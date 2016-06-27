@@ -1,0 +1,73 @@
+/*?
+        Author  :       BOULANGER Jean-Louis
+        Date    :       February 2000
+        Descr   :       Fib function
+        File    :       Fib_n.imp
+
+?*/
+
+/*
+        February 2000	Creation.
+*/      
+
+IMPLEMENTATION
+	Fib_n
+
+REFINES
+	Fib_0
+
+OPERATIONS
+
+yy <-- FIB (xx) =
+IF (xx =0)
+THEN 
+    yy := 1
+ELSE
+	VAR ii,yyy,nn IN
+	    ii  := 1
+	; 	yyy := 1
+	; 	nn  := 1
+	;	WHILE (ii < xx) DO
+			yyy := yyy + nn
+		;	nn  := yyy - nn
+		;	ii  := ii +1
+		INVARIANT
+			xx : NAT
+		&	ii : NAT
+		&	(ii <=xx)
+		&	nn : NAT
+		&	nn = fibonacci(ii-1)
+		&	yyy : NAT
+		&	yyy = fibonacci(ii)
+		VARIANT
+			xx-ii
+		END
+	;	yy := yyy
+   END
+END;
+
+yy <-- FIB_ (xx) = 
+IF (xx =0)
+THEN 
+    yy := 1
+ELSE
+VAR ii,yyy,nn IN
+	ii:=1;yyy:=1;nn := 1
+;	WHILE (ii < xx) DO
+		yyy := yyy + nn
+	;	nn  := yyy - nn
+	;	ii := ii +1
+	INVARIANT
+		xx : NAT
+	&	ii : NAT1
+	&	(ii <=xx)
+	&	nn : NAT
+	&	yyy : NAT
+	VARIANT
+		xx-ii
+	END
+	;	yy := yyy
+	END
+END
+
+END /*? of file Fib_n.imp ?*/

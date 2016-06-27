@@ -1,0 +1,17 @@
+// Mails	: jean.louis.boulanger@gmail.com
+// AUTHOR	: Jean-Louis Boulanger
+//	
+// Copyright 1999-2009 Boulanger Jean-Louis
+//
+// File		: CONTRIBUTORS.txt
+// Description	: Describe the content of this directory
+// 
+
+
+List of contributors:
+- Jean-louis Boulanger	: Developped the main part.
+- Karim berkani 	: Designed the ABTOOLS logo
+- Samuel Colin 		: Enhanced the stategy to compile ABTools 
+
+
+// End of File

@@ -1,0 +1,36 @@
+/* 
+
+File		:	Random_Nat_n.mch
+Author		:	Boulanger Jean-Louis
+Date		:	July 1998
+
+Description	:	Inspired of the book of K. LANO 
+			"The B specification language and Method"
+
+*/
+
+IMPLEMENTATION
+	Random_Nat_n
+
+REFINES
+	Random_Nat_1
+	
+CONCRETE_VARIABLES
+	rand_i
+
+INVARIANT
+	rand_i : NAT
+&	rand_i = rand_r
+
+INITIALISATION
+	rand_i := 0
+
+OPERATIONS
+
+Rand_New =
+	rand_i := 0;
+
+rr <-- Rand_get	=
+	rr := rand_i
+
+END /* of file Random_Nat_n.imp */

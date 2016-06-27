@@ -1,0 +1,8 @@
+# Automatically generated, contains relevant variables
+#
+# $Id$
+
+
+CLASSES+=  \
+	ABTOOLS/DEBUGGING/ErrorMessage.class \
+	ABTOOLS/DEBUGGING/DEBUG.class 

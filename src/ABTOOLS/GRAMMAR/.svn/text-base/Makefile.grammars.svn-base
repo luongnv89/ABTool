@@ -1,0 +1,393 @@
+# Makefile for grammars
+#
+# $Id$
+#TRACE_B=-traceParser
+TRCAE_B=
+#TRACE_TREEWALKER= -trace 
+TRACE_TREEWALKER=
+
+ABTOOLS/GRAMMAR/B.g.err \
+ABTOOLS/GRAMMAR/expandedB.g \
+ABTOOLS/GRAMMAR/BParser.java \
+ABTOOLS/GRAMMAR/BParser.smap \
+ABTOOLS/GRAMMAR/BLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/BLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/BLexer.java \
+ABTOOLS/GRAMMAR/BLexer.smap \
+ABTOOLS/GRAMMAR/BTokenTypes.java \
+ABTOOLS/GRAMMAR/BTokenTypes.txt \
+: ABTOOLS/GRAMMAR/B.g ABTOOLS/GRAMMAR/expandedExpression.g ABTOOLS/GRAMMAR/ExpressionTokenTypes.txt
+	echo "Generation of B"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) $(TRACE_B) -glib "expandedExpression.g" B.g 2> B.g.err
+
+ABTOOLS/GRAMMAR/BParser.html \
+ABTOOLS/GRAMMAR/BLexer.html \
+: ABTOOLS/GRAMMAR/B.g ABTOOLS/GRAMMAR/expandedExpression.g ABTOOLS/GRAMMAR/ExpressionTokenTypes.txt
+	echo "HTML of B"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedExpression.g" B.g
+
+ABTOOLS/GRAMMAR/BCodeGenerator.g.err \
+ABTOOLS/GRAMMAR/BCodeGeneratorTokenTypes.java \
+ABTOOLS/GRAMMAR/BCodeGeneratorTokenTypes.txt \
+ABTOOLS/GRAMMAR/BCodeGenerator.java \
+ABTOOLS/GRAMMAR/BCodeGenerator.smap \
+: ABTOOLS/GRAMMAR/BCodeGenerator.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of BCodeGenerator"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) BCodeGenerator.g 2> BCodeGenerator.g.err
+
+ABTOOLS/GRAMMAR/BCodeGenerator.html \
+: ABTOOLS/GRAMMAR/BCodeGenerator.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of BCodeGenerator"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html BCodeGenerator.g
+
+ABTOOLS/GRAMMAR/BEvent.g.err \
+ABTOOLS/GRAMMAR/expandedBEvent.g \
+ABTOOLS/GRAMMAR/BEventParser.java \
+ABTOOLS/GRAMMAR/BEventParser.smap \
+ABTOOLS/GRAMMAR/BEventLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/BEventLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/BEventLexer.java \
+ABTOOLS/GRAMMAR/BEventLexer.smap \
+ABTOOLS/GRAMMAR/BEventTokenTypes.java \
+ABTOOLS/GRAMMAR/BEventTokenTypes.txt \
+: ABTOOLS/GRAMMAR/BEvent.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of BEvent"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedB.g" BEvent.g 2> BEvent.g.err
+
+ABTOOLS/GRAMMAR/BEventParser.html \
+ABTOOLS/GRAMMAR/BEventLexer.html \
+: ABTOOLS/GRAMMAR/BEvent.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of BEvent"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedB.g" BEvent.g
+
+ABTOOLS/GRAMMAR/BModel.g.err \
+ABTOOLS/GRAMMAR/expandedBModel.g \
+ABTOOLS/GRAMMAR/BModelParser.java \
+ABTOOLS/GRAMMAR/BModelParser.smap \
+ABTOOLS/GRAMMAR/BModelLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/BModelLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/BModelLexer.java \
+ABTOOLS/GRAMMAR/BModelLexer.smap \
+ABTOOLS/GRAMMAR/BModelTokenTypes.java \
+ABTOOLS/GRAMMAR/BModelTokenTypes.txt \
+: ABTOOLS/GRAMMAR/BModel.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of BModel"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedB.g" BModel.g 2> BModel.g.err
+
+ABTOOLS/GRAMMAR/BModelParser.html \
+ABTOOLS/GRAMMAR/BModelLexer.html \
+: ABTOOLS/GRAMMAR/BModel.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of BModel"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedB.g" BModel.g
+
+ABTOOLS/GRAMMAR/BPrime.g.err \
+ABTOOLS/GRAMMAR/expandedBPrime.g \
+ABTOOLS/GRAMMAR/BPrimeParser.java \
+ABTOOLS/GRAMMAR/BPrimeParser.smap \
+ABTOOLS/GRAMMAR/BPrimeLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/BPrimeLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/BPrimeLexer.java \
+ABTOOLS/GRAMMAR/BPrimeLexer.smap \
+ABTOOLS/GRAMMAR/BPrimeTokenTypes.java \
+ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt \
+: ABTOOLS/GRAMMAR/BPrime.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of BPrime"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedB.g" BPrime.g 2> BPrime.g.err
+
+ABTOOLS/GRAMMAR/BPrimeParser.html \
+ABTOOLS/GRAMMAR/BPrimeLexer.html \
+: ABTOOLS/GRAMMAR/BPrime.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of BPrime"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedB.g" BPrime.g
+
+ABTOOLS/GRAMMAR/BSystem.g.err \
+ABTOOLS/GRAMMAR/expandedBSystem.g \
+ABTOOLS/GRAMMAR/BSystemParser.java \
+ABTOOLS/GRAMMAR/BSystemParser.smap \
+ABTOOLS/GRAMMAR/BSystemTokenTypes.java \
+ABTOOLS/GRAMMAR/BSystemTokenTypes.txt \
+ABTOOLS/GRAMMAR/BSystemLexer.java \
+ABTOOLS/GRAMMAR/BSystemLexer.smap \
+: ABTOOLS/GRAMMAR/BSystem.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of BSystem"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedB.g" BSystem.g 2> BSystem.g.err
+
+ABTOOLS/GRAMMAR/BSystemParser.html \
+ABTOOLS/GRAMMAR/BSystemLexer.html \
+: ABTOOLS/GRAMMAR/BSystem.g ABTOOLS/GRAMMAR/expandedB.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of BSystem"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedB.g" BSystem.g
+
+ABTOOLS/GRAMMAR/BTyping.g.err \
+ABTOOLS/GRAMMAR/BTypingTokenTypes.java \
+ABTOOLS/GRAMMAR/BTypingTokenTypes.txt \
+ABTOOLS/GRAMMAR/BTyping.java \
+ABTOOLS/GRAMMAR/BTyping.smap \
+: ABTOOLS/GRAMMAR/BTyping.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "Generation of BTyping"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) BTyping.g 2> BTyping.g.err
+
+ABTOOLS/GRAMMAR/BTyping.html \
+: ABTOOLS/GRAMMAR/BTyping.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "HTML of BTyping"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html BTyping.g
+
+ABTOOLS/GRAMMAR/BXML.g.err \
+ABTOOLS/GRAMMAR/expandedBXML.g \
+ABTOOLS/GRAMMAR/BXMLTokenTypes.java \
+ABTOOLS/GRAMMAR/BXMLTokenTypes.txt \
+ABTOOLS/GRAMMAR/BXML.java \
+ABTOOLS/GRAMMAR/BXML.smap \
+: ABTOOLS/GRAMMAR/BXML.g ABTOOLS/GRAMMAR/POWalker.g ABTOOLS/GRAMMAR/BSystemTokenTypes.txt
+	echo "Generation of BXML"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "POWalker.g" BXML.g 2> BXML.g.err
+
+ABTOOLS/GRAMMAR/BXML.html \
+: ABTOOLS/GRAMMAR/BXML.g ABTOOLS/GRAMMAR/POWalker.g ABTOOLS/GRAMMAR/BSystemTokenTypes.txt
+	echo "HTML of BXML"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "POWalker.g" BXML.g
+
+ABTOOLS/GRAMMAR/EventTreeWalker.g.err \
+ABTOOLS/GRAMMAR/expandedEventTreeWalker.g \
+ABTOOLS/GRAMMAR/EventTreeWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/EventTreeWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/EventTreeWalker.java \
+ABTOOLS/GRAMMAR/EventTreeWalker.smap \
+: ABTOOLS/GRAMMAR/EventTreeWalker.g ABTOOLS/GRAMMAR/expandedTreeWalker.g ABTOOLS/GRAMMAR/BEventTokenTypes.txt
+	echo "Generation of EventTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedTreeWalker.g" EventTreeWalker.g 2> EventTreeWalker.g.err
+
+ABTOOLS/GRAMMAR/EventTreeWalker.html \
+: ABTOOLS/GRAMMAR/EventTreeWalker.g ABTOOLS/GRAMMAR/expandedTreeWalker.g ABTOOLS/GRAMMAR/BEventTokenTypes.txt
+	echo "HTML of EventTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedTreeWalker.g" EventTreeWalker.g
+
+ABTOOLS/GRAMMAR/Expression.g.err \
+ABTOOLS/GRAMMAR/expandedExpression.g \
+ABTOOLS/GRAMMAR/ExpressionParser.java \
+ABTOOLS/GRAMMAR/ExpressionParser.smap \
+ABTOOLS/GRAMMAR/ExpressionLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/ExpressionLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/ExpressionLexer.java \
+ABTOOLS/GRAMMAR/ExpressionLexer.smap \
+ABTOOLS/GRAMMAR/ExpressionTokenTypes.java \
+ABTOOLS/GRAMMAR/ExpressionTokenTypes.txt \
+: ABTOOLS/GRAMMAR/Expression.g ABTOOLS/GRAMMAR/Predicat.g ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.txt
+	echo "Generation of Expression"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "Predicat.g" Expression.g 2> Expression.g.err
+
+ABTOOLS/GRAMMAR/ExpressionParser.html \
+ABTOOLS/GRAMMAR/ExpressionLexer.html \
+: ABTOOLS/GRAMMAR/Expression.g ABTOOLS/GRAMMAR/Predicat.g ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.txt
+	echo "HTML of Expression"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "Predicat.g" Expression.g
+
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.g.err \
+ABTOOLS/GRAMMAR/ExpressionTreeWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/ExpressionTreeWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.java \
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.smap \
+: ABTOOLS/GRAMMAR/ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "Generation of ExpressionTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) ExpressionTreeWalker.g 2> ExpressionTreeWalker.g.err
+
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.html \
+: ABTOOLS/GRAMMAR/ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "HTML of ExpressionTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html ExpressionTreeWalker.g
+
+ABTOOLS/GRAMMAR/GSL.g.err \
+ABTOOLS/GRAMMAR/GSLTokenTypes.java \
+ABTOOLS/GRAMMAR/GSLTokenTypes.txt \
+ABTOOLS/GRAMMAR/GSL.java \
+ABTOOLS/GRAMMAR/GSL.smap \
+: ABTOOLS/GRAMMAR/GSL.g ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt
+	echo "Generation of GSL"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) GSL.g 2> GSL.g.err
+
+ABTOOLS/GRAMMAR/GSL.html \
+: ABTOOLS/GRAMMAR/GSL.g ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt
+	echo "HTML of GSL"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html GSL.g
+
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguage.g.err \
+ABTOOLS/GRAMMAR/expandedGeneralisedSubstitutionLanguage.g \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.java \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.smap \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.java \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.smap \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageTokenTypes.java \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageTokenTypes.txt \
+: ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguage.g ABTOOLS/GRAMMAR/expandedExpression.g ABTOOLS/GRAMMAR/ExpressionTokenTypes.txt
+	echo "Generation of GeneralisedSubstitutionLanguage"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedExpression.g" GeneralisedSubstitutionLanguage.g 2> GeneralisedSubstitutionLanguage.g.err
+
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.html \
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.html \
+: ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguage.g ABTOOLS/GRAMMAR/expandedExpression.g ABTOOLS/GRAMMAR/ExpressionTokenTypes.txt
+	echo "HTML of GeneralisedSubstitutionLanguage"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedExpression.g" GeneralisedSubstitutionLanguage.g
+
+ABTOOLS/GRAMMAR/Normalize.g.err \
+ABTOOLS/GRAMMAR/NormalizeTokenTypes.java \
+ABTOOLS/GRAMMAR/NormalizeTokenTypes.txt \
+ABTOOLS/GRAMMAR/Normalize.java \
+ABTOOLS/GRAMMAR/Normalize.smap \
+: ABTOOLS/GRAMMAR/Normalize.g ABTOOLS/GRAMMAR/BSystemTokenTypes.txt
+	echo "Generation of Normalize"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) Normalize.g 2> Normalize.g.err
+
+ABTOOLS/GRAMMAR/Normalize.html \
+: ABTOOLS/GRAMMAR/Normalize.g ABTOOLS/GRAMMAR/BSystemTokenTypes.txt
+	echo "HTML of Normalize"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html Normalize.g
+
+ABTOOLS/GRAMMAR/POWalker.g.err \
+ABTOOLS/GRAMMAR/POWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/POWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/POWalker.java \
+ABTOOLS/GRAMMAR/POWalker.smap \
+: ABTOOLS/GRAMMAR/POWalker.g ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt
+	echo "Generation of POWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) POWalker.g 2> POWalker.g.err
+
+ABTOOLS/GRAMMAR/POWalker.html \
+: ABTOOLS/GRAMMAR/POWalker.g ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt
+	echo "HTML of POWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html POWalker.g
+
+ABTOOLS/GRAMMAR/Predicat.g.err \
+ABTOOLS/GRAMMAR/PredicatParser.java \
+ABTOOLS/GRAMMAR/PredicatParser.smap \
+ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.java \
+ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.txt \
+ABTOOLS/GRAMMAR/PredicatLexer.java \
+ABTOOLS/GRAMMAR/PredicatLexer.smap \
+ABTOOLS/GRAMMAR/PredicatTokenTypes.java \
+ABTOOLS/GRAMMAR/PredicatTokenTypes.txt \
+: ABTOOLS/GRAMMAR/Predicat.g
+	echo "Generation of Predicat"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) Predicat.g 2> Predicat.g.err
+
+ABTOOLS/GRAMMAR/PredicatParser.html \
+ABTOOLS/GRAMMAR/PredicatLexer.html \
+: ABTOOLS/GRAMMAR/Predicat.g
+	echo "HTML of Predicat"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html Predicat.g
+
+ABTOOLS/GRAMMAR/PredicateTreeWalker.g.err \
+ABTOOLS/GRAMMAR/PredicateTreeWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/PredicateTreeWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/PredicateTreeWalker.java \
+ABTOOLS/GRAMMAR/PredicateTreeWalker.smap \
+: ABTOOLS/GRAMMAR/PredicateTreeWalker.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of PredicateTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) PredicateTreeWalker.g 2> PredicateTreeWalker.g.err
+
+ABTOOLS/GRAMMAR/PredicateTreeWalker.html \
+: ABTOOLS/GRAMMAR/PredicateTreeWalker.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of PredicateTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html PredicateTreeWalker.g
+
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.g.err \
+ABTOOLS/GRAMMAR/Simple_Subst_GrammarTokenTypes.java \
+ABTOOLS/GRAMMAR/Simple_Subst_GrammarTokenTypes.txt \
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.java \
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.smap \
+: ABTOOLS/GRAMMAR/Simple_Subst_Grammar.g ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt
+	echo "Generation of Simple_Subst_Grammar"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) Simple_Subst_Grammar.g 2> Simple_Subst_Grammar.g.err
+
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.html \
+: ABTOOLS/GRAMMAR/Simple_Subst_Grammar.g ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt
+	echo "HTML of Simple_Subst_Grammar"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html Simple_Subst_Grammar.g
+
+ABTOOLS/GRAMMAR/Substitution.g.err \
+ABTOOLS/GRAMMAR/Substitution.java \
+ABTOOLS/GRAMMAR/Substitution.smap \
+ABTOOLS/GRAMMAR/PO_GSLTokenTypes.java \
+ABTOOLS/GRAMMAR/PO_GSLTokenTypes.txt \
+: ABTOOLS/GRAMMAR/Substitution.g ABTOOLS/GRAMMAR/POTokenTypes.txt
+	echo "Generation of Substitution"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) Substitution.g 2> Substitution.g.err
+
+ABTOOLS/GRAMMAR/Substitution.html \
+: ABTOOLS/GRAMMAR/Substitution.g ABTOOLS/GRAMMAR/POTokenTypes.txt
+	echo "HTML of Substitution"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html Substitution.g
+
+ABTOOLS/GRAMMAR/SystemTreeWalker.g.err \
+ABTOOLS/GRAMMAR/expandedSystemTreeWalker.g \
+ABTOOLS/GRAMMAR/SystemTreeWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/SystemTreeWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/SystemTreeWalker.java \
+ABTOOLS/GRAMMAR/SystemTreeWalker.smap \
+: ABTOOLS/GRAMMAR/SystemTreeWalker.g ABTOOLS/GRAMMAR/expandedTreeWalker.g ABTOOLS/GRAMMAR/BSystemTokenTypes.txt
+	echo "Generation of SystemTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "expandedTreeWalker.g" SystemTreeWalker.g 2> SystemTreeWalker.g.err
+
+ABTOOLS/GRAMMAR/SystemTreeWalker.html \
+: ABTOOLS/GRAMMAR/SystemTreeWalker.g ABTOOLS/GRAMMAR/expandedTreeWalker.g ABTOOLS/GRAMMAR/BSystemTokenTypes.txt
+	echo "HTML of SystemTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "expandedTreeWalker.g" SystemTreeWalker.g
+	
+#ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.g.err \
+#ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalkerTokenTypes.java \
+#ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalkerTokenTypes.txt \
+#ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.java \
+#ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.smap \
+#: ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+#	echo "Generation of toJML_ExpressionTreeWalker"
+#	cd ABTOOLS/GRAMMAR && $(ANTLR) toJML_ExpressionTreeWalker.g 2> toJML_ExpressionTreeWalker.g.err
+
+ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.html \
+: ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "HTML of toJML_ExpressionTreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html toJML_ExpressionTreeWalker.g
+
+ABTOOLS/GRAMMAR/toJML_TreeWalker.g.err \
+ABTOOLS/GRAMMAR/expandedtoJML_TreeWalker.g \
+ABTOOLS/GRAMMAR/toJML_TreeWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/toJML_TreeWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/toJML_TreeWalker.java \
+ABTOOLS/GRAMMAR/toJML_TreeWalker.smap \
+: ABTOOLS/GRAMMAR/toJML_TreeWalker.g ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "Generation of toJML_TreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -glib "toJML_ExpressionTreeWalker.g" toJML_TreeWalker.g 2> toJML_TreeWalker.g.err
+	
+ABTOOLS/GRAMMAR/toJML_TreeWalker.html \
+: ABTOOLS/GRAMMAR/toJML_TreeWalker.g ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "HTML of toJML_TreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "toJML_ExpressionTreeWalker.g" toJML_TreeWalker.g
+
+ABTOOLS/GRAMMAR/TreeWalker.g.err \
+ABTOOLS/GRAMMAR/expandedTreeWalker.g \
+ABTOOLS/GRAMMAR/TreeWalkerTokenTypes.java \
+ABTOOLS/GRAMMAR/TreeWalkerTokenTypes.txt \
+ABTOOLS/GRAMMAR/TreeWalker.java \
+ABTOOLS/GRAMMAR/TreeWalker.smap \
+: ABTOOLS/GRAMMAR/TreeWalker.g ABTOOLS/GRAMMAR/ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "Generation of TreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) $(TRACE_TREEWALKER) -glib "ExpressionTreeWalker.g" TreeWalker.g 2> TreeWalker.g.err
+
+ABTOOLS/GRAMMAR/TreeWalker.html \
+: ABTOOLS/GRAMMAR/TreeWalker.g ABTOOLS/GRAMMAR/ExpressionTreeWalker.g ABTOOLS/GRAMMAR/BPrimeTokenTypes.txt
+	echo "HTML of TreeWalker"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html -glib "ExpressionTreeWalker.g" TreeWalker.g
+
+ABTOOLS/GRAMMAR/generic.g.err \
+ABTOOLS/GRAMMAR/generic.java \
+ABTOOLS/GRAMMAR/generic.smap \
+ABTOOLS/GRAMMAR/POTokenTypes.java \
+ABTOOLS/GRAMMAR/POTokenTypes.txt \
+: ABTOOLS/GRAMMAR/generic.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "Generation of generic"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) generic.g 2> generic.g.err
+
+ABTOOLS/GRAMMAR/generic.html \
+: ABTOOLS/GRAMMAR/generic.g ABTOOLS/GRAMMAR/BTokenTypes.txt
+	echo "HTML of generic"
+	cd ABTOOLS/GRAMMAR && $(ANTLR) -html generic.g

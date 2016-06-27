@@ -1,0 +1,106 @@
+#!/bin/sh
+
+# Execute this script only in src/
+
+to_script=`dirname $0`
+echo Repertoire : $to_script
+
+tmpfile=tmp.txt
+dirs=
+
+# Warning: no space in the filename !
+for fname in `ls ABTOOLS`
+do
+  if [ -d "ABTOOLS/$fname" ]
+  then 
+    dirs="$dirs $fname"
+  fi
+done
+
+java -jar $to_script/javadeps.jar ABTOOLS/*/*.java >$tmpfile
+
+#DEBUG
+cp $tmpfile $tmpfile.1
+
+for i in $dirs
+do
+  echo Preparing the full file for $i
+
+# Keeping the stuff relevant to that dir
+  sed \
+  -e '/^\# Rules for ABTOOLS\.'$i'\.[[:print:]]\+$/ {' \
+  -e 'N; s/Rules/Additional dependencies/g; p}' \
+  -e '/^\(ABTOOLS\/'$i'\/[[:print:]]\+\)\.class: \1\.java$/d' \
+  -e '/^ABTOOLS\/'$i'\/[[:print:]]\+\.class: .*$/p' \
+  -e '/^CLASSES[ ]*=[ ]\+\\$/p' \
+  -e '/^	ABTOOLS\/'$i'\/[[:print:]]\+\.class\( \\\)\?$/p' \
+  -e 'd' \
+  $tmpfile \
+  >ABTOOLS/$i/Makefile.tmp
+
+#DEBUG
+cp ABTOOLS/$i/Makefile.tmp ABTOOLS/$i/Makefile.tmp.phase1
+
+  echo Replacing paths by variables in the full file for $i
+# Changing some paths into variables
+  sed \
+  -e 's/CLASSES =/CLASSES+=/g' \
+  -e '$ { s/\\$//g}' \
+  ABTOOLS/$i/Makefile.tmp \
+  >ABTOOLS/$i/Makefile.tmp2
+
+  rm -f ABTOOLS/$i/Makefile.tmp
+
+  echo Splitting the full file for $i
+
+# Now separating additional dependencies from variables
+
+  echo Variables for $i
+
+  sed \
+  -e '/^CLASSES+=[ ]\+\\$/p' \
+  -e '/^	ABTOOLS\/'$i'\/[[:print:]]\+\.class[ ]*\(\\\)\?$/p' \
+  -e 'd' \
+  ABTOOLS/$i/Makefile.tmp2 \
+  >ABTOOLS/$i/Makefile.vars.init
+
+  echo Dependencies for $i
+
+  sed \
+  -e '/^\#.*$/p' \
+  -e '/^ABTOOLS\/'$i'\/[[:print:]]\+\.class:.*$/ {' \
+  -e ' h' \
+  -e ' s/\.class\(:\|$\)/.o\1/g' \
+  -e ' G' \
+  -e ' p}' \
+  -e 'd' \
+  ABTOOLS/$i/Makefile.tmp2 \
+  >ABTOOLS/$i/Makefile.classdeps.init
+
+  rm -f ABTOOLS/$i/Makefile.tmp2
+  rm -f ABTOOLS/$i/Makefile.classdeps
+  rm -f ABTOOLS/$i/Makefile.vars
+
+  echo Small beautification of the makefiles
+
+  echo \# Automatically generated, contains additional dependencies >>ABTOOLS/$i/Makefile.classdeps
+  echo \# >>ABTOOLS/$i/Makefile.classdeps
+  echo \# \$Id\$ >>ABTOOLS/$i/Makefile.classdeps
+  echo >>ABTOOLS/$i/Makefile.classdeps
+  echo >>ABTOOLS/$i/Makefile.classdeps
+  cat ABTOOLS/$i/Makefile.classdeps.init >> ABTOOLS/$i/Makefile.classdeps
+  rm -f ABTOOLS/$i/Makefile.classdeps.init
+
+  echo \# Automatically generated, contains relevant variables >>ABTOOLS/$i/Makefile.vars
+  echo \# >>ABTOOLS/$i/Makefile.vars
+  echo \# \$Id\$ >>ABTOOLS/$i/Makefile.vars
+  echo >>ABTOOLS/$i/Makefile.vars
+  echo >>ABTOOLS/$i/Makefile.vars
+  cat ABTOOLS/$i/Makefile.vars.init >> ABTOOLS/$i/Makefile.vars
+  rm -f ABTOOLS/$i/Makefile.vars.init
+
+  echo Done for $i
+
+done
+
+#rm "$tmpfile"

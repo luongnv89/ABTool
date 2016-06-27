@@ -1,0 +1,82 @@
+/*?
+	Author	:	BOULANGER Jean-Louis
+	Date	:	OCTOBRE 96
+	Descr	:	Quelques operations mathematiques connues
+	File	: 	Math_n.imp
+?*/
+
+/*
+	September 1999	Add the Sign Operation.
+*/
+
+IMPLEMENTATION
+	Math_n
+
+REFINES
+	Math_1
+
+OPERATIONS
+
+xx <-- Min (aa,bb) =
+	IF aa >= bb
+		THEN xx := bb
+		ELSE xx := aa
+	END;
+
+xx <-- Max (aa,bb) =
+	IF aa >= bb
+		THEN xx := aa
+		ELSE xx := bb
+	END;
+
+xx <-- Abs (zz) =
+	BEGIN
+		IF (zz>=0)
+			THEN xx := zz
+			ELSE xx := -zz
+		END
+	END;
+
+qq,rr <-- Euclidean_div(aa,bb) =
+	BEGIN
+		qq := 0
+	;	rr := aa
+	;	WHILE rr >= bb DO
+		BEGIN
+			qq := qq + 1
+		;	rr := rr - bb
+		END
+		INVARIANT
+			aa : NAT
+		&	aa = qq*bb + rr
+		&	rr : NAT
+		&	0 <= rr
+		&	rr <= aa
+		&	qq : NAT
+		&	0 <= qq
+		&	qq <= aa
+		VARIANT
+			rr
+		END
+	END;
+
+xx,yy <-- Swap (aa,bb) =
+	BEGIN
+		xx := bb
+	;	yy := aa
+	END;
+
+ss <-- Sign (ii) =
+IF 
+	(ii < 0) 
+THEN
+	ss := -1
+ELSIF
+	(ii > 0)
+THEN
+	ss := 1
+ELSE
+	ss := 0
+END
+
+END /*? End of File Math_n.imp ?*/

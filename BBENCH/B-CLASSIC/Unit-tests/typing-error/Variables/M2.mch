@@ -1,0 +1,7 @@
+MACHINE M2
+
+VARIABLES xx
+
+
+
+END

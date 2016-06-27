@@ -1,0 +1,33 @@
+/* 
+   Description : Machine de test du typage
+   Author : Boulanger jean-louis
+*/
+
+IMPLEMENTATION
+	If_0b
+
+REFINES
+	If_0
+
+CONCRETE_VARIABLES
+	AA
+
+INVARIANT
+	AA : NAT
+
+INITIALISATION
+	AA :=0
+
+OPERATIONS
+
+OP(BB) =
+IF (AA=BB)
+THEN AA:=1
+ELSIF (AA/= BB)
+THEN AA:= 2
+ELSIF (AA/= AA)
+THEN AA:= 3
+ELSE AA:= 4
+END
+
+END

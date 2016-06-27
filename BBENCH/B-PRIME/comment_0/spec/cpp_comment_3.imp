@@ -1,0 +1,18 @@
+// 
+// AUTHOR      : BOULANGER Jean-Louis
+// DESCRIPTION : Ce fichier permet de tester l'ajout de commentaire a la mode C++
+//               Il fait partie integrante de la distribution ABTOOLS
+//               Il permet de tester l'extension de la methode B intitule BPRIME
+// FILE        : cpp_comment_2.ref
+//
+
+IMPLEMENTATION 			// c'est un refinement
+	cpp_comment_3 		// elle a un nom
+
+REFINES
+	cpp_comment_2
+// CONSTRAINTS			// cette instruction est commntee
+// une ligne vide 
+END				// C'est la fin de la machine
+
+// .....

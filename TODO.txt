@@ -1,0 +1,100 @@
+//
+// Jean-louis Boulanger : jean.louis.boulanger@gmail.com
+//
+// Todo file : in french
+//
+//	
+//	Copyright 1999-2009 Boulanger Jean-Louis
+//
+
+ABTOOLS:
+
+00. passage a ANTLR 3.0
+
+1. Constante pour le saut de ligne:
+private static String NEW_LINE = System.getProperty("line.separator");
+
+
+2. Mesure du temps de calcul:
+long time = System.currentTimeMillis();
+System.out.println("time (millis): " + (System.currentTimeMillis() - time));
+
+3. Encodage UTF8:
+
+Prise en compte du codage UTF8 et de l'aspect Unicode
+
+// Added UTF8 encoding string for correct character translation.
+   byte[] bytes              = s.getBytes("UTF8"); 
+   ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+   Call_Lexer(bais);
+
+options {
+        charVocabulary='\u0000'..'\uFFFE'; 
+        // allow all possible unicodes except -1 == EOF   (16 bit -1)
+ 
+......
+}
+
+.....
+protected
+ID_START_LETTER
+        :	'_'
+	|	'a'..'z'
+	|	'\u0080'..'\ufffe'
+        ;
+
+protected
+ID_LETTER
+	:	ID_START_LETTER
+	|	DIGIT
+	;
+
+......
+
+4. Mettre appel parser dans .g:
+
+A Etudier, l'utilisation de TokenBuffer ... regarder si gain de parsing.
+
+
+// Code local
+{
+  public Parser() 
+  {
+   super(2); 
+  }
+
+  public void parse(String s) 
+   throws EvaluatorException  
+  {
+    try 
+    {
+      byte[] bytes              = s.getBytes("UTF8"); 
+      ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
+      Lexer lexer               = new Lexer(bais);
+      TokenBuffer tokBuf        = new TokenBuffer(lexer);
+
+      setTokenBuffer(tokBuf);
+      Appel_Principal_Rule();
+      return ;
+    } 
+    catch (Exception e) 
+    {
+      throw new EvaluatorException("Couldn't parse '" + s + "'");
+    }
+  }
+}
+
+
+5. (indiqué par SC)
+- Utiliser les capacités de génération automatique des dépendances
+lors du passage à antlr3
+- Utiliser un mécanisme plus automatique pour les dépendances de
+fichiers java: cf des outils comme javamake, ou ant
+(http://ant.apache.org/). Le but est de spécifier uniquement dans le
+"Makefile" Interface_texte.class (par exemple) et il dérive le reste
+des dépendances automatiquement
+Note: regarder aussi "gcj -M" qui pourrait créer ces dépendances (pas
+réussi pour le moment)
+- Avoir des informations plus précises sur les fichiers générés par
+javadoc pour que ça entre dans le calcul des dépendances. Mais comme
+les docs sont vite générées c'est pas crucial.

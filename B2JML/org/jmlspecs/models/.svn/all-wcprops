@@ -1,0 +1,683 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models
+END
+JMLValueSequenceSpecs.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueSequenceSpecs.java
+END
+JMLObjectToValueRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToValueRelationEnumerator.java
+END
+JMLValueToValueRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToValueRelationEnumerator.java
+END
+JMLEqualsToValueRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToValueRelationEnumerator.java
+END
+JMLTypeException.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLTypeException.java
+END
+JMLValueSequence.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueSequence.java
+END
+JMLMap.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLMap.java-generic
+END
+JMLObjectSequence.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectSequence.java
+END
+JMLEqualsSequence.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsSequence.java
+END
+JMLNegativeInfinity.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLNegativeInfinity.java
+END
+JMLObjectBagEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectBagEnumerator.java
+END
+JMLValueBagEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueBagEnumerator.java
+END
+JMLEqualsBagEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsBagEnumerator.java
+END
+JMLNoSuchElementException.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLNoSuchElementException.java
+END
+JMLComparable.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLComparable.java
+END
+JMLObjectObjectPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectObjectPair.java
+END
+JMLObjectEqualsPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectEqualsPair.java
+END
+JMLEqualsObjectPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsObjectPair.java
+END
+JMLEqualsEqualsPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsEqualsPair.java
+END
+JMLInfiniteInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLInfiniteInteger.java
+END
+JMLValueObjectPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueObjectPair.java
+END
+JMLValueEqualsPair.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueEqualsPair.java
+END
+JMLValueSetSpecs.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueSetSpecs.java
+END
+JMLResources.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLResources.java
+END
+JMLInfiniteIntegerClass.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLInfiniteIntegerClass.java
+END
+JMLSetEnumerator.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLSetEnumerator.java-generic
+END
+JMLShort.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLShort.java
+END
+JMLObjectToValueMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToValueMap.java
+END
+JMLEqualsToValueMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToValueMap.java
+END
+JMLValueToValueMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToValueMap.java
+END
+JMLListValueNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLListValueNode.java
+END
+JMLValueType.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueType.java
+END
+JMLObjectType.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectType.java
+END
+JMLValueToEqualsRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToEqualsRelationImageEnumerator.java
+END
+JMLEqualsToEqualsRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToEqualsRelationImageEnumerator.java
+END
+JMLObjectToObjectRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToObjectRelationImageEnumerator.java
+END
+JMLValueToObjectRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToObjectRelationImageEnumerator.java
+END
+JMLObjectToEqualsRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToEqualsRelationImageEnumerator.java
+END
+JMLEqualsToObjectRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToObjectRelationImageEnumerator.java
+END
+JMLListNode.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLListNode.java-generic
+END
+JMLObjectToObjectRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToObjectRelation.java
+END
+JMLEqualsToObjectRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToObjectRelation.java
+END
+JMLObjectToEqualsRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToEqualsRelation.java
+END
+JMLEqualsToEqualsRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToEqualsRelation.java
+END
+JMLValueToObjectRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToObjectRelation.java
+END
+JMLValueToEqualsRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToEqualsRelation.java
+END
+JMLNullSafe.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLNullSafe.java
+END
+JMLString.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLString.java
+END
+JMLBagEnumerator.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLBagEnumerator.java-generic
+END
+JMLValueBagSpecs.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueBagSpecs.java
+END
+JMLIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLIterator.java
+END
+JMLFloat.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLFloat.java
+END
+JMLSet.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLSet.java-generic
+END
+JMLPositiveInfinity.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLPositiveInfinity.java
+END
+JMLCollection.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLCollection.java
+END
+JMLSequenceException.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLSequenceException.java
+END
+JMLObjectToObjectRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToObjectRelationEnumerator.java
+END
+JMLEqualsToObjectRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToObjectRelationEnumerator.java
+END
+JMLObjectToEqualsRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToEqualsRelationEnumerator.java
+END
+JMLEqualsToEqualsRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToEqualsRelationEnumerator.java
+END
+JMLValueToObjectRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToObjectRelationEnumerator.java
+END
+JMLValueToEqualsRelationEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToEqualsRelationEnumerator.java
+END
+JMLSequence.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLSequence.java-generic
+END
+JMLRelationEnumerator.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLRelationEnumerator.java-generic
+END
+JMLChar.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLChar.java
+END
+JMLEqualsSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsSet.java
+END
+JMLObjectToObjectMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToObjectMap.java
+END
+JMLValueToObjectMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToObjectMap.java
+END
+JMLObjectToEqualsMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToEqualsMap.java
+END
+JMLEqualsToObjectMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToObjectMap.java
+END
+JMLValueToEqualsMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToEqualsMap.java
+END
+JMLEqualsToEqualsMap.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToEqualsMap.java
+END
+JMLObjectSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectSet.java
+END
+JMLValueSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueSet.java
+END
+JMLPair.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLPair.java-generic
+END
+JMLBag.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLBag.java-generic
+END
+JMLInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLInteger.java
+END
+JMLByte.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLByte.java
+END
+JMLModelValueSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLModelValueSet.java
+END
+JMLMath.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLMath.java
+END
+JMLRelationImageEnumerator.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLRelationImageEnumerator.java-generic
+END
+JMLObjectSequenceEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectSequenceEnumerator.java
+END
+JMLEqualsSequenceEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsSequenceEnumerator.java
+END
+JMLValueSequenceEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueSequenceEnumerator.java
+END
+JMLObjectToValueRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToValueRelation.java
+END
+JMLValueToValueRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToValueRelation.java
+END
+JMLEqualsToValueRelation.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToValueRelation.java
+END
+JMLListException.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLListException.java
+END
+JMLListObjectNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLListObjectNode.java
+END
+JMLListEqualsNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLListEqualsNode.java
+END
+JMLEnumerationToIterator.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEnumerationToIterator.java
+END
+JMLFiniteInteger.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLFiniteInteger.java
+END
+JMLLong.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLLong.java
+END
+JMLSequenceEnumerator.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLSequenceEnumerator.java-generic
+END
+JMLEqualsValuePair.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsValuePair.java
+END
+JMLType.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLType.java
+END
+JMLModelObjectSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLModelObjectSet.java
+END
+JMLObjectValuePair.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectValuePair.java
+END
+JMLValueValuePair.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueValuePair.java
+END
+JMLArrayOps.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLArrayOps.java
+END
+JMLObjectBag.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectBag.java
+END
+JMLValueBag.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueBag.java
+END
+JMLEqualsBag.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsBag.java
+END
+JMLEqualsSetEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsSetEnumerator.java
+END
+JMLObjectSetEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectSetEnumerator.java
+END
+JMLEnumeration.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEnumeration.java
+END
+JMLValueSetEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueSetEnumerator.java
+END
+JMLMapException.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLMapException.java
+END
+JMLRelation.java-generic
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLRelation.java-generic
+END
+JMLDouble.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLDouble.java
+END
+JMLObjectToValueRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLObjectToValueRelationImageEnumerator.java
+END
+JMLEqualsToValueRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLEqualsToValueRelationImageEnumerator.java
+END
+JMLValueToValueRelationImageEnumerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/JMLValueToValueRelationImageEnumerator.java
+END

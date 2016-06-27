@@ -1,0 +1,962 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar BCodeGenerator.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar BCodeGenerator</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from BCodeGenerator.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.7 (2006-11-01); 1989-2005
+</td>
+</tr>
+</table>
+<PRE>
+
+
+Definition of tree parser BCodeGenerator, which is a subclass of TreeParser.
+
+	
+	
+/** 
+ *  Root Rule
+ **/
+<a name="composant">composant</a>
+		:	(	<a href="BCodeGenerator.html#machine">machine</a> 
+			|	<a href="BCodeGenerator.html#refinement">refinement</a> 
+			|	<a href="BCodeGenerator.html#implementation">implementation</a> 
+			) 
+		;
+	
+	
+/**
+ * THREE type of B composants simple name or with one or more parameters
+ **/
+<a name="machine">machine</a>
+		:				 #( "MACHINE" pparamName 
+    System.err.println(errors.NotImplementation (tmp)); 
+ ) 
+		;
+	
+	
+<a name="refinement">refinement</a>
+		:				 #( "REFINEMENT" pparamName 
+    System.err.println(errors.NotImplementation (tmp)); 
+ ) 
+		;
+	
+	
+<a name="implementation">implementation</a>
+		:				 #( "IMPLEMENTATION" 
+	InitializeModule();
+ pparamName 
+    System.out.println("Module a traiter :"+tmp);
+	cg.BeginGen(tmp);
+
+ clauses 
+    cg.EndGen();
+	FinalizeModule();
+ ) 
+		;
+	
+	
+<a name="pparamName">pparamName</a>
+		:				 #( B_LPAREN name:B_IDENTIFIER 
+	currentName = #name.getText();
+ listTypedIdentifier ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="listTypedIdentifier">listTypedIdentifier</a>
+		:				 #( B_COMMA listTypedIdentifier listTypedIdentifier ) 
+		|	<a href="BCodeGenerator.html#typedIdentifier">typedIdentifier</a> 
+		;
+	
+	
+<a name="clauses">clauses</a>
+		:	( <a href="BCodeGenerator.html#clause">clause</a> )* 
+		;
+	
+	
+<a name="clause">clause</a>
+		:	<a href="BCodeGenerator.html#refines">refines</a> 
+		|	<a href="BCodeGenerator.html#link">link</a> 
+		|	<a href="BCodeGenerator.html#sets">sets</a> 
+		|	<a href="BCodeGenerator.html#values">values</a> 
+		|	<a href="BCodeGenerator.html#constants">constants</a> 
+		|	<a href="BCodeGenerator.html#properties">properties</a> 
+		|	<a href="BCodeGenerator.html#variables">variables</a> 
+		|	<a href="BCodeGenerator.html#invariant">invariant</a> 
+		|	<a href="BCodeGenerator.html#assertions">assertions</a> 
+		|	<a href="BCodeGenerator.html#definitions">definitions</a> 
+		|	<a href="BCodeGenerator.html#initialisation">initialisation</a> 
+		|	<a href="BCodeGenerator.html#operations">operations</a> 
+		;
+	
+	
+<a name="refines">refines</a>
+		:				 #( "REFINES" 
+	;
+ name:B_IDENTIFIER 
+	;
+ ) 
+		;
+	
+	
+<a name="link">link</a>
+		:	<a href="BCodeGenerator.html#uses">uses</a> 
+		|	<a href="BCodeGenerator.html#includes">includes</a> 
+		|	<a href="BCodeGenerator.html#sees">sees</a> 
+		|	<a href="BCodeGenerator.html#extendeds">extendeds</a> 
+		|	<a href="BCodeGenerator.html#promotes">promotes</a> 
+		|	<a href="BCodeGenerator.html#imports">imports</a> 
+		;
+	
+	
+<a name="sets">sets</a>
+		:				 #( "SETS" 
+	;
+ sets_declaration 
+	;
+ ) 
+		;
+	
+	
+<a name="values">values</a>
+		:				 #( tt:"VALUES" 
+	;
+ list_valuation 
+	;
+ ) 
+		;
+	
+	
+<a name="constants">constants</a>
+		:				 #( "CONSTANTS" 
+	;
+ listTypedIdentifier 
+	;
+ ) 
+		|				 #( "CONCRETE_CONSTANTS" 
+	;
+ listTypedIdentifier 
+	;
+ ) 
+		|				 #( "VISIBLE_CONSTANTS" 
+	;
+ listTypedIdentifier 
+	;
+ ) 
+		|				 #( "ABSTRACT_CONSTANTS" 
+	;
+ listTypedIdentifier 
+	;
+ ) 
+		|				 #( "HIDDEN_CONSTANTS" 
+	;
+ listTypedIdentifier 
+	;
+ ) 
+		;
+	
+	
+<a name="properties">properties</a>
+		:				 #( "PROPERTIES" predicate ) 
+		;
+	
+	
+<a name="variables">variables</a>
+		:				 #( "VARIABLES" gTypedIdentifier ) 
+		|				 #( "ABSTRACT_VARIABLES" gTypedIdentifier ) 
+		|				 #( "VISIBLE_VARIABLES" gTypedIdentifier ) 
+		|				 #( "CONCRETE_VARIABLES" gTypedIdentifier ) 
+		|				 #( "HIDDEN_VARIABLES" gTypedIdentifier ) 
+		;
+	
+	
+<a name="invariant">invariant</a>
+		:				 #( "INVARIANT" predicate ) 
+		;
+	
+	
+<a name="assertions">assertions</a>
+		:				 #( "ASSERTIONS" list_assertions ) 
+		;
+	
+	
+<a name="definitions">definitions</a>
+		:				 #( "DEFINITIONS" list_def ) 
+		;
+	
+	
+<a name="initialisation">initialisation</a>
+		:				 #( "INITIALISATION" 
+   cg.Constructor();
+   cg.BeginOp();
+ instruction 
+   cg.EndOp();
+ ) 
+		;
+	
+	
+<a name="operations">operations</a>
+		:				 #( "OPERATIONS" listOperation ) 
+		;
+	
+	
+/**
+ *  For all Name with parameters
+ **/
+<a name="paramName">paramName</a>
+		:				 #( B_LPAREN name:B_IDENTIFIER listTypedIdentifier ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="typedIdentifier">typedIdentifier</a>
+		:				 #( B_INSET nameRenamed predicate ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+/**
+ * Ne pas utiliser de fonction d&#039;impression pour le renommage ....
+ **/
+<a name="nameRenamed">nameRenamed</a>
+		:	B_IDENTIFIER 
+		|				 #( B_POINT nameRenamed nameRenamed ) 
+		;
+	
+	
+/** 
+ *  PREDICATE 
+ **/
+<a name="predicate">predicate</a>
+		:				 #( B_AND predicate predicate 
+	st = cg.And(tmp1, tmp2);
+ ) 
+		|				 #( "or" predicate predicate 
+	st = cg.Or(tmp1, tmp2);
+ ) 
+		|				 #( B_IMPLIES predicate predicate 
+    System.err.println(errors.NotAllowedInImp("Imply -- pred x => y"));
+ ) 
+		|				 #( B_EQUIV predicate predicate 
+    System.err.println(errors.NotAllowedInImp("Equivalent -- pred x <=> y"));
+ ) 
+		|				 #( B_MULT predicate predicate 
+	st = cg.Mult(tmp1, tmp2);
+ ) 
+		|				 #( t6:B_POWER predicate predicate 
+	st = cg.Power(tmp1, tmp2);
+ ) 
+		|				 #( t7:B_DIV predicate predicate 
+	st = cg.Div(tmp1, tmp2);
+ ) 
+		|				 #( t8:"mod" predicate predicate 
+	st = cg.Mod(tmp1, tmp2);
+ ) 
+		|				 #( UNARY_ADD predicate ) 
+		|				 #( UNARY_MINUS predicate 
+	st = cg.Minus("", tmp1);
+ ) 
+		|				 #( B_ADD predicate predicate 
+	st = cg.Plus(tmp1, tmp2);
+ ) 
+		|				 #( B_MINUS predicate predicate 
+	st = cg.Minus(tmp1, tmp2);
+ ) 
+		|				 #( B_EQUAL predicate predicate 
+	st = cg.Equal(tmp1, tmp2);
+ ) 
+		|				 #( B_LESS predicate predicate 
+	st = cg.Less(tmp1, tmp2);
+ ) 
+		|				 #( B_GREATER predicate predicate 
+	st = cg.Greater(tmp1, tmp2);
+ ) 
+		|				 #( B_NOTEQUAL predicate predicate 
+	st = cg.NotEqual(tmp1, tmp2);
+ ) 
+		|				 #( B_LESSTHANEQUAL predicate predicate 
+	st = cg.LessEqual(tmp1, tmp2);
+ ) 
+		|				 #( B_GREATERTHANEQUAL predicate predicate 
+	st = cg.GreaterEqual(tmp1, tmp2);
+ ) 
+		|				 #( B_INSET predicate predicate ) 
+		|				 #( B_NOTINSET predicate predicate ) 
+		|				 #( B_SUBSET predicate predicate ) 
+		|				 #( B_NOTSUBSET predicate predicate ) 
+		|				 #( B_STRICTSUBSET predicate predicate ) 
+		|				 #( B_NOTSTRICTSBSET predicate predicate ) 
+		|				 #( B_CONCATSEQ predicate predicate ) 
+		|				 #( B_PREAPPSEQ predicate predicate ) 
+		|				 #( B_APPSEQ predicate predicate ) 
+		|				 #( B_PREFIXSEQ predicate predicate ) 
+		|				 #( B_SUFFIXSEQ predicate predicate ) 
+		|				 #( B_RELATION predicate predicate ) 
+		|				 #( B_PARTIAL predicate predicate ) 
+		|				 #( B_TOTAL predicate predicate ) 
+		|				 #( B_PARTIAL_INJECT predicate predicate ) 
+		|				 #( B_TOTAL_INJECT predicate predicate ) 
+		|				 #( B_PARTIAL_SURJECT predicate predicate ) 
+		|				 #( B_TOTAL_SURJECT predicate predicate ) 
+		|				 #( B_BIJECTION predicate predicate ) 
+		|				 #( B_DOMAINRESTRICT predicate predicate ) 
+		|				 #( B_RANGERESTRICT predicate predicate ) 
+		|				 #( B_DOMAINSUBSTRACT predicate predicate ) 
+		|				 #( B_RANGESUBSTRACT predicate predicate ) 
+		|				 #( B_OVERRIDEFORWARD predicate predicate ) 
+		|				 #( B_OVERRIDEBACKWARD predicate predicate ) 
+		|				 #( B_RELPROD predicate predicate ) 
+		|				 #( B_UNION predicate predicate ) 
+		|				 #( B_INTER predicate predicate ) 
+		|				 #( B_MAPLET predicate predicate ) 
+		|				 #( LIST_VAR predicate predicate ) 
+		|				 #( B_NOT predicate ) 
+		|				 #( B_RAN predicate ) 
+		|				 #( B_DOM predicate ) 
+		|	<a href="BCodeGenerator.html#cset_description">cset_description</a> 
+		;
+	
+	
+<a name="constraints">constraints</a>
+		:				 #( "CONSTRAINTS" predicate ) 
+		;
+	
+	
+<a name="uses">uses</a>
+		:				 #( "USES" listNames ) 
+		;
+	
+	
+<a name="includes">includes</a>
+		:				 #( "INCLUDES" listInstanciation ) 
+		;
+	
+	
+<a name="sees">sees</a>
+		:				 #( tt:"SEES" listNames ) 
+		;
+	
+	
+<a name="extendeds">extendeds</a>
+		:				 #( "EXTENDS" listInstanciation ) 
+		;
+	
+	
+<a name="promotes">promotes</a>
+		:				 #( "PROMOTES" 
+	;
+ listNames 
+	;
+ ) 
+		;
+	
+	
+<a name="imports">imports</a>
+		:				 #( "IMPORTS" listInstanciation ) 
+		;
+	
+	
+<a name="listInstanciation">listInstanciation</a>
+		:				 #( B_COMMA listInstanciation paramRenameValuation ) 
+		|	<a href="BCodeGenerator.html#paramRenameValuation">paramRenameValuation</a> 
+		;
+	
+	
+<a name="listNames">listNames</a>
+		:				 #( B_COMMA listNames nameRenamed ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="paramRenameValuation">paramRenameValuation</a>
+		:				 #( B_LPAREN paramRenameValuation list_New_Predicate ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="list_New_Predicate">list_New_Predicate</a>
+		:				 #( B_COMMA list_New_Predicate new_predicate ) 
+		|	<a href="BCodeGenerator.html#new_predicate">new_predicate</a> 
+		;
+	
+	
+<a name="sets_declaration">sets_declaration</a>
+		:				 #( B_SEMICOLON sets_declaration 
+	;
+ sets_declaration ) 
+		|				 #( B_COMMA sets_declaration 
+	;
+ sets_declaration ) 
+		|	<a href="BCodeGenerator.html#set_declaration">set_declaration</a> 
+		;
+	
+	
+<a name="set_declaration">set_declaration</a>
+		:				 #( B_EQUAL set:B_IDENTIFIER 
+	;
+ valuation_set ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="valuation_set">valuation_set</a>
+		:				 #( B_CURLYOPEN 
+	;
+ list_couple 
+	;
+ ) 
+		|	<a href="BCodeGenerator.html#is_record">is_record</a> 
+		|				 #( B_MULT valuation_set 
+	;
+ valuation_set ) 
+		|				 #( B_ADD valuation_set 
+	;
+ valuation_set ) 
+		|				 #( B_MINUS valuation_set 
+	;
+ valuation_set ) 
+		|	B_IDENTIFIER 
+		|	<a href="BCodeGenerator.html#basic_sets">basic_sets</a> 
+		;
+	
+	
+<a name="is_record">is_record</a>
+		:				 #( "rec" 
+	;
+ listrecord 
+	;
+ ) 
+		|				 #( "struct" listrecord ) 
+		;
+	
+	
+<a name="listrecord">listrecord</a>
+		:				 #( B_COMMA listrecord 
+	;
+ a_record ) 
+		|	<a href="BCodeGenerator.html#a_record">a_record</a> 
+		;
+	
+	
+<a name="list_couple">list_couple</a>
+		:				 #( B_COMMA list_couple 
+	;
+ couple ) 
+		|	<a href="BCodeGenerator.html#couple">couple</a> 
+		;
+	
+	
+<a name="basic_sets">basic_sets</a>
+		:	&quot;INT&quot; 
+		|	&quot;INT1&quot; 
+		|	&quot;INTEGER&quot; 
+		|	&quot;INTEGER1&quot; 
+		|	&quot;BOOL&quot; 
+		|	&quot;NAT&quot; 
+		|	&quot;NAT1&quot; 
+		|	&quot;NATURAL&quot; 
+		|	&quot;NATURAL1&quot; 
+		|	&quot;STRING&quot; 
+		;
+	
+	
+<a name="a_record">a_record</a>
+		:				 #( B_SELECTOR name:B_IDENTIFIER predicate ) 
+		|	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="couple">couple</a>
+		:				 #( B_MAPLET a_set_value 
+	;
+ a_set_value ) 
+		|				 #( B_LPAREN 
+	;
+ parent_couple 
+	;
+ ) 
+		|	<a href="BCodeGenerator.html#a_set_value">a_set_value</a> 
+		;
+	
+	
+<a name="a_set_value">a_set_value</a>
+		:	B_IDENTIFIER 
+		|				 #( mi:B_MINUS val1:B_NUMBER 
+	;
+ ) 
+		|	B_NUMBER 
+		|	&quot;TRUE&quot; 
+		|	&quot;FALSE&quot; 
+		;
+	
+	
+<a name="parent_couple">parent_couple</a>
+		:				 #( B_MAPLET a_set_value 
+	;
+ a_set_value ) 
+		|				 #( B_COMMA a_set_value 
+	;
+ a_set_value ) 
+		|	<a href="BCodeGenerator.html#a_set_value">a_set_value</a> 
+		;
+	
+	
+<a name="list_valuation">list_valuation</a>
+		:				 #( tt:B_SEMICOLON list_valuation 
+	;
+ set_valuation ) 
+		|	<a href="BCodeGenerator.html#set_valuation">set_valuation</a> 
+		;
+	
+	
+<a name="set_valuation">set_valuation</a>
+		:				 #( tt:B_EQUAL name:B_IDENTIFIER 
+	;
+ new_set_or_constant_valuation ) 
+		;
+	
+	
+<a name="new_set_or_constant_valuation">new_set_or_constant_valuation</a>
+		:	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="set_interval_value">set_interval_value</a>
+		:				 #( B_EQUAL B_IDENTIFIER interval_declaration ) 
+		;
+	
+	
+<a name="interval_declaration">interval_declaration</a>
+		:				 #( B_RANGE predicate predicate ) 
+		;
+	
+	
+<a name="set_rename_value">set_rename_value</a>
+		:				 #( B_EQUAL B_IDENTIFIER B_IDENTIFIER ) 
+		;
+	
+	
+<a name="gTypedIdentifier">gTypedIdentifier</a>
+		:				 #( B_COMMA gTypedIdentifier gTypedIdentifier ) 
+		|				 #( B_INSET nameRenamed 
+    cg.DecVar(#name1.getText(),#name1.getBType().toString());
+ predicate ) 
+		|	( <a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> ) 
+		;
+	
+	
+<a name="list_def">list_def</a>
+		:				 #( LIST_DEF list_def definition ) 
+		|	<a href="BCodeGenerator.html#definition">definition</a> 
+		;
+	
+	
+/**
+ *  Attention deux cas
+ *     - Une definition
+ *     - un acces a un fichier de definition
+ **/
+<a name="definition">definition</a>
+		:				 #( B_DOUBLE_EQUAL paramName formalText ) 
+		|	B_ASTRING 
+		;
+	
+	
+<a name="formalText">formalText</a>
+		:	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		|	<a href="BCodeGenerator.html#instruction">instruction</a> 
+		|	<a href="BCodeGenerator.html#operation">operation</a> 
+		;
+	
+	
+/**
+ * The Generalised Substitution Language
+ **/
+<a name="instruction">instruction</a>
+		:				 #( PARALLEL instruction instruction 
+    System.err.println(errors.NotAllowedInImp("PARALLEL -- subst ||"));
+ ) 
+		|				 #( SEQUENTIAL instruction 
+    cg.Sequential();
+ instruction ) 
+		|				 #( "skip" 
+	cg.Comment(" Skip -- do nothing");
+ ) 
+		|				 #( "BEGIN" 
+	cg.BeginOp();
+ instruction 
+    cg.EndOp();
+ ) 
+		|				 #( "PRE" predicate 
+    System.err.println(errors.NotAllowedInImp("PRE -- subst p | I"));
+ instruction ) 
+		|				 #( "ASSERT" predicate instruction ) 
+		|				 #( "IF" predicate branche_then ( branche_elsif )* ( branche_else | ) ) 
+		|				 #( "CHOICE" list_or 
+    System.err.println(errors.NotAllowedInImp("CHOICE -- subst I [] J"));
+ ) 
+		|				 #( "CASE" predicate 
+	tmp2 = "tmp"; 	//la variable debe comenzar por letra y no por numero
+	Date fec = new Date(); 
+	int  dat=fec.getDay();
+	int hor=fec.getHours();
+	int min=fec.getMinutes();
+	int sec=fec.getSeconds();
+//formato de la variable: tmpXXXXXXXX
+
+//	tmp2= tmp2 +dat+hor+min+sec;
+
+//	tmp3.append(" "); //  aqui habra que escribir el tipo que devuelve predicate
+//	tmp3.append( tmp2+" = " +tmp1+";");
+
+
+ branche_either ( branche_or )* ( branche_else | ) 
+
+ ) 
+		|				 #( "ANY" listTypedIdentifier predicate instruction 
+    System.err.println(errors.NotAllowedInImp("CHOICE -- subst I [] J"));
+ ) 
+		|				 #( "LET" 
+	;
+ listTypedIdentifier 
+	;
+ list_equal 
+	;
+ instruction 
+	;
+ ) 
+		|				 #( "SELECT" 
+	;
+ predicate 
+	;
+ instruction 
+	;
+ ( branche_when )* ( branche_else | ) 
+	;
+ ) 
+		|				 #( "WHILE" 
+	;
+ predicate 
+	;
+ instruction variant_or_no 
+	;
+ ) 
+		|				 #( "VAR" listTypedIdentifier 
+	;
+ instruction ) 
+		|	<a href="BCodeGenerator.html#simple_affect">simple_affect</a> 
+		;
+	
+	
+<a name="operation">operation</a>
+		:				 #( OP_DEF operationHeader 
+   cg.BeginOp();
+ instruction 
+   cg.EndOp();
+ ) 
+		;
+	
+	
+<a name="list_assertions">list_assertions</a>
+		:				 #( B_SEMICOLON list_assertions list_assertions ) 
+		|	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="listOperation">listOperation</a>
+		:				 #( B_SEMICOLON listOperation operation ) 
+		|	<a href="BCodeGenerator.html#operation">operation</a> 
+		;
+	
+	
+<a name="operationHeader">operationHeader</a>
+		:				 #( B_OUT opNameParameter opparamNamepp ) 
+		|	<a href="BCodeGenerator.html#opparamName">opparamName</a> 
+		;
+	
+	
+<a name="opNameParameter">opNameParameter</a>
+		:				 #( B_COMMA opParameters opNameParameter 
+    out = cg.concatParam(tmp1, tmp2);
+ ) 
+		|	<a href="BCodeGenerator.html#opParameters">opParameters</a> 
+		;
+	
+	
+<a name="opparamName">opparamName</a>
+		:				 #( B_LPAREN name:B_IDENTIFIER opNameParameter 
+    res = cg.constructOPHeader(#name.getText(),res + pOut);
+    cg.Constructor(res);
+ ) 
+		|	( B_IDENTIFIER ) 
+		;
+	
+	
+<a name="opParameters">opParameters</a>
+		:				 #( B_INSET nameRenamed predicate 
+    out = cg.constructDecVar(n1.getText(), n1.getBType().toString());
+ ) 
+		|	( <a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> ) 
+		;
+	
+	
+<a name="branche_then">branche_then</a>
+		:				 #( "THEN" instruction ) 
+		;
+	
+	
+<a name="branche_elsif">branche_elsif</a>
+		:				 #( "ELSIF" predicate instruction ) 
+		;
+	
+	
+<a name="branche_else">branche_else</a>
+		:				 #( "ELSE" instruction ) 
+		;
+	
+	
+<a name="list_or">list_or</a>
+		:				 #( "OR" list_or instruction ) 
+		|	<a href="BCodeGenerator.html#instruction">instruction</a> 
+		;
+	
+	
+<a name="branche_either">branche_either</a>
+		:				 #( "EITHER" predicate instruction ) 
+		;
+	
+	
+<a name="branche_or">branche_or</a>
+		:				 #( "OR" listPredicate instruction ) 
+		;
+	
+	
+<a name="list_equal">list_equal</a>
+		:				 #( tt:B_AND list_equal 
+	;
+ an_equal ) 
+		|	<a href="BCodeGenerator.html#an_equal">an_equal</a> 
+		;
+	
+	
+<a name="branche_when">branche_when</a>
+		:				 #( "WHEN" 
+	;
+ predicate 
+	;
+ instruction ) 
+		;
+	
+	
+<a name="variant_or_no">variant_or_no</a>
+		:				 #( "VARIANT" #( "INVARIANT" predicate ) predicate ) 
+		|				 #( "INVARIANT" #( "VARIANT" predicate ) predicate ) 
+		;
+	
+	
+<a name="simple_affect">simple_affect</a>
+		:				 #( B_SIMPLESUBST afc_bis predicate 
+   cg.Affectation(#var.getText(),tmp1);
+ ) 
+		|				 #( B_OUT list_func_call func_call ) 
+		|				 #( INSET list_func_call predicate 
+    System.err.println(errors.NotAllowedInImp("INSET -- subst x:(A)"));
+ ) 
+		|				 #( B_BECOME_ELEM list_func_call predicate 
+    System.err.println(errors.NotAllowedInImp("B_BECOME_ELEMENT -- subst x::A"));
+ ) 
+		|	<a href="BCodeGenerator.html#a_func_call">a_func_call</a> 
+		;
+	
+	
+<a name="listPredicate">listPredicate</a>
+		:				 #( B_COMMA listPredicate predicate ) 
+		|	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="an_equal">an_equal</a>
+		:				 #( B_EQUAL B_IDENTIFIER predicate ) 
+		;
+	
+	
+<a name="func_call">func_call</a>
+		:				 #( B_TILDE func_call 
+	;
+ ) 
+		|				 #( APPLY_TO func_call 
+	;
+ list_New_Predicate 
+	;
+ ) 
+		|				 #( t3:B_LPAREN func_call 
+	;
+ list_New_Predicate 
+	;
+ ) 
+		|				 #( t4:B_QUOTEIDENT func_call 
+	;
+ func_call ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="func_param">func_param</a>
+		:	<a href="BCodeGenerator.html#list_New_Predicate">list_New_Predicate</a> 
+		;
+	
+	
+<a name="new_predicate">new_predicate</a>
+		:				 #( B_SEMICOLON new_predicate 
+	;
+ predicate ) 
+		|				 #( B_PARALLEL new_predicate 
+	;
+ predicate ) 
+		|	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="nameRenamedDecorated">nameRenamedDecorated</a>
+		:				 #( B_CPRED nameRenamed ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="nameRenameDecoratedInverted">nameRenameDecoratedInverted</a>
+		:				 #( tt:B_TILDE nameRenamedDecorated ) 
+		|	<a href="BCodeGenerator.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		;
+	
+	
+<a name="list_identifier">list_identifier</a>
+		:				 #( B_COMMA list_identifier B_IDENTIFIER ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="a_func_call">a_func_call</a>
+		:				 #( A_FUNC_CALL afc ) 
+		;
+	
+	
+<a name="afc">afc</a>
+		:				 #( FUNC_CALL_PARAM afc listPredicate ) 
+		|				 #( t1:B_QUOTEIDENT afc afc ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="list_func_call">list_func_call</a>
+		:				 #( B_COMMA list_func_call list_func_call ) 
+		|	<a href="BCodeGenerator.html#a_func_call">a_func_call</a> 
+		;
+	
+	
+<a name="afc_bis">afc_bis</a>
+		:				 #( FUNC_CALL_PARAM afc_bis listPredicate 
+    System.err.println(errors.NotAllowedInImp("FUNC_CALL_PARAM"));
+ ) 
+		|				 #( B_QUOTEIDENT afc_bis afc_bis ) 
+		|	<a href="BCodeGenerator.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="cset_description">cset_description</a>
+		:	<a href="BCodeGenerator.html#basic_sets">basic_sets</a> 
+		|	<a href="BCodeGenerator.html#cbasic_value">cbasic_value</a> 
+		|				 #( "bool" predicate ) 
+		|				 #( B_BRACKOPEN listPredicate ) 
+		|				 #( B_RANGE predicate predicate ) 
+		|	B_EMPTYSET 
+		|				 #( B_CURLYOPEN cvalue_set ) 
+		|	B_SEQEMPTY 
+		|	<a href="BCodeGenerator.html#is_record">is_record</a> 
+		|	<a href="BCodeGenerator.html#quantification">quantification</a> 
+		|	<a href="BCodeGenerator.html#q_lambda">q_lambda</a> 
+		;
+	
+	
+<a name="cbasic_value">cbasic_value</a>
+		:	B_ASTRING 
+		|	B_NUMBER 
+		|				 #( B_TILDE predicate ) 
+		|	<a href="BCodeGenerator.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		|				 #( B_LPAREN predicate list_New_Predicate ) 
+		|				 #( PARENT pred_func_composition ) 
+		|				 #( B_QUOTEIDENT predicate predicate ) 
+		|				 #( APPLY_TO predicate predicate ) 
+		|	&quot;TRUE&quot; 
+		|	&quot;FALSE&quot; 
+		;
+	
+	
+<a name="cvalue_set">cvalue_set</a>
+		:				 #( B_SUCH list_var predicate ) 
+		|				 #( B_COMMA cvalue_set predicate ) 
+		|	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="quantification">quantification</a>
+		:				 #( B_FORALL list_var predicate ) 
+		|				 #( B_EXISTS list_var predicate ) 
+		;
+	
+	
+<a name="q_lambda">q_lambda</a>
+		:				 #( B_LAMBDA 
+	;
+ q_operande ) 
+		|				 #( "PI" 
+	;
+ q_operande ) 
+		|				 #( "SIGMA" 
+	;
+ q_operande ) 
+		|				 #( t4:"UNION" 
+	;
+ q_operande ) 
+		|				 #( "INTER" 
+	;
+ q_operande ) 
+		;
+	
+	
+<a name="list_var">list_var</a>
+		:				 #( B_LPAREN 
+	;
+ list_identifier 
+	;
+ ) 
+		|	<a href="BCodeGenerator.html#list_identifier">list_identifier</a> 
+		;
+	
+	
+<a name="pred_func_composition">pred_func_composition</a>
+		:				 #( B_SEMICOLON pred_func_composition predicate ) 
+		|				 #( t2:B_PARALLEL pred_func_composition predicate ) 
+		|				 #( t3:B_COMMA pred_func_composition predicate ) 
+		|	<a href="BCodeGenerator.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="q_operande">q_operande</a>
+		:				 #( t1:B_SUCH list_var 
+	;
+ predicate 
+	;
+ predicate 
+	;
+ ) 
+		;
+

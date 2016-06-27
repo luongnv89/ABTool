@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util
+END
+Seq.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Seq.java
+END
+B_Types.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/B_Types.java
+END
+Relation.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Relation.java
+END
+PartialSurject.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/PartialSurject.java
+END
+ModelUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/ModelUtils.java
+END
+TotalSurject.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/TotalSurject.java
+END
+TotalInject.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/TotalInject.java
+END
+Interval.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Interval.java
+END
+Bijection.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Bijection.java
+END
+Total.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Total.java
+END
+PartialInject.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/PartialInject.java
+END
+Set.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Set.java
+END
+Partial.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/163/B2JML/org/jmlspecs/b2jml/util/Partial.java
+END

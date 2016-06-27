@@ -1,0 +1,9 @@
+/* 
+   AUTHOR      : Boulanger Jean-Louis
+   DESCRIPTION : test des clauses 
+*/
+
+REFINEMENT
+	TITI ( TOTO : )
+END
+

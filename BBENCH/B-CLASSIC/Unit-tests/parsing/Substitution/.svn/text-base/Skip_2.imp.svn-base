@@ -1,0 +1,12 @@
+IMPLEMENTATION
+	Skip_2
+
+REFINES
+	Skip_1
+
+OPERATIONS
+
+xx,yy,zz <-- OP (aa,bb,cc,dd,ee)=
+	skip
+
+END

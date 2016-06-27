@@ -1,0 +1,18 @@
+MACHINE
+	t1
+
+VARIABLES
+	tt
+
+INVARIANT
+	tt : BOOL
+
+INITIALISATION
+	tt := TRUE
+
+OPERATIONS
+
+TT = 
+	tt := 5
+
+END

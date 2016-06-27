@@ -1,0 +1,10 @@
+/* 
+	AUTHOR 	: Boulanger Jean-Louis
+	EMAIL	: jean.louis.boulanger@wanadoo.fr
+*/
+
+REFINEMENT
+   nom__refinement
+REFINES
+   nom__machine
+END

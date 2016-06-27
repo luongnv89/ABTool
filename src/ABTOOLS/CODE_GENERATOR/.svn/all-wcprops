@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR
+END
+Makefile.vars
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/Makefile.vars
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/ReadMe.txt
+END
+CG_JAVA.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/CG_JAVA.java
+END
+Makefile.classdeps
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/Makefile.classdeps
+END
+CodeGenerator.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/CodeGenerator.java
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/Makefile
+END
+CG_ADA.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/CODE_GENERATOR/CG_ADA.java
+END

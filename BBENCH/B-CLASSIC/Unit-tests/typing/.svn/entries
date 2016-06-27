@@ -1,0 +1,86 @@
+9
+
+dir
+180
+https://svn.code.sf.net/p/abtools/code/BBENCH/B-CLASSIC/Unit-tests/typing
+https://svn.code.sf.net/p/abtools/code
+
+
+
+2011-06-23T18:48:40.045866Z
+129
+jlboulanger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+95d96ede-8e10-4124-9be6-eef1d011146f
+
+ComposantName
+dir
+
+Constant
+dir
+
+List_Var
+dir
+
+Naming
+dir
+
+Operations
+dir
+
+Poduct
+dir
+
+README.txt
+file
+
+
+
+
+2016-06-27T14:47:22.000000Z
+becd5e0e41a2a29f26f7d51f84d66dca
+2009-09-08T08:45:44.359148Z
+33
+jlboulanger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+577
+
+Substitution
+dir
+
+Variable
+dir
+

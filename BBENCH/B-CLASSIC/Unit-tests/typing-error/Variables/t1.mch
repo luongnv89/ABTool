@@ -1,0 +1,13 @@
+MACHINE
+	t1
+
+VARIABLES
+	tt
+
+INVARIANT
+	tt : NAT
+
+INITIALISATION
+	tt := TRUE
+
+END

@@ -1,0 +1,25 @@
+//
+// AUTHOR      	: BOULANGER Jean-Louis
+// MAIL		: jean.louis.boulanger@gmail.com
+// FILE        	: CONTENTS.txt
+//
+// DESCRIPTION 	: Ce fichier permet de presenter l'arborescence d'exemple liee a B Classic
+//                Il fait partie integrante de la distribution ABTOOLS
+//                Il permet de tester le nouveau langage de JR Abrial : B-event
+//
+// DATE		: Septembre 2001
+// MAJ		: November 2008
+// MAJ		: March 2009
+//  Retrait de BRILLANT
+//  Passage a sourceforge et reorganisation
+//
+// Copyright 2001-2009 Boulanger Jean-Louis
+//
+
+
+
+Ce Repertoire contient:
+	CONTENTS.txt		Ce fichier
+	README.txt 		Other explanation on B event
+
+// End of file CONTENTS

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/p/abtools/code/!svn/ver/90/Make/grammar-scripts
+END
+pretty_rules.sed
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/abtools/code/!svn/ver/23/Make/grammar-scripts/pretty_rules.sed
+END
+split_rules.sed
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/abtools/code/!svn/ver/23/Make/grammar-scripts/split_rules.sed
+END
+build_deps.sed
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/abtools/code/!svn/ver/31/Make/grammar-scripts/build_deps.sed
+END
+build-makefile.sh
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/32/Make/grammar-scripts/build-makefile.sh
+END
+add_rules.sed
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/abtools/code/!svn/ver/90/Make/grammar-scripts/add_rules.sed
+END
+clean_deps.sed
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/abtools/code/!svn/ver/23/Make/grammar-scripts/clean_deps.sed
+END

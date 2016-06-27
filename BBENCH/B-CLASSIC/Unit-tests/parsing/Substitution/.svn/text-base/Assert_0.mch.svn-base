@@ -1,0 +1,14 @@
+MACHINE
+	Assert_0
+
+OPERATIONS
+
+aa <-- OP =
+BEGIN
+	ASSERT
+		aa : INT
+	THEN
+		aa:= 5
+	END
+END
+END

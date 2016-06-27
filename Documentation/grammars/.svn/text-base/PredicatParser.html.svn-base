@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar Predicat.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar PredicatParser</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from Predicat.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.7 (2006-11-01); 1989-2005
+</td>
+</tr>
+</table>
+<PRE>
+
+/**
+ * @author &lt;a href=&quot;mailto:jl.boulanger@wanadoo.fr&quot;&gt;Jean-Louis Boulanger&lt;/a&gt;
+ **/
+Definition of parser PredicatParser, which is a subclass of LLkParser.
+
+
+<a name="analyse_predicate">analyse_predicate</a>
+	:	<a href="PredicatParser.html#predicate">predicate</a> 
+	|	
+	;
+
+
+<a name="predicate">predicate</a>
+	:	<a href="PredicatParser.html#plogical_1">plogical_1</a> ( B_IMPLIES <a href="PredicatParser.html#plogical_1">plogical_1</a> )* 
+	;
+
+
+<a name="listPredicate">listPredicate</a>
+	:	<a href="PredicatParser.html#predicate">predicate</a> ( B_COMMA <a href="PredicatParser.html#predicate">predicate</a> )* 
+	;
+
+
+<a name="expression">expression</a>
+	:	<a href="PredicatParser.html#predicate">predicate</a> 
+	;
+
+
+<a name="nameRenamed">nameRenamed</a>
+	:	B_IDENTIFIER ( B_POINT B_IDENTIFIER )* 
+	;
+
+
+<a name="nameRenamedDecorated">nameRenamedDecorated</a>
+	:	<a href="PredicatParser.html#nameRenamed">nameRenamed</a> 
+		(	B_CPRED 
+		|	
+		) 
+	;
+
+
+protected <a name="plogical_1">plogical_1</a>
+	:	<a href="PredicatParser.html#plogical_2">plogical_2</a> ( (	&quot;or&quot; 
+			|	B_AND 
+			) 
+			<a href="PredicatParser.html#plogical_2">plogical_2</a> )* 
+	;
+
+
+protected <a name="plogical_2">plogical_2</a>
+	:	<a href="PredicatParser.html#psubset_description">psubset_description</a> ( (	B_EQUIV 
+			|	B_EQUAL 
+			) 
+			<a href="PredicatParser.html#psubset_description">psubset_description</a> )* 
+	;
+
+
+protected <a name="psubset_description">psubset_description</a>
+	:	<a href="PredicatParser.html#pextended_pair">pextended_pair</a> ( (	B_SUBSET 
+			|	B_NOTSUBSET 
+			|	B_STRICTSUBSET 
+			|	B_NOTSTRICTSBSET 
+			) 
+			<a href="PredicatParser.html#parithmetic_3">parithmetic_3</a> )* 
+	;
+
+
+protected <a name="pextended_pair">pextended_pair</a>
+	:	<a href="PredicatParser.html#parithmetic_3">parithmetic_3</a> ( B_COMMA <a href="PredicatParser.html#parithmetic_3">parithmetic_3</a> )* 
+	;
+
+
+protected <a name="parithmetic_3">parithmetic_3</a>
+	:	<a href="PredicatParser.html#psequence_description">psequence_description</a> ( (	B_LESS 
+			|	B_GREATER 
+			|	B_NOTEQUAL 
+			|	B_LESSTHANEQUAL 
+			|	B_GREATERTHANEQUAL 
+			) 
+			<a href="PredicatParser.html#psequence_description">psequence_description</a> )* 
+	;
+
+
+protected <a name="psequence_description">psequence_description</a>
+	:	<a href="PredicatParser.html#pset_description">pset_description</a> ( (	B_CONCATSEQ 
+			|	B_PREAPPSEQ 
+			|	B_APPSEQ 
+			|	B_PREFIXSEQ 
+			|	B_SUFFIXSEQ 
+			) 
+			<a href="PredicatParser.html#pset_description">pset_description</a> )* 
+	;
+
+
+protected <a name="pset_description">pset_description</a>
+	:	&quot;bool&quot; B_LPAREN <a href="PredicatParser.html#expression">expression</a> B_RPAREN 
+	|	<a href="PredicatParser.html#pfunctional_set">pfunctional_set</a> 
+	;
+
+
+protected <a name="pfunctional_set">pfunctional_set</a>
+	:	<a href="PredicatParser.html#pfunctional_const_set">pfunctional_const_set</a> ( (	B_RELATION 
+			|	B_PARTIAL 
+			|	B_TOTAL 
+			|	B_PARTIAL_INJECT 
+			|	B_TOTAL_INJECT 
+			|	B_PARTIAL_SURJECT 
+			|	B_TOTAL_SURJECT 
+			|	B_BIJECTION 
+			) 
+			<a href="PredicatParser.html#pfunctional_const_set">pfunctional_const_set</a> )* 
+	;
+
+
+protected <a name="pfunctional_const_set">pfunctional_const_set</a>
+	:	<a href="PredicatParser.html#pset_constructors">pset_constructors</a> ( (	B_DOMAINRESTRICT 
+			|	B_RANGERESTRICT 
+			|	B_DOMAINSUBSTRACT 
+			|	B_RANGESUBSTRACT 
+			|	B_OVERRIDEFORWARD 
+			|	B_OVERRIDEBACKWARD 
+			|	B_RELPROD 
+			) 
+			<a href="PredicatParser.html#pset_constructors">pset_constructors</a> )* 
+	;
+
+
+protected <a name="pset_constructors">pset_constructors</a>
+	:	<a href="PredicatParser.html#ppaire">ppaire</a> ( (	B_UNION 
+			|	B_INTER 
+			) 
+			<a href="PredicatParser.html#ppaire">ppaire</a> )* 
+	;
+
+
+protected <a name="ppaire">ppaire</a>
+	:	<a href="PredicatParser.html#parithmetic_0">parithmetic_0</a> ( B_MAPLET <a href="PredicatParser.html#parithmetic_0">parithmetic_0</a> )* 
+	;
+
+
+protected <a name="parithmetic_0">parithmetic_0</a>
+	:	<a href="PredicatParser.html#parithmetic_1">parithmetic_1</a> ( (	B_POWER 
+			|	B_MULT 
+			) 
+			<a href="PredicatParser.html#parithmetic_1">parithmetic_1</a> )* 
+	;
+
+
+protected <a name="parithmetic_1">parithmetic_1</a>
+	:	<a href="PredicatParser.html#parithmetic_2">parithmetic_2</a> ( (	B_DIV 
+			|	&quot;mod&quot; 
+			) 
+			<a href="PredicatParser.html#parithmetic_2">parithmetic_2</a> )* 
+	;
+
+
+protected <a name="parithmetic_2">parithmetic_2</a>
+	:	<a href="PredicatParser.html#pbases">pbases</a> ( (	B_ADD 
+			|	B_MINUS 
+			) 
+			<a href="PredicatParser.html#pbases">pbases</a> )* 
+	;
+
+
+protected <a name="pbases">pbases</a>
+	:	B_SEQEMPTY 
+	|	B_BRACKOPEN <a href="PredicatParser.html#listPredicate">listPredicate</a> B_BRACKCLOSE 
+	|	B_LESS <a href="PredicatParser.html#listPredicate">listPredicate</a> B_GREATER 
+	|	<a href="PredicatParser.html#basic_sets">basic_sets</a> 
+	|	<a href="PredicatParser.html#pbasic_value">pbasic_value</a> 
+		(	B_RANGE <a href="PredicatParser.html#parithmetic_0">parithmetic_0</a> 
+		|	
+		) 
+	|	B_EMPTYSET 
+	|	B_CURLYOPEN <a href="PredicatParser.html#pvalue_set">pvalue_set</a> B_CURLYCLOSE 
+	|	<a href="PredicatParser.html#quantification">quantification</a> 
+	|	<a href="PredicatParser.html#q_lambda">q_lambda</a> 
+	;
+
+
+<a name="basic_sets">basic_sets</a>
+	:	&quot;INT&quot; 
+	|	&quot;INT1&quot; 
+	|	&quot;INTEGER&quot; 
+	|	&quot;INTEGER1&quot; 
+	|	&quot;BOOL&quot; 
+	|	&quot;NAT&quot; 
+	|	&quot;NAT1&quot; 
+	|	&quot;NATURAL&quot; 
+	|	&quot;NATURAL1&quot; 
+	;
+
+
+protected <a name="pbasic_value">pbasic_value</a>
+	:	B_ADD <a href="PredicatParser.html#punary_basic_value_inverted">punary_basic_value_inverted</a> 
+	|	B_MINUS <a href="PredicatParser.html#punary_basic_value_inverted">punary_basic_value_inverted</a> 
+	|	<a href="PredicatParser.html#punary_basic_value_inverted">punary_basic_value_inverted</a> 
+	|	B_ASTRING 
+	|	<a href="PredicatParser.html#is_rec">is_rec</a> 
+	|	&quot;TRUE&quot; 
+	|	&quot;FALSE&quot; 
+	;
+
+
+protected <a name="pvalue_set">pvalue_set</a>
+	:	<a href="PredicatParser.html#alist_var">alist_var</a> B_SUCH <a href="PredicatParser.html#expression">expression</a> 
+	|	<a href="PredicatParser.html#predicate">predicate</a> ( B_COMMA <a href="PredicatParser.html#predicate">predicate</a> )* 
+	;
+
+
+<a name="quantification">quantification</a>
+	:	(	B_FORALL 
+		|	B_EXISTS 
+		) 
+		(	( B_LPAREN <a href="PredicatParser.html#q_quantification">q_quantification</a> B_RPAREN ) 
+		|	( <a href="PredicatParser.html#q_quantification">q_quantification</a> ) 
+		|	( B_LPAREN <a href="PredicatParser.html#q_quantification">q_quantification</a> B_RPAREN ) 
+		|	( B_LPAREN <a href="PredicatParser.html#q_quantification">q_quantification</a> B_RPAREN ) 
+		|	( <a href="PredicatParser.html#q_quantification">q_quantification</a> ) 
+		|	( <a href="PredicatParser.html#q_quantification">q_quantification</a> ) 
+		) 
+	;
+
+
+<a name="q_lambda">q_lambda</a>
+	:	(	B_LAMBDA 
+		|	&quot;PI&quot; 
+		|	&quot;SIGMA&quot; 
+		|	&quot;UNION&quot; 
+		|	&quot;INTER&quot; 
+		) 
+		(	( B_LPAREN <a href="PredicatParser.html#q_operande">q_operande</a> B_RPAREN ) 
+		|	( <a href="PredicatParser.html#q_operande">q_operande</a> ) 
+		|	( B_LPAREN <a href="PredicatParser.html#q_operande">q_operande</a> B_RPAREN ) 
+		|	( B_LPAREN <a href="PredicatParser.html#q_operande">q_operande</a> B_RPAREN ) 
+		|	( <a href="PredicatParser.html#q_operande">q_operande</a> ) 
+		|	( <a href="PredicatParser.html#q_operande">q_operande</a> ) 
+		) 
+	;
+
+
+<a name="alist_var">alist_var</a>
+	:	B_LPAREN <a href="PredicatParser.html#list_identifier">list_identifier</a> B_RPAREN 
+	|	<a href="PredicatParser.html#list_identifier">list_identifier</a> 
+	;
+
+
+protected <a name="punary_basic_value_inverted">punary_basic_value_inverted</a>
+	:	<a href="PredicatParser.html#punary_basic_value">punary_basic_value</a> 
+		(	B_TILDE 
+		|	
+		) 
+	;
+
+
+<a name="is_rec">is_rec</a>
+	:	&quot;rec&quot; B_LPAREN <a href="PredicatParser.html#listRecord">listRecord</a> B_RPAREN 
+	;
+
+
+<a name="listRecord">listRecord</a>
+	:	<a href="PredicatParser.html#a_record">a_record</a> ( B_COMMA <a href="PredicatParser.html#a_record">a_record</a> )* 
+	;
+
+
+protected <a name="punary_basic_value">punary_basic_value</a>
+	:	<a href="PredicatParser.html#predInvertedParamInvertedQuoted">predInvertedParamInvertedQuoted</a> 
+		(	B_BRACKOPEN <a href="PredicatParser.html#predicate">predicate</a> B_BRACKCLOSE 
+		|	
+		) 
+	|	B_NUMBER 
+	;
+
+
+protected <a name="predInvertedParamInvertedQuoted">predInvertedParamInvertedQuoted</a>
+	:	<a href="PredicatParser.html#predInvertedParamInverted">predInvertedParamInverted</a> ( B_QUOTEIDENT <a href="PredicatParser.html#predInvertedParamInverted">predInvertedParamInverted</a> )* 
+	;
+
+
+protected <a name="predInvertedParamInverted">predInvertedParamInverted</a>
+	:	<a href="PredicatParser.html#predInvertedParam">predInvertedParam</a> 
+		(	B_TILDE 
+		|	
+		) 
+	;
+
+
+protected <a name="predInvertedParam">predInvertedParam</a>
+	:	<a href="PredicatParser.html#predParentInverted">predParentInverted</a> ( B_LPAREN <a href="PredicatParser.html#list_New_Predicate">list_New_Predicate</a> B_RPAREN )* 
+	;
+
+
+protected <a name="predParentInverted">predParentInverted</a>
+	:	(	&quot;ran&quot; 
+		|	&quot;not&quot; 
+		|	&quot;dom&quot; 
+		|	&quot;min&quot; 
+		|	&quot;max&quot; 
+		|	&quot;card&quot; 
+		|	
+		) 
+		<a href="PredicatParser.html#pred_parent">pred_parent</a> 
+		(	B_TILDE 
+		|	
+		) 
+	;
+
+
+<a name="list_New_Predicate">list_New_Predicate</a>
+	:	<a href="PredicatParser.html#new_predicate">new_predicate</a> ( B_COMMA <a href="PredicatParser.html#new_predicate">new_predicate</a> )* 
+	;
+
+
+<a name="pred_parent">pred_parent</a>
+	:	B_LPAREN <a href="PredicatParser.html#pred_func_composition">pred_func_composition</a> B_RPAREN 
+	|	<a href="PredicatParser.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+	;
+
+
+<a name="pred_func_composition">pred_func_composition</a>
+	:	<a href="PredicatParser.html#predicate">predicate</a> ( (	B_SEMICOLON 
+			|	B_PARALLEL 
+			) 
+			<a href="PredicatParser.html#predicate">predicate</a> )* 
+	;
+
+
+<a name="q_quantification">q_quantification</a>
+	:	<a href="PredicatParser.html#alist_var">alist_var</a> B_POINT B_LPAREN <a href="PredicatParser.html#expression">expression</a> B_RPAREN 
+	;
+
+
+<a name="q_operande">q_operande</a>
+	:	<a href="PredicatParser.html#alist_var">alist_var</a> B_POINT B_LPAREN <a href="PredicatParser.html#expression">expression</a> B_SUCH <a href="PredicatParser.html#expression">expression</a> B_RPAREN 
+	;
+
+
+/**
+ * Is_rec 	is applicable for no typing predicate
+ * Is_record    is applicable for    typing predicate (expression)
+ **/
+<a name="is_struct">is_struct</a>
+	:	&quot;struct&quot; B_LPAREN <a href="PredicatParser.html#listRecord">listRecord</a> B_RPAREN 
+	;
+
+
+<a name="is_record">is_record</a>
+	:	<a href="PredicatParser.html#is_rec">is_rec</a> 
+	|	<a href="PredicatParser.html#is_struct">is_struct</a> 
+	;
+
+
+/**
+ *
+ * Attention a ne pas mettre n&#039;importe quoi ....
+ *	- ne pas oublie que ca peut etre un autre record (01/2001)
+ *
+ * On change le : en SELECTOR pour retirer les conflits dans les treewalker
+ **/
+<a name="a_record">a_record</a>
+	:	B_IDENTIFIER B_INSET <a href="PredicatParser.html#pfunctional_set">pfunctional_set</a> 
+	|	<a href="PredicatParser.html#pfunctional_set">pfunctional_set</a> 
+	|	<a href="PredicatParser.html#is_struct">is_struct</a> 
+	;
+
+
+<a name="list_identifier">list_identifier</a>
+	:	B_IDENTIFIER ( B_COMMA B_IDENTIFIER )* 
+	;
+
+
+<a name="new_predicate">new_predicate</a>
+	:	<a href="PredicatParser.html#expression">expression</a> ( (	B_SEMICOLON 
+			|	B_PARALLEL 
+			) 
+			<a href="PredicatParser.html#predicate">predicate</a> )* 
+	;
+
+
+<a name="dummy">dummy</a>
+	:	UNARY_ADD 
+	|	UNARY_MINUS 
+	|	ELEM_SET 
+	|	LIST_VAR 
+	|	APPLY_TO 
+	|	PARENT 
+	|	B_SELECTOR 
+	|	B_NOT 
+	|	B_DOM 
+	|	B_RAN 
+	|	B_MIN 
+	|	B_MAX 
+	|	B_CARD 
+	|	B_MOD 
+	;
+
+</PRE>
+</BODY>
+</HTML>

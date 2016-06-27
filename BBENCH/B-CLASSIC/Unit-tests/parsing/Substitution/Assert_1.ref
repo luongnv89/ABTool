@@ -1,0 +1,18 @@
+REFINEMENT
+	Assert_1
+
+REFINES
+	Assert_0
+
+OPERATIONS
+
+aa <-- OP =
+BEGIN
+	ASSERT
+		aa : INT
+	THEN
+		aa:= 5
+	END
+END
+
+END

@@ -1,0 +1,37 @@
+/*
+	AUTHOR		:	Boulanger JL
+	FILE		:	another_toy_0.sys
+	DESCRIPTION	: 	This example is presented by JRA in the paper
+					"Introducing Dynamic Constraints in B"
+*/
+
+/*
+	RELEASES
+		18 July 2001	:	Creation
+*/
+
+
+SYSTEM
+	another_toy_0
+
+VARIABLES
+	aa,bb
+
+INVARIANT
+	aa,bb : NAT * NAT
+&	bb = aa
+
+INITIALISATION
+	aa,bb := 0,0
+
+EVENTS
+evt_1 	= 
+	ANY 
+		xx
+	WHERE
+		xx : NAT
+	THEN
+		aa,bb := xx,xx
+	END
+
+END

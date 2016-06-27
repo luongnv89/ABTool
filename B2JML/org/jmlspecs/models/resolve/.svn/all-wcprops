@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve
+END
+AntisymmetricCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/AntisymmetricCompareTo.java
+END
+AsymmetricCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/AsymmetricCompareTo.java
+END
+SymmetricCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/SymmetricCompareTo.java
+END
+StrictlyOrderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/StrictlyOrderedCompareTo.java
+END
+StringOfObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/StringOfObject.java
+END
+TrichotomousCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/TrichotomousCompareTo.java
+END
+TotallyOrderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/TotallyOrderedCompareTo.java
+END
+PartiallyOrderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/PartiallyOrderedCompareTo.java
+END
+CompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/CompareTo.java
+END
+UndefinedException.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/UndefinedException.java
+END
+DenselyOrderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/DenselyOrderedCompareTo.java
+END
+TotalCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/TotalCompareTo.java
+END
+TransitiveCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/TransitiveCompareTo.java
+END
+StrictPartiallyOrderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/StrictPartiallyOrderedCompareTo.java
+END
+PreorderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/PreorderedCompareTo.java
+END
+ReflexiveCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/ReflexiveCompareTo.java
+END
+TotalPreorderedCompareTo.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/TotalPreorderedCompareTo.java
+END
+NaturalNumber.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/abtools/code/!svn/ver/110/B2JML/org/jmlspecs/models/resolve/NaturalNumber.java
+END

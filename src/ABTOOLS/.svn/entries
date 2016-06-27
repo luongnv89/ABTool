@@ -1,0 +1,129 @@
+9
+
+dir
+180
+https://svn.code.sf.net/p/abtools/code/src/ABTOOLS
+https://svn.code.sf.net/p/abtools/code
+
+
+
+2011-10-13T15:34:33.315793Z
+179
+wahlst
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+95d96ede-8e10-4124-9be6-eef1d011146f
+
+ANTLR_TOOLS
+dir
+
+APPLET_EDITION
+dir
+
+CODE_GENERATOR
+dir
+
+DEBUGGING
+dir
+
+GRAMMAR
+dir
+
+GRAMMAR.3.0
+dir
+
+INTERFACE_GRAPHIQUE
+dir
+
+INTERFACE_TEXTE
+dir
+
+Makefile
+file
+
+
+
+
+2016-06-27T14:47:27.000000Z
+0b3fa03409cff18556cf41c9901ee126
+2009-03-30T20:15:04.319955Z
+22
+jlboulanger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+56
+
+PO
+dir
+
+PRINTING
+dir
+
+README.txt
+file
+
+
+
+
+2016-06-27T14:47:27.000000Z
+2dbc843dca24fb45f381fbf8c76aa052
+2011-06-23T18:10:18.880088Z
+128
+jlboulanger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+622
+
+TYPING
+dir
+

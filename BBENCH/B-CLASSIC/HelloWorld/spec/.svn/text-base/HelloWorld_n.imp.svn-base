@@ -1,0 +1,30 @@
+/*
+	FILE		:	HelloWorld.mch
+	AUTHOR		:	Boulanger Jean-Louis
+	DESCRIPTION	:	The classical Hello Program
+				BBENCH is part of ABTOOLS project
+
+ 	Copyright 2000-2010 Boulanger Jean-Louis
+*/
+
+/*
+RELEASES
+	v 0.1 	Septembter 2000
+		- Creation
+*/
+
+IMPLEMENTATION
+	HelloWorld_n
+
+REFINES
+	HelloWorld_0
+
+IMPORTS
+	BASIC_IO
+
+OPERATIONS
+
+Hello =
+	STRING_WRITE("Hello World")
+
+END	/* of file HelloWorld_n.imp */

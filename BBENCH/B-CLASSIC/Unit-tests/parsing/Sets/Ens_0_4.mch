@@ -1,0 +1,7 @@
+MACHINE
+	Ens_0_4
+
+SETS
+	EE = {AA, BB}
+
+END

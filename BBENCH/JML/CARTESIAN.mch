@@ -1,0 +1,6 @@
+MACHINE CARTESIAN
+  SETS X; Y={red, green}
+  VARIABLES rel
+  INVARIANT rel : X <-> Y
+  INITIALISATION rel := X * Y
+END

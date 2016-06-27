@@ -1,0 +1,32 @@
+/*
+	AUTHOR		:	Boulanger JL
+	FILE		:	another_toy_1.ref
+	DESCRIPTION	: 	This example is presented by JRA in th paper					"Introducing Dynamic Constraints in B
+*/
+
+/*
+	RELEASES
+		18 July 2001	:	Creation
+*/
+
+
+REFINEMENT
+	another_toy_1
+
+REFINES
+	another_toy_0
+
+VARIABLES
+	aa, bbb
+
+INVARIANT
+	bbb : (0 .. aa)
+&	((bbb = aa) => (bbb = bb))
+
+VARIANT
+	aa - bbb
+
+INITIALISATION
+	aa,bbb := 0,0
+
+END

@@ -1,0 +1,10 @@
+REFINEMENT
+	Deux_variables_meme_noms_1
+
+REFINES
+	Deux_variables_meme_noms
+
+VARIABLES
+	bb, bb
+
+END

@@ -1,0 +1,23 @@
+# Automatically generated, contains additional dependencies
+#
+# $Id$
+
+
+# Additional dependencies for ABTOOLS.PRINTING.INDEX
+#
+# Additional dependencies for ABTOOLS.PRINTING.OUT
+#
+# Additional dependencies for ABTOOLS.PRINTING.OutTEX
+#
+ABTOOLS/PRINTING/OutTEX.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/PRINTING/OutTEX.class: ABTOOLS/PRINTING/OUT.class
+# Additional dependencies for ABTOOLS.PRINTING.OutASCII
+#
+ABTOOLS/PRINTING/OutASCII.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/PRINTING/OutASCII.class: ABTOOLS/PRINTING/OUT.class
+# Additional dependencies for ABTOOLS.PRINTING.OutXML
+#
+ABTOOLS/PRINTING/OutXML.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/PRINTING/OutXML.class: ABTOOLS/PRINTING/OUT.class
+# Additional dependencies for ABTOOLS.PRINTING.XML
+#

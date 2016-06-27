@@ -1,0 +1,60 @@
+/*
+http://www.computing.dcu.ie/~hamilton/teaching/CA619/practicals/SmallSetI.imp
+*/
+IMPLEMENTATION SmallSetI
+REFINES SmallSetR
+CONCRETE_VARIABLES numarr,freei
+VALUES maxsize=MAXINT
+INVARIANT  freei:1..(maxsize+1)
+INITIALISATION numarr:={};freei:=1
+OPERATIONS
+ enter(nn)=
+    IF freei<=maxsize   
+    THEN
+       numarr(freei):=nn; freei:= freei+1 
+    END;
+
+remove(nn)=
+  VAR x
+  IN
+     x:=1;
+     WHILE (numarr(x) /= nn & x<=maxsize) DO
+        x:=x+1
+     INVARIANT
+        x:NAT1
+     VARIANT
+        maxsize-x
+     END;
+     WHILE (x<freei) DO
+        numarr(x):=numarr(x+1);x:=x+1
+     INVARIANT
+        nn/:ran(1..x<|numarr) & x<=freei
+     VARIANT
+        freei-x
+     END;
+     freei:=freei-1
+  END;
+
+nn<-- minimum=
+  IF freei > 1
+  THEN 
+     VAR m,x
+     IN  
+        x:=1;
+        m:=numarr(x);
+        WHILE (x<maxsize) DO
+           x:=x+1;
+           IF (numarr(x) < m)
+           THEN
+              m:=numarr(x)
+           END
+           INVARIANT
+              x:NAT1 &  m=min(ran(1..x<|numarr)) & x<=maxsize
+           VARIANT
+              maxsize-x
+        END;
+      nn:=m
+    END
+  END
+
+END

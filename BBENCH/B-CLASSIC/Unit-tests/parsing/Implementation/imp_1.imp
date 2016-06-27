@@ -1,0 +1,11 @@
+/*
+ AUTHOR : Jean-Louis Boulanger
+ DESCRIPTION : exemple de raffinemment, voir qu'il n'y a pas de mélange entre le nom et l'extension
+*/
+
+IMPLEMENTATION
+	imp_1
+
+REFINES 
+	ref_0	
+END

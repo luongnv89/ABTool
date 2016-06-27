@@ -1,0 +1,10 @@
+REFINEMENT
+	Deux_constantes_meme_noms_1
+
+REFINES
+	Deux_constantes_meme_noms
+
+CONSTANTS
+	bb, bb
+
+END

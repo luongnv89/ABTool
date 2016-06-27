@@ -1,0 +1,1905 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar BTyping.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar BTyping</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from BTyping.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.7 (2006-11-01); 1989-2005
+</td>
+</tr>
+</table>
+<PRE>
+
+
+Definition of tree parser BTyping, which is a subclass of TreeParser.
+
+	
+	
+/**
+ *	La regle &quot;composant&quot; permet de definir le point d&#039;entree pour realiser le typage.
+ **/
+<a name="composant">composant</a>
+		:	(	<a href="BTyping.html#machine">machine</a> 
+			|	<a href="BTyping.html#refinement">refinement</a> 
+			|	<a href="BTyping.html#implementation">implementation</a> 
+			) 
+			
+		;
+	
+	
+<a name="machine">machine</a>
+		:				 #( "MACHINE" 
+	// on active la memorisation des parametres pour typage en fin de constraints.
+	param_module = true;
+    machine      = true;
+ paramName 
+	param_module = false;
+ ( constraints | link | sets | constants | properties | variables | invariant | assertions | definitions | initialisation | operations )* 
+// Verification de la declaration des operations promotes
+	if (promote != null)
+	{
+		list_var_bis(promote);
+		ABType type = promote.getBType();
+	}
+
+	popScope(); 				// Celui la c'est celui associe au paramName 
+
+    machine = false;
+ ) 
+		;
+	
+	
+<a name="refinement">refinement</a>
+		:				 #( "REFINEMENT" 
+	// on active la memorisation des parametres pour typage en fin de constraints.
+	param_module = true;
+ paramName 
+	param_module = false;
+ ( refines | constraints | link | sets | constants | properties | variables | invariant | assertions | definitions | initialisation | operations )* 
+// Verification de la declaration des operations promotes
+	if (promote != null)
+	{
+		list_var_bis(promote);
+		ABType type = promote.getBType();
+	}
+
+	popScope(); 				// Celui la c'est celui associe a la clause paramName 
+ ) 
+		;
+	
+	
+<a name="implementation">implementation</a>
+		:				 #( "IMPLEMENTATION" 
+	// on active la memorisation des parametres pourtypage en fin de constraints.
+	param_module = true;
+ paramName 
+	param_module = false;
+ ( refines | link | sets | values | constants | properties | variables | invariant | assertions | definitions | initialisation | operations )* 
+// Verification de la declaration des operations promotes
+	if (promote != null)
+	{
+		list_var_bis(promote);
+		ABType type = promote.getBType();
+	}
+
+	popScope(); 				// Celui la c'est celui associe au paramName 
+ ) 
+		;
+	
+	
+/**
+ * This rule is used for defined all Name with or without parameters
+ **/
+<a name="paramName">paramName</a>
+		:				 #( tt:B_LPAREN name:B_IDENTIFIER 
+	pushScope(#name.getText());
+ listTypedIdentifier 
+	ABType tmp = new FUNC_DEF(new ABType(), #ll.getBType());
+ 	tmp.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+	#name.setBType(tmp);
+
+	if (param_module)
+    {
+		param_machine = ll;
+    }
+
+	popScope();
+ 	symbolTable.add(#name.getText(),(MyNode)#name);
+	pushScope(#name.getText());
+ ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="constraints">constraints</a>
+		:				 #( c1:"CONSTRAINTS" 
+ 	ABType type=new ABType(); 
+ predicate 
+	typeControleTreatement (tt, type);
+
+// ATTENTION
+// QUESTION : On reaffecte le type mais est ce necessaire ??
+	type.setLineNumber(#c1.getLineNum());			// On reaffecte le numero de ligne
+	#tt.setBType(type);
+	#c1.setBType(type);
+
+
+// Verification du typages des parametres d'E/S
+	if (param_machine != null)
+	{
+		list_var_bis(param_machine);
+		ABType ltype = param_machine.getBType();
+	}
+ ) 
+		;
+	
+	
+<a name="link">link</a>
+		:	<a href="BTyping.html#uses">uses</a> 
+		|	<a href="BTyping.html#includes">includes</a> 
+		|	<a href="BTyping.html#sees">sees</a> 
+		|	<a href="BTyping.html#extendeds">extendeds</a> 
+		|	<a href="BTyping.html#promotes">promotes</a> 
+		|	<a href="BTyping.html#imports">imports</a> 
+		;
+	
+	
+<a name="sets">sets</a>
+		:				 #( "SETS" sets_declaration ) 
+		;
+	
+	
+<a name="constants">constants</a>
+		:				 #( "CONSTANTS" listTypedIdentifier 
+	constant = #lv1;
+	constant_valide	= true;
+ ) 
+		|				 #( "CONCRETE_CONSTANTS" listTypedIdentifier 
+	concrete_constant = #lv2;
+	constant_valide	= true;
+ ) 
+		|				 #( "VISIBLE_CONSTANTS" listTypedIdentifier 
+	visible_constant = #lv3;
+	constant_valide	= true;
+ ) 
+		|				 #( "ABSTRACT_CONSTANTS" listTypedIdentifier 
+	abstract_constant = #lv4;
+	constant_valide	= true;
+ ) 
+		|				 #( "HIDDEN_CONSTANTS" listTypedIdentifier 
+	hidden_constant = #lv5;
+	constant_valide	= true;
+ ) 
+		;
+	
+	
+<a name="properties">properties</a>
+		:				 #( "PROPERTIES" 
+ 	ABType type 	= new ABType();
+ 	ABType type1	= new ABType();
+	typant 		= true;				// Debut de phase typante
+ predicate 
+	typeControleTreatement (tt, type);
+
+// Verification de la declaration des constantes
+
+	if (constant != null)
+	{
+		list_var_bis(constant);
+		type = constant.getBType();
+		constant_valide	= false;
+	}
+	if (abstract_constant != null)
+	{
+		list_var_bis(abstract_constant);
+		type = abstract_constant.getBType();
+		constant_valide	= false;
+	}
+	if (visible_constant != null)
+	{
+		list_var_bis(visible_constant);
+		type = visible_constant.getBType();
+		constant_valide	= false;
+	}
+	if (hidden_constant != null)
+	{
+		list_var_bis(hidden_constant);
+		type = hidden_constant.getBType();
+		constant_valide	= false;
+	}
+	if (concrete_constant != null)
+	{
+		list_var_bis(concrete_constant);
+		type = concrete_constant.getBType();
+		constant_valide	= false;
+	}
+
+	typant = false;						// Fin de phase Typante
+ ) 
+		;
+	
+	
+<a name="variables">variables</a>
+		:	
+			(					 #( "VARIABLES" listTypedIdentifier 
+		variable = #lv1;
+ ) 
+			|					 #( "ABSTRACT_VARIABLES" listTypedIdentifier 
+		abstract_variable = #lv2;
+ ) 
+			|					 #( "VISIBLE_VARIABLES" listTypedIdentifier 
+		visible_variable = #lv3;
+ ) 
+			|					 #( "CONCRETE_VARIABLES" listTypedIdentifier 
+		concrete_variable = #lv4;
+ ) 
+			|					 #( "HIDDEN_VARIABLES" listTypedIdentifier 
+		hidden_variable = #lv5;
+ ) 
+			) 
+		;
+	
+	
+<a name="invariant">invariant</a>
+		:				 #( b1:"INVARIANT"  
+	ABType type	    = new ABType();
+	ABType tmpType	= new ABType();
+         typant     = true;					// Debut de phase typante
+ predicate 
+
+// ATTENTION
+// QUESTION : On reaffecte le type mais est ce necessaire ??
+	type.setLineNumber(#b1.getLineNum());			// On reaffecte le numero de ligne
+	#tt.setBType(type);
+	#b1.setBType(type);
+
+// Une fois l'invariant declare, toutes les variables sont typees
+
+// Verification de la declaration des variables
+	tmpType 	= TypedDeclaratedVariable(variable);
+	tmpType 	= TypedDeclaratedVariable(abstract_variable);
+	tmpType 	= TypedDeclaratedVariable(visible_variable);
+	tmpType 	= TypedDeclaratedVariable(hidden_variable);
+	tmpType 	= TypedDeclaratedVariable(concrete_variable);
+
+	typant = false;						// Fin de phase typante
+
+    if (type != null)
+    {
+       variable_valide = false;
+    }
+ ) 
+		;
+	
+	
+<a name="assertions">assertions</a>
+		:				 #( "ASSERTIONS" list_assertions ) 
+		;
+	
+	
+<a name="definitions">definitions</a>
+		:				 #( "DEFINITIONS" 
+    errors.Disabling();
+ list_def ) 
+		;
+	
+	
+/**
+ **	L&#039;initialisation ne doit pas introduire de VARIABLE 
+ **	sauf si on utilise l&#039;instruction VAR .. IN ... END 
+ **	=&gt; pas de push/pop
+ **/
+<a name="initialisation">initialisation</a>
+		:				 #( "INITIALISATION" instruction ) 
+		;
+	
+	
+<a name="operations">operations</a>
+		:				 #( "OPERATIONS" listOperation ) 
+		;
+	
+	
+/**
+ * A FAIRE:
+ * ========
+ * Pour realiser un typage complet, on a besoin d&#039;avoir acces a la &quot;notion de projet&quot;
+ * pour ceci afin de verifier que 
+ *	- la machine existe et que c&#039;est bien une machine, ou un raffinement suivant le cas
+ *	- le raffinement de la machine est correct au niveau parametre
+ *
+ */
+<a name="refines">refines</a>
+		:				 #( "REFINES" name:B_IDENTIFIER 
+	// Pour l'instant c'est un FUNC_DEF on pourrait imaginer mettre un MCH_DEF
+	addId(name,new FUNC_DEF());
+ ) 
+		;
+	
+	
+<a name="values">values</a>
+		:				 #( "VALUES" list_valuation ) 
+		;
+	
+	
+<a name="listTypedIdentifier">listTypedIdentifier</a>
+		:				 #( t1:B_COMMA listTypedIdentifier listTypedIdentifier 
+	// C'est bien un produit cartesien de type ...
+
+  	ABType type = new PROD(#t2.getBType(),#t3.getBType());
+ 	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+  	#t1.setBType(type);
+ ) 
+		|	<a href="BTyping.html#typedIdentifier">typedIdentifier</a> 
+		;
+	
+	
+<a name="paramNameOP">paramNameOP</a>
+		:				 #( tt:B_LPAREN name:B_IDENTIFIER 
+	pushScope(#name.getText());
+ listTypedIdentifier 
+	param_in = #ll;
+
+	ABType tmp = new FUNC_DEF(new ABType(), #ll.getBType());
+ 	tmp.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+	#name.setBType(tmp);
+
+	popScope();
+ 	symbolTable.add(#name.getText(),(MyNode)#name);
+	pushScope(#name.getText());
+ ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+/** 
+ * La regle &quot;typedIdentifier&quot; permet de prendre en compte l&#039;extension 
+ * de typage explicite de B&#039;
+ */
+<a name="typedIdentifier">typedIdentifier</a>
+		:				 #( t1:B_INSET nameRenamed predicate 
+	// ATTENTION
+	// Question : que fait-on comme verification sur newCurrent ??
+	// Reponse  : Aucune car AddTypeToId verifie l'unicite avant ajout a la table.
+
+        newType.setLineNumber(#t1.getLineNum());			// On reaffecte le numero de ligne
+        #name.setBType(newType);
+        #t1.setBType(newType);						// Il faut typer les deux noeuds pour la decompilation
+        addIdInCurrentScope(#name,newType);
+
+ ) 
+		|	<a href="BTyping.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+/**
+ *  Ne pas tenter de mettre l&#039;identificateur dans la table des symboles
+ * dans cette clause 
+ **/
+<a name="nameRenamed">nameRenamed</a>
+		:				 #( name:B_IDENTIFIER  
+	currentName = #name.getText();
+									// On retrourne un ID.
+	ABType type = new ID();
+	type.setLineNumber(#name.getLineNum());				// On reaffecte le numero de ligne
+ 	#name.setBType(type);
+ ) 
+		|				 #( v:B_POINT nameRenamed w:B_IDENTIFIER  
+									// on calcule le nom complet et 
+									// on l'affecte au noeud principal
+ 	currentName = currentName +#v.getText()+#w.getText();
+//	#v.setText(currentName);
+
+									// On retrourne un ID.
+	ABType type = new ID();
+	type.setLineNumber(#v.getLineNum());				// On reaffecte le numero de ligne
+ 	#v.setBType(type);
+ ) 
+		;
+	
+	
+/** 
+ * Clause Predicate
+ * Il faut verifier la compatibilite entre les deux types
+ **/
+<a name="predicate">predicate</a>
+		:				 #( a2:B_CARD predicate  
+ 	theType = compatibilityReduceType (#a2, new SET(), newType1);
+
+	theType.setLineNumber(#a2.getLineNum());				// On reaffecte le numero de ligne
+	#a2.setBType(theType);	
+ ) 
+		|				 #( a1:B_MIN predicate  
+ 	theType = compatibilityReduceType (#a1, new SET(), newType1);
+
+	theType.setLineNumber(#a1.getLineNum());				// On reaffecte le numero de ligne
+	#a1.setBType(theType);	
+ ) 
+		|				 #( a0:B_MAX predicate  
+ 	theType = compatibilityReduceType (#a0, new SET(), newType1);
+
+	theType.setLineNumber(#a0.getLineNum());				// On reaffecte le numero de ligne
+	#a0.setBType(theType);	
+ ) 
+		|				 #( t0:B_NOT predicate  
+ 	theType = compatibilityReduceType (#t0, new BOOL(), newType1);
+
+	theType.setLineNumber(#t0.getLineNum());				// On reaffecte le numero de ligne
+	#t0.setBType(theType);	
+ ) 
+		|				 #( o0:B_RAN predicate  
+
+// BJL - May 2007
+// B_RAN prend le second membre d'un produit
+
+ 	if (newType1.getType().compareTo("PROD")==0)
+ 	{
+ 		theType = newType1.getMember();
+ 	}
+ 	else
+ 	{
+ 		String msg = errors.TypeIncompatible( "ran(f) where f is not a function ",
+ 		                                      newType1.toString(),
+ 		                                      "(line"+newType1.getLineNumber() + ")");
+		theType    = new Typing_ERROR(msg);
+ 	}
+
+	theType.setLineNumber(#o0.getLineNum());				// On reaffecte le numero de ligne
+	#o0.setBType(theType);	
+ ) 
+		|				 #( o1:B_DOM predicate  
+
+// BJL - April 2007
+// B_DOM prend le premier membre d'un produit
+
+ 	if (newType1.getType().compareTo("PROD")==0)
+ 	{
+ 		theType = newType1.getMember2();
+ 	}
+ 	else
+ 	{
+ 		String msg = errors.TypeIncompatible( "dom(f) where f is not a function ",
+ 		                                      newType1.toString(),
+ 		                                      "(line"+newType1.getLineNumber() + ")");
+		theType    = new Typing_ERROR(msg);
+ 	}
+
+	theType.setLineNumber(#o1.getLineNum());				// On reaffecte le numero de ligne
+	#o1.setBType(theType);	
+ ) 
+		|				 #( t1:B_AND predicate predicate  
+ 	theType = compatibilityReduceType (#t1, newType, newType1);
+
+	theType.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+	#t1.setBType(theType);	
+ ) 
+		|				 #( t2:"or" predicate predicate  
+ 	theType = compatibilityReduceType (#t2, newType, newType1);
+
+	theType.setLineNumber(#t2.getLineNum());				// On reaffecte le numero de ligne
+	#t2.setBType(theType);	
+ ) 
+		|				 #( t3:B_IMPLIES predicate predicate  
+ 	theType = compatibilityReduceType (#t3, newType, newType1);
+
+	theType.setLineNumber(#t3.getLineNum());				// On reaffecte le numero de ligne
+	#t3.setBType(theType);	
+ ) 
+		|				 #( t4:B_EQUIV predicate predicate  
+ 	theType = compatibilityReduceType (#t4, newType, newType1);
+
+	theType.setLineNumber(#t4.getLineNum());				// On reaffecte le numero de ligne
+	#t4.setBType(theType);	
+ ) 
+		|				 #( t5:B_MULT predicate predicate  
+ 	theType = compatibilityReduceType (#t5, newType, newType1);
+
+	theType.setLineNumber(#t5.getLineNum());				// On reaffecte le numero de ligne
+	#t5.setBType(theType);	
+ ) 
+		|				 #( t6:B_POWER predicate predicate  
+ 	theType = compatibilityReduceType (#t6, newType, newType1);
+
+	theType.setLineNumber(#t6.getLineNum());				// On reaffecte le numero de ligne
+	#t6.setBType(theType);	
+ ) 
+		|				 #( t7:B_DIV predicate predicate 
+ 	theType = compatibilityReduceType (#t7, newType, newType1);
+
+	theType.setLineNumber(#t7.getLineNum());				// On reaffecte le numero de ligne
+	#t7.setBType(theType);	
+ ) 
+		|				 #( t8:"mod" predicate predicate 
+ 	theType = compatibilityReduceType (#t8, newType, newType1);
+
+	theType.setLineNumber(#t8.getLineNum());				// On reaffecte le numero de ligne
+	#t8.setBType(theType);	
+ ) 
+		|				 #( t9:UNARY_ADD predicate 
+	// Pas d'evolution du type car A et +A sont du meme type.
+	// Mais il faut que ce soit un INTEGER.
+ 	theType = compatibilityReduceType (#t9, newType, new INTEGER());
+
+	theType.setLineNumber(#t9.getLineNum());				// On reaffecte le numero de ligne
+	#t9.setBType(theType);	
+ ) 
+		|				 #( t10:UNARY_MINUS predicate 
+	// Par contre pour -A, il y a des verifications de type a faire,
+	// avant de construire le nouveau type
+
+	// Il faut que l'on est un ENTIER 
+ 	theType = compatibilityReduceType (#t10, new INTEGER(), newType);
+
+	theType.setLineNumber(#t10.getLineNum());				// On reaffecte le numero de ligne
+	#t10.setBType(theType);	
+ ) 
+		|				 #( t11:B_ADD predicate predicate  
+ 	theType = compatibilityReduceType (#t11, newType, newType1);
+
+	theType.setLineNumber(#t11.getLineNum());				// On reaffecte le numero de ligne
+	#t11.setBType(theType);	
+ ) 
+		|				 #( t12:B_MINUS predicate predicate  
+	theType = compatibilityReduceType (#t12, newType, newType1);
+
+	theType.setLineNumber(#t12.getLineNum());				// On reaffecte le numero de ligne
+	#t12.setBType(theType);	
+ ) 
+		|				 #( t131:B_EQUAL ( ( p131:B_IDENTIFIER predicate 
+	addTypeToId(p131,newType1);
+	theType = new BOOL();
+
+	theType.setLineNumber(#t131.getLineNum());				// On reaffecte le numero de ligne
+	#t131.setBType(theType);	
+ ) | ( predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					    // On reduit et si compatible on a BOOL.
+	theType.setLineNumber(#t131.getLineNum());				// On reaffecte le numero de ligne
+	#t131.setBType(theType);
+ ) ) ) 
+		|				 #( t14:B_LESS predicate predicate 
+	// Il faut que les deux types soit compatible si OUI => BOOL
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					    // On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t14.getLineNum());				// On reaffecte le numero de ligne
+	#t14.setBType(theType);	
+ ) 
+		|				 #( t15:B_GREATER predicate predicate 
+	// Il faut que les deux types soit compatible si OUI => BOOL
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t15.getLineNum());				// On reaffecte le numero de ligne
+	#t15.setBType(theType);	
+ ) 
+		|				 #( t16:B_NOTEQUAL predicate predicate 
+	// Il faut que les deux types soit compatible si OUI => BOOL
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t16.getLineNum());				// On reaffecte le numero de ligne
+	#t16.setBType(theType);	
+ ) 
+		|				 #( t17:B_LESSTHANEQUAL predicate predicate 
+	// Il faut que les deux types soit compatible si OUI => BOOL
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t17.getLineNum());				// On reaffecte le numero de ligne
+	#t17.setBType(theType);	
+ ) 
+		|				 #( t18:B_GREATERTHANEQUAL predicate predicate 
+System.out.println("debut GE");
+
+System.out.println("t1"+newType.toString()+" t2 "+newType1.toString());
+
+
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t18.getLineNum());				// On reaffecte le numero de ligne
+	#t18.setBType(theType);
+
+System.out.println("fin GE");
+ ) 
+		|				 #( t19:B_INSET predicate predicate  
+
+System.out.println("INSET : t1="+p191.getBType().toString()+" t2="+p192.getBType().toString());
+System.out.println(" " + p191.getBType().toString().compareTo(newType.toString()));
+System.out.println("INSET : t1="+p191.getBType().toString()+" nt="+newType.toString());
+System.out.println("INSET : t2="+p192.getBType().toString()+" nt="+newType1.toString());
+
+
+	// ATTENTION:
+	//		soit ID    : xx
+	//		soit ID,ID : xx*yy
+
+	// Introduire un algorithme qui si newType est un ID verifie qu'il est ou non dans la table
+	// et ensuite ajoute ou non un type
+	// si il y avait un type on doit etre compatible .... sinon erreur ...
+
+
+	if (p191.getBType().toString().compareTo(newType.toString())== 0)
+	{
+		addTypeToId(p191,newType1);
+		theType = new BOOL();
+	}
+	else
+	{
+		tmpType = new EQUAL (newType,newType1);
+		theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+	}
+
+	theType.setLineNumber(#t19.getLineNum());
+	#t19.setBType(theType);
+ ) 
+		|				 #( t20:B_NOTINSET predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t20.getLineNum());				// On reaffecte le numero de ligne
+	#t20.setBType(theType);
+ ) 
+		|				 #( t21:B_SUBSET predicate predicate 
+	if (p211.getBType().toString().compareTo(newType.toString())== 0)
+	{
+		addTypeToId(p211,newType1);
+		theType = new BOOL();
+	}
+	else
+	{
+		tmpType = new EQUAL (newType,newType1);
+		theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+	}
+
+	theType.setLineNumber(#t21.getLineNum());				// On reaffecte le numero de ligne
+	#t21.setBType(theType);	
+ ) 
+		|				 #( t22:B_NOTSUBSET predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t22.getLineNum());				// On reaffecte le numero de ligne
+	#t22.setBType(theType);
+ ) 
+		|				 #( t23:B_STRICTSUBSET predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t23.getLineNum());				// On reaffecte le numero de ligne
+	#t23.setBType(theType);
+ ) 
+		|				 #( t24:B_NOTSTRICTSBSET predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	theType = tmpType.reduce(errors);					// On reduit et si compatible on a BOOL.
+
+	theType.setLineNumber(#t24.getLineNum());				// On reaffecte le numero de ligne
+	#t24.setBType(theType);
+ ) 
+		|				 #( t25:B_CONCATSEQ predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+
+	theType.setLineNumber(#t25.getLineNum());				// On reaffecte le numero de ligne
+	#t25.setBType(theType);
+ ) 
+		|				 #( t26:B_PREAPPSEQ predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+	theType.setLineNumber(#t26.getLineNum());				// On reaffecte le numero de ligne
+	#t26.setBType(theType);
+ ) 
+		|				 #( t27:B_APPSEQ predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+	theType.setLineNumber(#t27.getLineNum());				// On reaffecte le numero de ligne
+	#t27.setBType(theType);
+ ) 
+		|				 #( t28:B_PREFIXSEQ predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+	theType.setLineNumber(#t28.getLineNum());				// On reaffecte le numero de ligne
+	#t28.setBType(theType);
+ ) 
+		|				 #( t29:B_SUFFIXSEQ predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+	theType.setLineNumber(#t29.getLineNum());				// On reaffecte le numero de ligne
+	#t29.setBType(theType);
+ ) 
+		|				 #( t30:B_RELATION predicate predicate 
+	theType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t30.getLineNum());				// On reaffecte le numero de ligne
+	#t30.setBType(theType);
+ ) 
+		|				 #( t31:B_PARTIAL predicate predicate 
+	theType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t31.getLineNum());				// On reaffecte le numero de ligne
+	#t31.setBType(theType);
+ ) 
+		|				 #( t32:B_TOTAL predicate predicate 
+	theType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t32.getLineNum());				// On reaffecte le numero de ligne
+	#t32.setBType(theType);
+ ) 
+		|				 #( t33:B_PARTIAL_INJECT predicate predicate 
+	theType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t33.getLineNum());				// On reaffecte le numero de ligne
+	#t33.setBType(theType);
+ ) 
+		|				 #( t34:B_TOTAL_INJECT predicate predicate 
+	theType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t34.getLineNum());				// On reaffecte le numero de ligne
+	#t34.setBType(theType);
+ ) 
+		|				 #( t35:B_PARTIAL_SURJECT predicate predicate 
+	tmpType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t35.getLineNum());				// On reaffecte le numero de ligne
+	#t35.setBType(theType);
+ ) 
+		|				 #( t36:B_TOTAL_SURJECT predicate predicate 
+	tmpType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t36.getLineNum());				// On reaffecte le numero de ligne
+	#t36.setBType(theType);
+ ) 
+		|				 #( t37:B_BIJECTION predicate predicate 
+	tmpType = new PROD(newType,newType1);					// Creation d'un nouveau type
+
+	theType.setLineNumber(#t37.getLineNum());				// On reaffecte le numero de ligne
+	#t37.setBType(theType);
+ ) 
+		|				 #( t38:B_DOMAINRESTRICT predicate predicate 
+theType = newType;
+ ) 
+		|				 #( t39:B_RANGERESTRICT predicate predicate 
+theType = newType;
+ ) 
+		|				 #( t40:B_DOMAINSUBSTRACT predicate predicate 
+theType = newType;
+ ) 
+		|				 #( t41:B_RANGESUBSTRACT predicate predicate 
+theType = newType;
+ ) 
+		|				 #( t42:B_OVERRIDEFORWARD predicate predicate 
+	theType = newType;
+	theType.setLineNumber(#t42.getLineNum());				// On reaffecte le numero de ligne
+ ) 
+		|				 #( t43:B_OVERRIDEBACKWARD predicate predicate 
+	theType = newType;
+	theType.setLineNumber(#t43.getLineNum());				// On reaffecte le numero de ligne
+ ) 
+		|				 #( t44:B_RELPROD predicate predicate 
+	theType = newType;
+	theType.setLineNumber(#t44.getLineNum());				// On reaffecte le numero de ligne
+ ) 
+		|				 #( t45:B_UNION predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+	theType.setLineNumber(#t45.getLineNum());				// On reaffecte le numero de ligne
+	#t45.setBType(theType);
+ ) 
+		|				 #( t46:B_INTER predicate predicate 
+	tmpType = new EQUAL (newType,newType1);
+
+	if (typeControle( tmpType ) )
+		theType = newType.reduce(errors);				// Ils sont compatibles d'ou on en reduits 1 
+	else
+		theType = tmpType.reduce(errors);				// On renvoie le message d'erreur.
+
+	theType.setLineNumber(#t46.getLineNum());
+ ) 
+		|				 #( t48:B_MAPLET predicate predicate 
+	theType = new PROD(newType, newType1);
+	theType.setLineNumber(#t48.getLineNum());				// On reaffecte le numero de ligne
+	#t48.setBType(theType);
+ ) 
+		|				 #( t49:LIST_VAR predicate predicate 
+	theType = new PROD(newType, newType1);
+	theType.setLineNumber(#t49.getLineNum());				// On reaffecte le numero de ligne
+	#t49.setBType(theType);
+ ) 
+		|	<a href="BTyping.html#cset_description">cset_description</a> 
+		;
+	
+	
+<a name="uses">uses</a>
+		:				 #( "USES" listNames ) 
+		;
+	
+	
+<a name="includes">includes</a>
+		:				 #( "INCLUDES" listInstanciation ) 
+		;
+	
+	
+<a name="sees">sees</a>
+		:				 #( "SEES" listNames ) 
+		;
+	
+	
+<a name="extendeds">extendeds</a>
+		:				 #( "EXTENDS" listInstanciation ) 
+		;
+	
+	
+<a name="promotes">promotes</a>
+		:				 #( "PROMOTES" listNames 
+		promote = #lv;
+ ) 
+		;
+	
+	
+<a name="imports">imports</a>
+		:				 #( "IMPORTS" listInstanciation ) 
+		;
+	
+	
+<a name="listInstanciation">listInstanciation</a>
+		:				 #( B_COMMA listInstanciation listInstanciation ) 
+		|	<a href="BTyping.html#paramRenameValuation">paramRenameValuation</a> 
+		;
+	
+	
+<a name="listNames">listNames</a>
+		:				 #( B_COMMA listNames listNames ) 
+		|	<a href="BTyping.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+/**
+ * Cette regle permet de verifier le typage lors des instanciations
+ * on doit type des objets de la forme ff(pred1, pred2, pred3) (pred4)
+ *
+ * A FAIRE:
+ * ========
+ * Pour realiser un typage complet, on a besoin d&#039;avoir acces a la &quot;notion de projet&quot;
+ * pour ceci afin de verifier que 
+ *	- la machine existe et que c&#039;est bien une machine
+ *	- l&#039;instanciation de la machine est correct
+ *
+ **/
+<a name="paramRenameValuation">paramRenameValuation</a>
+		:				 #( t1:B_LPAREN paramRenameValuation list_New_Predicate 
+	ABType tmp = pp.getBType();
+	type 	 = new PROD(tmp, type);
+
+// Il faut etudier comment faire :
+// en effet on a F (a) (b) (c) qui se traduite en [ ( [ ( [ ( F, a] b] c ]
+// pas facilement typable 
+
+//	if (typeControle(new EQUAL(tmp, type)))
+//		type = new BOOL();
+
+ 	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+  	#t1.setBType(type);
+ ) 
+		|	<a href="BTyping.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="list_New_Predicate">list_New_Predicate</a>
+		:				 #( t1:B_COMMA list_New_Predicate new_predicate 
+	type = new PROD(tmp1, tmp2);
+
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+  	#t1.setBType(type);
+ ) 
+		|	<a href="BTyping.html#new_predicate">new_predicate</a> 
+		;
+	
+	
+<a name="sets_declaration">sets_declaration</a>
+		:				 #( B_SEMICOLON sets_declaration sets_declaration ) 
+		|				 #( B_COMMA sets_declaration sets_declaration ) 
+		|	<a href="BTyping.html#set_declaration">set_declaration</a> 
+		;
+	
+	
+<a name="set_declaration">set_declaration</a>
+		:				 #( t1:B_EQUAL set:B_IDENTIFIER 
+	ABType type = new ABType();
+ valuation_setset 
+//	type = new SET(type.reduce(errors));
+	type.setLineNumber(#t1.getLineNum());
+	#t1.setBType(type);
+	addId(set,type);
+	System.out.println("1.On a mis dans la table "+type.toString());
+ ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="valuation_set">valuation_set</a>
+		:				 #( t1:B_CURLYOPEN list_coupleset 
+// Pour analyse des erreurs de compatibilite dans la declaration du type
+  	type = tmp1.reduce(errors);
+
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+  	#t1.setBType(type);
+ ) 
+		|	<a href="BTyping.html#is_record">is_record</a> 
+		|				 #( t3:B_MULT valuation_setset valuation_setset 
+ 	type = compatibilityReduceType (#t3, tmp1, tmp2);
+	type.setLineNumber(#t3.getLineNum());				// On reaffecte le numero de ligne
+ 	#t3.setBType(type);
+ ) 
+		|				 #( t4:B_ADD valuation_setset valuation_setset 
+ 	type = compatibilityReduceType (#t4, tmp1, tmp2);
+	type.setLineNumber(#t4.getLineNum());				// On reaffecte le numero de ligne
+ 	#t4.setBType(type);
+ ) 
+		|				 #( t5:B_MINUS valuation_setset valuation_setset 
+ 	type = compatibilityReduceType (#t5, tmp1, tmp2);
+	type.setLineNumber(#t5.getLineNum());				// On reaffecte le numero de ligne
+ 	#t5.setBType(type);
+ ) 
+		|	B_IDENTIFIER 
+		|	<a href="BTyping.html#basic_sets">basic_sets</a> 
+		;
+	
+	
+<a name="is_record">is_record</a>
+		:				 #( t1:"rec" 
+	pushScope("STRUCT");
+ listrecordfalse 
+  	type = new STRUCT (tmp1);
+
+ 	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+ 	#t1.setBType(type);
+
+	popScope();
+ ) 
+		|				 #( t2:"struct" 
+	pushScope("STRUCT");
+ listrecordtrue 
+  	type = new STRUCT (tmp1);
+
+ 	type.setLineNumber(#t2.getLineNum());				// On reaffecte le numero de ligne
+ 	#t2.setBType(type);
+
+	popScope();
+ ) 
+		;
+	
+	
+<a name="listrecord">listrecord</a>
+		:				 #( t1:B_COMMA listrecordbb listrecordbb 
+  	type = new LIST(tmp1, tmp2); 
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+  	#t1.setBType(type);
+ ) 
+		|	<a href="BTyping.html#a_record">a_record</a> 
+		;
+	
+	
+<a name="list_couple">list_couple</a>
+		:				 #( t1:B_COMMA list_coupleset list_coupleset 
+  	type = new LIST(list, temp); 
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+  	#t1.setBType(type);
+ ) 
+		|	<a href="BTyping.html#couple">couple</a> 
+		;
+	
+	
+/**
+ * Les Types de base
+ **/
+<a name="basic_sets">basic_sets</a>
+		:	(	&quot;INT&quot; 
+			|	&quot;INT1&quot; 
+			|	&quot;INTEGER&quot; 
+			|	&quot;INTEGER1&quot; 
+			|	&quot;BOOL&quot; 
+			|	&quot;NAT&quot; 
+			|	&quot;NAT1&quot; 
+			|	&quot;NATURAL&quot; 
+			|	&quot;NATURAL1&quot; 
+			|	&quot;STRING&quot; 
+			) 
+		;
+	
+	
+/**
+ *	La regle &quot;a_record&quot; permet de definir le type de chaque champs
+ **/
+<a name="a_record">a_record</a>
+		:				 #( tt:B_SELECTOR name:B_IDENTIFIER predicate 
+	if (b == true) 						// New ID  pas de branche ELSE
+		if (typant == true)				// Il y a des phases non typantes  ex: INIT
+			addId(name,type);
+
+	type.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+	#tt.setBType(type);
+ ) 
+		|	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="couple">couple</a>
+		:	<a href="BTyping.html#a_maplet">a_maplet</a> 
+		|				 #( tt:B_LPAREN parent_coupleset  
+	type.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+  	#tt.setBType(type);
+ ) 
+		|	<a href="BTyping.html#a_set_value">a_set_value</a> 
+		;
+	
+	
+<a name="a_maplet">a_maplet</a>
+		:				 #( tt:B_MAPLET a_set_value_ a_set_value_ 
+  	type = new PROD(t1,t2); 
+	type.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+  	#tt.setBType(type);
+ ) 
+		;
+	
+	
+<a name="parent_couple">parent_couple</a>
+		:	<a href="BTyping.html#a_maplet">a_maplet</a> 
+		|	<a href="BTyping.html#a_comma">a_comma</a> 
+		;
+	
+	
+<a name="a_set_value">a_set_value</a>
+		:	B_IDENTIFIER 
+		|				 #( t1:UNARY_MINUS val:B_NUMBER 
+	type = new INT();
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+	#t1.setBType(type);
+	#val.setBType(type);
+ ) 
+		|	B_NUMBER 
+		;
+	
+	
+<a name="a_comma">a_comma</a>
+		:				 #( tt:B_COMMA a_set_value_ a_set_value_ 
+  	type = new PROD(t1,t2); 
+	type.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+  	#tt.setBType(type);
+ ) 
+		;
+	
+	
+<a name="a_set_value_">a_set_value_</a>
+		:	B_IDENTIFIER 
+		|				 #( t1:UNARY_MINUS val:B_NUMBER 
+	type = new INT();
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+
+	#t1.setBType(type);
+	#val.setBType(type);
+ ) 
+		|	B_NUMBER 
+		|	&quot;TRUE&quot; 
+		|	&quot;FALSE&quot; 
+		;
+	
+	
+<a name="list_valuation">list_valuation</a>
+		:				 #( B_SEMICOLON list_valuation list_valuation ) 
+		|	<a href="BTyping.html#set_valuation">set_valuation</a> 
+		;
+	
+	
+<a name="set_valuation">set_valuation</a>
+		:				 #( aa:B_EQUAL name:B_IDENTIFIER 
+ 	ABType newType= new ABType();
+ new_set_or_constant_valuationname 
+	addTypeToId(name,newType);
+	newType.setLineNumber(#aa.getLineNum());				// On reaffecte le numero de ligne
+	#aa.setBType(newType);
+ ) 
+		;
+	
+	
+<a name="new_set_or_constant_valuation">new_set_or_constant_valuation</a>
+		:	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="set_interval_value">set_interval_value</a>
+		:				 #( tt:B_EQUAL a:B_IDENTIFIER 
+ 	ABType newType = new ABType();
+ 	pushScope(#a.getText());
+ interval_declaration 
+	newType.setLineNumber(#tt.getLineNum());				// On reaffecte le numero de ligne
+  	#tt.setBType(newType);
+	addId(a,newType);
+ 	popScope();
+ ) 
+		;
+	
+	
+<a name="interval_declaration">interval_declaration</a>
+		:				 #( t1:B_RANGE 
+  	ABType newType1= new ABType();
+  	ABType newType2= new ABType();
+ predicate predicate 
+  	newType = new RANGE(newType1,newType2);
+  	#t1.setBType(newType);
+ ) 
+		;
+	
+	
+<a name="list_def">list_def</a>
+		:				 #( LIST_DEF list_def list_def ) 
+		|	<a href="BTyping.html#definition">definition</a> 
+		;
+	
+	
+/**
+ * Attention deux cas
+ *	- Une definition
+ *	- un acces a un fichier de definition
+ **/
+<a name="definition">definition</a>
+		:				 #( B_DOUBLE_EQUAL paramName formalText 
+	popScope(); 						// Celui la c'est celui associe au paramName 
+
+// Pas de type de retours pour les definitions .....
+ ) 
+		|	B_ASTRING 
+		;
+	
+	
+/**
+ **	A FAIRE
+ **	On se trouve dans le corps d&#039;une DEFINITION,
+ **	il va falloir introduire l&#039;inhibition des messages d&#039;erreurs 
+ **	ou les transforme en WARNING
+ **/
+<a name="formalText">formalText</a>
+		:				 #( EXP_DEF predicate ) 
+		|				 #( SUBST_DEF instruction ) 
+		;
+	
+	
+/**
+ * the Generalised Substitution Language
+ **/
+<a name="instruction">instruction</a>
+		:				 #( PARALLEL instruction instruction ) 
+		|				 #( SEQUENTIAL instruction instruction ) 
+		|	&quot;skip&quot; 
+		|				 #( "BEGIN" instruction ) 
+		|				 #( "PRE" System.out.println("Debut de Pre"); predicate instruction System.out.println("Fin de Pre"); ) 
+		|				 #( "ASSERT" predicate instruction ) 
+		|				 #( "IF" predicate branche_then ( branche_elsif )* ( branche_else | ) ) 
+		|				 #( "CHOICE" list_or ) 
+		|				 #( "CASE" predicate branche_either ( branche_or )* ( branche_else | ) ) 
+		|				 #( sany:"ANY" 
+	pushScope("ANY");
+ listTypedIdentifier 
+	local_variable = #lv1;	 	// Memorize the list of local VARIABLE for verification of typing
+ predicate 
+	type		= TypedDeclaratedVariable(local_variable);
+	local_variable 	= null ;
+	type.setLineNumber(#sany.getLineNum());				// On reaffecte le numero de ligne
+ 	#sany.setBType(type);
+ instruction 
+ 	popScope();
+ ) 
+		|				 #( let:"LET" 
+	pushScope("LET");
+ listTypedIdentifier 
+	local_variable = #lv2;	 	// Memorize the list of local VARIABLE for verification of typing
+ list_equal 
+	type		= TypedDeclaratedVariable(local_variable);
+	local_variable 	= null ;
+	type.setLineNumber(#let.getLineNum());				// On reaffecte le numero de ligne
+ 	#let.setBType(type);
+ instruction 
+ 	popScope();
+ ) 
+		|				 #( "SELECT" predicate instruction ( branche_when )* ( branche_else | ) ) 
+		|				 #( "WHILE" predicate instruction variant_or_no ) 
+		|				 #( var:"VAR" 
+	pushScope("VAR");
+ listTypedIdentifier 
+	local_variable = #lv3;
+	int ln = #var.getLineNum();
+ instruction 
+	type		= TypedDeclaratedVariable(local_variable);
+	local_variable 	= null ;
+	type.setLineNumber(ln);				// On reaffecte le numero de ligne
+ 	#var.setBType(type);
+
+ 	popScope();
+ ) 
+		|	<a href="BTyping.html#simple_affect">simple_affect</a> 
+		;
+	
+	
+<a name="list_assertions">list_assertions</a>
+		:				 #( B_SEMICOLON list_assertions list_assertions ) 
+		|	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="listOperation">listOperation</a>
+		:				 #( B_SEMICOLON listOperation listOperation ) 
+		|	<a href="BTyping.html#operation">operation</a> 
+		;
+	
+	
+<a name="operation">operation</a>
+		:				 #( OP_DEF def_operation ) 
+		;
+	
+	
+<a name="def_operation">def_operation</a>
+		:	( 				 #( tt:B_OUT 	// mise en place du context
+	pushScope(#tt.getOpname());
+ listTypedIdentifier 
+	param_out = #ll;
+	popScope();
+ paramNameOP ) <a href="BTyping.html#instruction">instruction</a> ) 
+		|	( <a href="BTyping.html#paramNameOP">paramNameOP</a> <a href="BTyping.html#instruction">instruction</a> ) 
+		;
+	
+	
+<a name="branche_then">branche_then</a>
+		:				 #( "THEN" instruction ) 
+		;
+	
+	
+<a name="branche_elsif">branche_elsif</a>
+		:				 #( "ELSIF"  
+	ABType type= new ABType();
+ predicate 
+	typeControleTreatement (tt, type);
+ instruction ) 
+		;
+	
+	
+<a name="branche_else">branche_else</a>
+		:				 #( "ELSE" instruction ) 
+		;
+	
+	
+<a name="list_or">list_or</a>
+		:				 #( "OR" list_or instruction ) 
+		|	<a href="BTyping.html#instruction">instruction</a> 
+		;
+	
+	
+<a name="branche_either">branche_either</a>
+		:				 #( "EITHER" 
+	ABType type= new ABType();
+ predicate 
+	typeControleTreatement (tt, type);
+ instruction ) 
+		;
+	
+	
+<a name="branche_or">branche_or</a>
+		:				 #( "OR"  
+	ABType type= new ABType();
+ predicate 
+	typeControleTreatement (tt, type);
+ instruction ) 
+		;
+	
+	
+<a name="list_equal">list_equal</a>
+		:				 #( B_AND list_equal list_equal ) 
+		|	<a href="BTyping.html#an_equal">an_equal</a> 
+		;
+	
+	
+<a name="branche_when">branche_when</a>
+		:				 #( "WHEN"  
+	ABType type= new ABType();
+ predicate 
+	typeControleTreatement (tt, type);
+ instruction ) 
+		;
+	
+	
+<a name="variant_or_no">variant_or_no</a>
+		:				 #( "VARIANT" #( "INVARIANT" predicate 
+	typeControleTreatement (#t2, type);
+ ) predicate 
+	typeControleTreatement (#t1, type);
+ ) 
+		|				 #( "INVARIANT" #( "VARIANT" predicate 
+	typeControleTreatement (#t4, type);
+ ) predicate 
+	typeControleTreatement (#t3, type);
+ ) 
+		;
+	
+	
+<a name="simple_affect">simple_affect</a>
+		:				 #( sa1:B_SIMPLESUBST list_func_call 
+	RA1(#lf1);
+ predicate 
+
+// A VERIFIER
+// Il y a un PB car si on a x,y,z := a,b,c
+// il faut scinder les verifications ...........
+
+// Il y a bien le cas ou on complete le type ==> dans les VAR.
+
+	type = #lp1.getBType();
+
+	type.setLineNumber(#sa1.getLineNum());		// On reaffecte le numero de ligne
+	#sa1.setBType(type);
+
+	addTypeToId (#lf1, type);
+
+ ) 
+		|				 #( sa2:B_OUT list_func_call func_call 
+	type = #fc2.getBType();
+	type.setLineNumber(#sa2.getLineNum());		// On reaffecte le numero de ligne
+	#sa2.setBType(type);
+
+	addTypeToId (#lf2, type);
+ ) 
+		|				 #( si:INSET 
+	System.out.println("debut => INSET");
+ list_func_call 
+	RA1(#lf3);
+	local_variable = #lf3;	 	// Memorize the list of local VARIABLE for verification of typing
+ predicate 
+
+// BJL : April 2007 
+// In x,y :( P), P is a predicate and is type is BOOL
+// x and y must be defined and typed.
+// PB : normally X and Y must be dedefined in P. How verified this ????
+ 
+
+    	tmp1   		= TypedDeclaratedVariable(local_variable);
+	local_variable 	= null ;
+	tmp 		= new BOOL();
+	
+	if (typeControle(new EQUAL(type, tmp)))
+	{
+		type = new BOOL();
+		type.setLineNumber(#si.getLineNum());		// On reaffecte le numero de ligne
+        	#si.setBType(type);
+   	 }
+    	else
+    	{
+
+// BJL
+// Introduire une incompatibilite de type 
+
+   	}
+ 
+	System.out.println("Fin => INSET");
+ ) 
+		|				 #( sa4:B_BECOME_ELEM 
+	System.out.println("debut => BECOME");
+ list_func_call 
+	RA1(#lf4);
+	local_variable = #lf4;	 	// Memorize the list of local VARIABLE for verification of typing
+ predicate 
+
+	tmp1	    	= TypedDeclaratedVariable(local_variable);
+	local_variable 	= null ;
+
+	if (typeControle(new EQUAL(tmp1, type)))
+	{
+		type = new BOOL();
+		type.setLineNumber(#sa4.getLineNum());		// On reaffecte le numero de ligne
+        	#sa4.setBType(type);
+    	}
+    	else
+    	{
+
+// BJL
+// Introduire une incompatibilite de type 
+
+    	}
+
+System.out.println("fin => BECOME");
+ ) 
+		|	<a href="BTyping.html#a_func_call">a_func_call</a> 
+		;
+	
+	
+<a name="an_equal">an_equal</a>
+		:				 #( B_EQUAL name:B_IDENTIFIER  
+	ABType type= new ABType();
+ predicate 
+	addId(#name,type);
+ ) 
+		;
+	
+	
+/**
+ * afin de prendre en compte 
+ *	soit f (x,y,z)
+ *	soit f (x) [z]
+ *	soit f~(x) [z]
+ *	soit f (x)~
+ **/
+<a name="func_call">func_call</a>
+		:				 #( t1:B_TILDE func_call ) 
+		|				 #( t2:APPLY_TO func_call list_New_Predicate ) 
+		|				 #( t3:B_LPAREN func_call list_New_Predicate 
+	if ((name.toString()).compareTo("POW") == 0)
+	{
+		type = new POW(tmp1);
+	}
+	else
+	{    // Autre cas
+	}
+
+	type.setLineNumber(#t3.getLineNum());				// On reaffecte le numero de ligne
+  	#t3.setBType(type);
+ ) 
+		|				 #( t4:B_QUOTEIDENT func_call func_call ) 
+		|	<a href="BTyping.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="func_param">func_param</a>
+		:	<a href="BTyping.html#list_New_Predicate">list_New_Predicate</a> 
+		;
+	
+	
+<a name="new_predicate">new_predicate</a>
+		:				 #( B_SEMICOLON new_predicate predicate ) 
+		|				 #( B_PARALLEL new_predicate predicate ) 
+		|	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="nameRenamedDecorated">nameRenamedDecorated</a>
+		:				 #( t1:B_CPRED nameRenamed 
+	// Etant donne qu'on parle de la valeur precedente d'un ID il faut qu'il soit deja definit
+
+	ABType tmp = searchId(name,new ABType());	// On recupere le type 
+	tmp.setLineNumber(#t1.getLineNum());		// On reaffecte le numero de ligne
+	#name.setBType(tmp);				// et on le re-affecte
+	#t1.setBType(tmp);				// et on le re-affecte
+ ) 
+		|	<a href="BTyping.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="nameRenamedDecoratedInverted">nameRenamedDecoratedInverted</a>
+		:				 #( B_TILDE nameRenamedDecorated ) 
+		|	<a href="BTyping.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		;
+	
+	
+<a name="listPredicate">listPredicate</a>
+		:				 #( tt:B_COMMA listPredicate listPredicate 
+	type = new PROD(#lp1.getBType(),#lp2.getBType());
+	type.setLineNumber(#tt.getLineNum());
+	#tt.setBType(type);
+ ) 
+		|	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="a_func_call">a_func_call</a>
+		:				 #( tt:A_FUNC_CALL afc 
+
+	ABType tmp = #a1.getBType();
+
+// March 2003
+// Cette ID existe 
+//    si oui est-ce le bon type 
+//    sinon on le cre avec ce type.
+	ABType tmp1= searchId(name, #tmp);
+
+// F e1* ... * en --> s1 * .. * sn a pour type e1* ...* en * s1* ... *sn
+// et on a F( p1, ... ,pm) a pour type P1* ...*Pn et le resultat est un sous interval du type precedent
+
+// PB afec les F(xx,yy) qui retourne des couples, triplets ou autre ...
+
+	tmp.setLineNumber(#a1.getLineNum());					// On reaffecte le numero de ligne
+	#tt.setBType(tmp);
+
+//    #tt.setText(#a1.getText()); 
+    #tt.memorizeOpname(#a1.getOpname());
+
+ ) 
+		|	( <a href="BTyping.html#afc">afc</a> ) 
+		;
+	
+	
+<a name="afc">afc</a>
+		:				 #( t1:FUNC_CALL_PARAM afc listPredicate 
+    ABType tmp1 = #a1.getBType();					        // on a un f(x)...(y)
+	ABType tmp2 = #lp.getBType();					        // on ajoute un (zz)
+
+	ABType tmptype  = new PROD(tmp1,tmp2);				// c'est pourquoi on fait le product
+	tmptype.setLineNumber(#t1.getLineNum());			// On reaffecte le numero de ligne
+	#t1.setBType(tmptype);
+
+//    #t1.setText(#a1.getText());
+
+    #t1.memorizeOpname(#a1.getOpname());
+ ) 
+		|				 #( t2:B_LPAREN afc listPredicate 
+    ABType tmp1 = #a2.getBType();					        // on a un f(x)...(y)
+	ABType tmp2 = #lp2.getBType();					    // on ajoute un (zz)
+
+	ABType tmptype  = new PROD(tmp1,tmp2);				// c'est pourquoi on fait le product
+	tmptype.setLineNumber(#t2.getLineNum());			// On reaffecte le numero de ligne
+
+	#t2.setBType(tmptype);
+
+//    #t2.setText(#a2.getText());
+
+    #t2.memorizeOpname(#a2.getOpname());
+ ) 
+		|				 #( t3:B_QUOTEIDENT afc afc  
+//   #t3.setText(#a3.getText());
+
+    #t3.memorizeOpname(#a3.getOpname());
+ ) 
+		|	<a href="BTyping.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="list_func_call">list_func_call</a>
+		:				 #( tt:B_COMMA list_func_call list_func_call 
+	// On construit le produit cartesien ...
+	ABType type = new PROD(#lf1.getBType(),#lf2.getBType());
+	type.setLineNumber(#tt.getLineNum());
+
+	#tt.setBType(type);
+ ) 
+		|	<a href="BTyping.html#a_func_call">a_func_call</a> 
+		;
+	
+	
+<a name="cset_description">cset_description</a>
+		:	<a href="BTyping.html#basic_sets">basic_sets</a> 
+		|	<a href="BTyping.html#cbasic_value">cbasic_value</a> 
+		|				 #( bb:"bool" predicate 
+	// Dans un predicat de la forme bool( P ), ....
+
+	theType	= new EQUAL( new BOOL(),newType);
+	theType.reduce(errors);
+	theType.setLineNumber(#bb.getLineNum());				// On reaffecte le numero de ligne
+	#bb.setBType(theType);
+ ) 
+		|				 #( t4:B_BRACKOPEN listPredicate 
+ 	theType = ll.getBType();
+ 	theType.setLineNumber(#t4.getLineNum());				// On reaffecte le numero de ligne
+	#t4.setBType(theType);
+ ) 
+		|				 #( t5:B_RANGE predicate predicate 
+ 	theType = new RANGE(newType, newType1);
+ 	theType.setLineNumber(#t5.getLineNum());				// On reaffecte le numero de ligne
+	#t5.setBType(theType);
+ ) 
+		|				 #( t6:B_EMPTYSET 
+ 	theType = new JOKER();
+ 	theType.setLineNumber(#t6.getLineNum());				// On reaffecte le numero de ligne
+	#t6.setBType(theType);
+ ) 
+		|				 #( t7:B_CURLYOPEN cvalue_set 
+System.out.println("CURLYOPEN : t1="+q12.getBType().toString()+" nt="+newType.toString());
+
+ //	theType = new SET(newType.reduce(errors));  
+	theType = newType.reduce(errors);
+	theType.setLineNumber(#t7.getLineNum());				// On reaffecte le numero de ligne
+ 	#t7.setBType(theType);
+ ) 
+		|				 #( t8:B_SEQEMPTY 
+ 	theType = new EMPTYSEQ();
+ 	theType.setLineNumber(#t8.getLineNum());				// On reaffecte le numero de ligne
+	#t8.setBType(theType);
+ ) 
+		|	<a href="BTyping.html#is_record">is_record</a> 
+		|	<a href="BTyping.html#quantification">quantification</a> 
+		|	<a href="BTyping.html#q_lambda">q_lambda</a> 
+		;
+	
+	
+<a name="cbasic_value">cbasic_value</a>
+		:				 #( as:B_ASTRING 
+ 	type = new STRING();
+	type.setLineNumber(#as.getLineNum());				// On reaffecte le numero de ligne
+	#as.setBType(type);
+ ) 
+		|				 #( nb:B_NUMBER 
+ 	type = new NAT();
+	type.setLineNumber(#nb.getLineNum());				// On reaffecte le numero de ligne
+	#nb.setBType(type);
+ ) 
+		|				 #( t1:B_TILDE predicate 
+	type = newType1.inverse(errors);				// On inverse le type ....
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+	#t1.setBType(type);	
+ ) 
+		|	<a href="BTyping.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		|				 #( t3:B_LPAREN predicate list_New_Predicate 
+
+System.out.println("LPARENT");
+
+	if ((ll.toString()).compareTo("POW") == 0)
+	{
+		type = new POW(type);	// on a pas besoin de typer ....
+	}
+	else
+	{    // Autre cas
+
+	}
+
+	type.setLineNumber(#t3.getLineNum());				// On reaffecte le numero de ligne
+	#t3.setBType(type);
+ ) 
+		|				 #( t4:PARENT 
+    System.out.println("on a un PARENT");
+ pred_func_composition 
+	type.setLineNumber(#t4.getLineNum());				// On reaffecte le numero de ligne
+	#t4.setBType(type);
+ ) 
+		|				 #( B_QUOTEIDENT predicate predicate ) 
+		|				 #( APPLY_TO predicate predicate ) 
+		|	&quot;TRUE&quot; 
+		|	&quot;FALSE&quot; 
+		;
+	
+	
+<a name="cvalue_set">cvalue_set</a>
+		:				 #( t1:B_SUCH 
+	pushScope("SUCH");
+ list_var predicate 
+	compatibilityReduceType (#t1, tmp1, new BOOL());
+
+ // Q:
+ //  Peux t on re-evaluer list_var pour verificaton du typage ?? 
+ //  si oui faut le faire ....
+
+	list_var_bis(lv);
+
+	type = lv.getBType();
+
+// Verification des objets non types
+	type.typingVerification(errors);
+
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+ 	#t1.setBType(type);
+
+	popScope();
+
+ ) 
+		|				 #( t2:ELEM_SET cvalue_set cvalue_set 
+System.out.println("ELEM_SET : t1="+tmp1.toString()+" t2="+tmp2.toString());
+
+	type = new LIST(tmp1, tmp2);
+	type.setLineNumber(#t2.getLineNum());				// On reaffecte le numero de ligne
+ 	#t2.setBType(type);
+ ) 
+		|	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="quantification">quantification</a>
+		:				 #( t1:B_FORALL 
+ 	pushScope("FORALL");
+ list_var predicate 
+	compatibilityReduceType (#t1, type, new BOOL());
+
+ // Q:
+ //  Peux t on re-evaluer list_var pour verificaton du typage ?? 
+ //  si oui faut le faire ....
+ //  OUI : C'est fait ...
+
+	ABType tmpType = TypedDeclaratedVariable(lv1);
+
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+ 	#t1.setBType(type);
+
+ 	popScope();
+ ) 
+		|				 #( t2:B_EXISTS 
+ 	pushScope("EXISTS"+nb_exist++);
+ list_var predicate 
+// System.out.println("Typage : EXIST : Begin");
+// System.out.println("predicate = "+ type.toString());
+
+	compatibilityReduceType (#t2, type, new BOOL());
+
+ // Q:
+ //  Peux t on re-evaluer list_var pour verificaton du typage ?? 
+ //  si oui faut le faire ....
+ //  OUI : C'est fait ...
+
+	ABType tmpType = TypedDeclaratedVariable(lv2);
+	
+	type.setLineNumber(#t2.getLineNum());				// On reaffecte le numero de ligne
+ 	#t2.setBType(type);
+
+// System.out.println("result = "+ #t2.getBType().toString());
+
+ 	popScope();
+
+// System.out.println("Typage : EXIST : End");
+ ) 
+		;
+	
+	
+<a name="q_lambda">q_lambda</a>
+		:				 #( t1:B_LAMBDA q_operande 
+System.out.println("debut Lambda");
+
+	transfertType(q1,t1);
+    type = t1.getBType();
+
+System.out.println("fin Lambda");
+
+ ) 
+		|				 #( t2:"PI" q_operande 
+	transfertType(q2,t2);
+    type = #t2.getBType();
+ ) 
+		|				 #( t3:"SIGMA" q_operande 
+	transfertType(q3,t3);
+    type = t3.getBType();
+ ) 
+		|				 #( t4:"UNION" q_operande 
+	transfertType(q4,t4);
+    type = t4.getBType();
+ ) 
+		|				 #( t5:"INTER" q_operande 
+	transfertType(q5,t5);
+    type = t4.getBType();
+ ) 
+		;
+	
+	
+/**
+ * Rien a faire car on a une liste de variable
+ * Faut quand meme ajouter les variables a l&#039;environnement .....
+ *
+ * Prevoire l&#039;extension B&#039; liste_typed_identifier
+ */
+<a name="list_var">list_var</a>
+		:				 #( t1:B_LPAREN list_identifier ) 
+		|	<a href="BTyping.html#list_identifier">list_identifier</a> 
+		;
+	
+	
+<a name="pred_func_composition">pred_func_composition</a>
+		:				 #( B_SEMICOLON pred_func_composition pred_func_composition ) 
+		|				 #( B_PARALLEL pred_func_composition pred_func_composition ) 
+		|				 #( B_COMMA pred_func_composition pred_func_composition ) 
+		|	<a href="BTyping.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="q_operande">q_operande</a>
+		:				 #( t1:B_SUCH 
+	pushScope("SUCH");
+ list_var predicate 
+	compatibilityReduceType (#t1, type, new BOOL());
+
+ // Q:
+ //  Peux t on re-evaluer list_var pour verificaton du typage ?? 
+ //  si oui faut le faire ....
+	list_var_bis(lv1);
+
+	type = lv1.getBType();
+	type.setLineNumber(#t1.getLineNum());				// On reaffecte le numero de ligne
+
+ predicate 
+ 	#t1.setBType(type);
+
+ 	popScope();
+ ) 
+		;
+	
+	
+<a name="list_identifier">list_identifier</a>
+		:				 #( tt:B_COMMA list_identifier list_identifier 
+	ABType tmp1 = #a1.getBType();
+	ABType tmp2 = #a2.getBType();
+	ABType type = new PROD(tmp1, tmp2);
+	type.setLineNumber(#tt.getLineNum());
+ 	#tt.setBType(type);
+ ) 
+		|				 #( name:B_IDENTIFIER 
+	ABType tmp = new ABType();
+	addId(#name,tmp);
+	tmp.setLineNumber(#name.getLineNum());			// On reaffecte le numero de ligne
+ 	#name.setBType(tmp);
+ ) 
+		;
+	
+	
+/**
+ * Cette seconde version a pour but de recuperer le typage
+ * en fait, le premier tour permet de declarer les variables
+ * le second de recuperer les informations de typage et de decelees 
+ * les variables non typees et non utilisees
+ **/
+<a name="list_var_bis">list_var_bis</a>
+		:				 #( t1:B_LPAREN list_identifier_bis ) 
+		|	<a href="BTyping.html#list_identifier_bis">list_identifier_bis</a> 
+		;
+	
+	
+<a name="list_identifier_bis">list_identifier_bis</a>
+		:				 #( tt:B_COMMA list_identifier_bis list_identifier_bis 
+	ABType tmp1 = #a1.getBType();
+	ABType tmp2 = #a2.getBType();
+	ABType type = new PROD(tmp1, tmp2);
+
+ 	#tt.setBType(type);
+ ) 
+		|	<a href="BTyping.html#id_bis">id_bis</a> 
+		|				 #( t1:B_INSET id_bis predicate 
+
+//  BJL a voir
+//	compatibilityReduceType (#name1, newType, new BOOL());
+
+  	#t1.setBType(#name1.getBType());				   // Transfert de type
+ ) 
+		|				 #( n1:A_FUNC_CALL id_bis 
+        #n1.setBType(#n2.getBType());                  // Transfert de type
+ ) 
+		;
+	
+	
+<a name="id_bis">id_bis</a>
+		:	B_IDENTIFIER 
+		|				 #( B_POINT B_IDENTIFIER B_IDENTIFIER ) 
+		;
+

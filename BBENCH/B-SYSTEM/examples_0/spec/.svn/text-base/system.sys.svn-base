@@ -1,0 +1,10 @@
+/*
+	AUTHOR	:	Boulanger Jean-Louis
+	MAIL	:	jean-louis.boulanger@utc.fr
+	FILE	:	system.sys
+*/
+
+SYSTEM
+	system
+
+END

@@ -1,0 +1,7 @@
+MACHINE
+	Ens_0_2
+
+SETS
+	EE; FF
+
+END

@@ -1,0 +1,80 @@
+9
+
+dir
+180
+https://svn.code.sf.net/p/abtools/code/BBENCH/B-CLASSIC/Unit-tests/parsing-error
+https://svn.code.sf.net/p/abtools/code
+
+
+
+2009-10-04T23:36:23.916950Z
+48
+jlboulanger
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+95d96ede-8e10-4124-9be6-eef1d011146f
+
+Clause
+dir
+
+Implementation
+dir
+
+Link
+dir
+
+Machine
+dir
+
+Naming
+dir
+
+README.txt
+file
+
+
+
+
+2016-06-27T14:47:21.000000Z
+c2465fe2dbb81d78278511e000d0e43e
+2009-09-08T08:45:44.359148Z
+33
+jlboulanger
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+365
+
+Refinement
+dir
+

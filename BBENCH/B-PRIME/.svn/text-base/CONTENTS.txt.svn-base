@@ -1,0 +1,33 @@
+//
+// AUTHOR      	: BOULANGER Jean-Louis
+// FILE        	: CONTENT
+// MAIL         : jean.louis.boulanger@gmail.com
+//
+// DESCRIPTION 	: Ce fichier permet de presenter l'arborescence d'exemple liée a BPRIME
+//                Il fait partie integrante de la distribution ABTOOLS
+//                Il permet de tester l'extension de la methode B intitule BPRIME
+//
+// DATE		: Septembre 2001
+// MAJ		: November 2008
+// MAJ 		: March 2009
+//  Retrait du projet BRILLANT et passage sous sourceforge
+//
+// Copyright 2001-2010 Boulanger Jean-Louis
+//
+
+Le langage que nous appelons "BPrime" est constitue du langage B 
+introduit par JR ABRIAL et d'un certain nombre d'extension permettant 
+de simplifier l'expression de programme.
+
+Ces extensions n'ont aucun impact sur la semantique initiale, 
+ce ne sont que du sucre syntaxique.
+
+Ce Repertoire contient:
+	CONTENT.txt		Ce fichier
+	README.txt		Some others decriptions on BPRIME
+	COMMENT  		Un repertoire contenant les exemples lies aux commentaires
+	EXEMPLE  		Un repertoire d'exemples representatifs
+	RENOMMAGE  		Un repertoire contenant des exemples introduisants la notion de renommage
+	TYPAGE_EXPLICITE	Un repertoire d'exemples lies a l'introducton du typage explicite
+        PROPERTIES		Some example of machine with link between a machine formal parameter and a SETS
+// End of file CONTENT

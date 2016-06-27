@@ -1,0 +1,48 @@
+/* 
+
+File		:	Random_Nat_1.mch
+Author		:	Boulanger Jean-Louis
+Date		:	July 1998
+
+Description	:	Inspired of the book of K. Lano
+
+*/
+
+REFINEMENT
+	Random_Nat_1
+
+REFINES
+	Random_Nat_0
+	
+VARIABLES
+	rand_r
+
+INVARIANT
+	rand_r : NAT
+&	rand_r = rand
+
+INITIALISATION
+ANY
+	rr
+WHERE
+	rr : NAT
+THEN
+	rand_r := rr
+END
+
+
+OPERATIONS
+
+Rand_New	=
+ANY
+	rr
+WHERE
+	rr : NAT
+THEN
+	rand_r := rr
+END;
+
+rr <-- Rand_get	=
+	rr := rand_r
+
+END /* of file Random_Nat_1.ref */

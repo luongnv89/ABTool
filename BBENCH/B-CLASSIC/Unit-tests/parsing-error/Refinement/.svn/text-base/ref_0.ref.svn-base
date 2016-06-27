@@ -1,0 +1,13 @@
+/*
+ AUTHOR : Jean-Louis Boulanger
+ DESCRIPTION : exemple de raffinemment, 
+               voir qu'il n'y a pas de mélange entre le nom et l'extension
+ ERREUR : le nom du fichier n'est pas le nom du raffinement
+*/
+
+REFINEMENT
+	ref_1
+
+REFINES 
+	ref_0
+END

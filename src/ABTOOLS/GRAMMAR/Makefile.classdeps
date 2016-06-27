@@ -1,0 +1,501 @@
+# Automatically generated, contains additional dependencies
+#
+# $Id$
+
+
+# Additional dependencies for ABTOOLS.GRAMMAR.BLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BLexer
+#
+ABTOOLS/GRAMMAR/BLexer.o: ABTOOLS/GRAMMAR/BTokenTypes.o
+ABTOOLS/GRAMMAR/BLexer.class: ABTOOLS/GRAMMAR/BTokenTypes.class
+ABTOOLS/GRAMMAR/BLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/BLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BParser
+#
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/GRAMMAR/BLexerTokenTypes.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/GRAMMAR/BLexerTokenTypes.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/ANTLR_TOOLS/ListAM.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/ANTLR_TOOLS/ListAM.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/ANTLR_TOOLS/LinkedAM.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/ANTLR_TOOLS/LinkedAM.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/ANTLR_TOOLS/ASTterme.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/ANTLR_TOOLS/ASTterme.class
+ABTOOLS/GRAMMAR/BParser.o: ABTOOLS/GRAMMAR/BLexer.o
+ABTOOLS/GRAMMAR/BParser.class: ABTOOLS/GRAMMAR/BLexer.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BModelTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BModelLexer
+#
+ABTOOLS/GRAMMAR/BModelLexer.o: ABTOOLS/GRAMMAR/BModelTokenTypes.o
+ABTOOLS/GRAMMAR/BModelLexer.class: ABTOOLS/GRAMMAR/BModelTokenTypes.class
+ABTOOLS/GRAMMAR/BModelLexer.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BModelLexer.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BModelLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/BModelLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BPrimeTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BXMLTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.POWalkerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.Simple_Subst_GrammarTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BSystemTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.GeneralisedSubstitutionLanguageLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BSystemLexer
+#
+ABTOOLS/GRAMMAR/BSystemLexer.o: ABTOOLS/GRAMMAR/BSystemTokenTypes.o
+ABTOOLS/GRAMMAR/BSystemLexer.class: ABTOOLS/GRAMMAR/BSystemTokenTypes.class
+ABTOOLS/GRAMMAR/BSystemLexer.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BSystemLexer.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BSystemLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/BSystemLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.PredicatLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.TreeWalkerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.TreeWalker
+#
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/GRAMMAR/TreeWalkerTokenTypes.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/GRAMMAR/TreeWalkerTokenTypes.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/PRINTING/OUT.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/PRINTING/OutTEX.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/PRINTING/OutTEX.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/PRINTING/OutASCII.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/PRINTING/OutASCII.class
+ABTOOLS/GRAMMAR/TreeWalker.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/TreeWalker.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.ExpressionTreeWalkerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.ExpressionTreeWalker
+#
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/GRAMMAR/ExpressionTreeWalkerTokenTypes.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/GRAMMAR/ExpressionTreeWalkerTokenTypes.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/PRINTING/OUT.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/PRINTING/OutTEX.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/PRINTING/OutTEX.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/PRINTING/OutASCII.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/PRINTING/OutASCII.class
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/ExpressionTreeWalker.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.EventTreeWalkerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.ExpressionLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.ExpressionParser
+#
+ABTOOLS/GRAMMAR/ExpressionParser.o: ABTOOLS/GRAMMAR/ExpressionLexerTokenTypes.o
+ABTOOLS/GRAMMAR/ExpressionParser.class: ABTOOLS/GRAMMAR/ExpressionLexerTokenTypes.class
+ABTOOLS/GRAMMAR/ExpressionParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/ExpressionParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/ExpressionParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/ExpressionParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/ExpressionParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/ExpressionParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BModelLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BModelParser
+#
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/GRAMMAR/BModelLexerTokenTypes.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/GRAMMAR/BModelLexerTokenTypes.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/ANTLR_TOOLS/ListAM.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/ANTLR_TOOLS/ListAM.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/ANTLR_TOOLS/LinkedAM.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/ANTLR_TOOLS/LinkedAM.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/ANTLR_TOOLS/ASTterme.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/ANTLR_TOOLS/ASTterme.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/GRAMMAR/BLexer.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/GRAMMAR/BLexer.class
+ABTOOLS/GRAMMAR/BModelParser.o: ABTOOLS/GRAMMAR/BParser.o
+ABTOOLS/GRAMMAR/BModelParser.class: ABTOOLS/GRAMMAR/BParser.class
+# Additional dependencies for ABTOOLS.GRAMMAR.ExpressionTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.ExpressionLexer
+#
+ABTOOLS/GRAMMAR/ExpressionLexer.o: ABTOOLS/GRAMMAR/ExpressionTokenTypes.o
+ABTOOLS/GRAMMAR/ExpressionLexer.class: ABTOOLS/GRAMMAR/ExpressionTokenTypes.class
+ABTOOLS/GRAMMAR/ExpressionLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/ExpressionLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BSystemParser
+#
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/GRAMMAR/BSystemTokenTypes.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/GRAMMAR/BSystemTokenTypes.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/ANTLR_TOOLS/ListAM.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/ANTLR_TOOLS/ListAM.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/ANTLR_TOOLS/LinkedAM.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/ANTLR_TOOLS/LinkedAM.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/ANTLR_TOOLS/ASTterme.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/ANTLR_TOOLS/ASTterme.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/GRAMMAR/BLexer.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/GRAMMAR/BLexer.class
+ABTOOLS/GRAMMAR/BSystemParser.o: ABTOOLS/GRAMMAR/BParser.o
+ABTOOLS/GRAMMAR/BSystemParser.class: ABTOOLS/GRAMMAR/BParser.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BPrimeLexer
+#
+ABTOOLS/GRAMMAR/BPrimeLexer.o: ABTOOLS/GRAMMAR/BPrimeTokenTypes.o
+ABTOOLS/GRAMMAR/BPrimeLexer.class: ABTOOLS/GRAMMAR/BPrimeTokenTypes.class
+ABTOOLS/GRAMMAR/BPrimeLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/BPrimeLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BPrimeLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BPrimeParser
+#
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/GRAMMAR/BPrimeLexerTokenTypes.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/GRAMMAR/BPrimeLexerTokenTypes.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/ANTLR_TOOLS/ListAM.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/ANTLR_TOOLS/ListAM.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/ANTLR_TOOLS/LinkedAM.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/ANTLR_TOOLS/LinkedAM.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/ANTLR_TOOLS/ASTterme.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/ANTLR_TOOLS/ASTterme.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/GRAMMAR/BLexer.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/GRAMMAR/BLexer.class
+ABTOOLS/GRAMMAR/BPrimeParser.o: ABTOOLS/GRAMMAR/BParser.o
+ABTOOLS/GRAMMAR/BPrimeParser.class: ABTOOLS/GRAMMAR/BParser.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BEventTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BEventLexer
+#
+ABTOOLS/GRAMMAR/BEventLexer.o: ABTOOLS/GRAMMAR/BEventTokenTypes.o
+ABTOOLS/GRAMMAR/BEventLexer.class: ABTOOLS/GRAMMAR/BEventTokenTypes.class
+ABTOOLS/GRAMMAR/BEventLexer.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BEventLexer.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BEventLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/BEventLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BEventLexerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BEventParser
+#
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/GRAMMAR/BEventLexerTokenTypes.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/GRAMMAR/BEventLexerTokenTypes.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/ANTLR_TOOLS/ListAM.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/ANTLR_TOOLS/ListAM.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/ANTLR_TOOLS/LinkedAM.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/ANTLR_TOOLS/LinkedAM.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/ANTLR_TOOLS/ASTterme.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/ANTLR_TOOLS/ASTterme.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/GRAMMAR/BLexer.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/GRAMMAR/BLexer.class
+ABTOOLS/GRAMMAR/BEventParser.o: ABTOOLS/GRAMMAR/BParser.o
+ABTOOLS/GRAMMAR/BEventParser.class: ABTOOLS/GRAMMAR/BParser.class
+# Additional dependencies for ABTOOLS.GRAMMAR.NormalizeTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.GSLTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.GSL
+#
+ABTOOLS/GRAMMAR/GSL.o: ABTOOLS/GRAMMAR/GSLTokenTypes.o
+ABTOOLS/GRAMMAR/GSL.class: ABTOOLS/GRAMMAR/GSLTokenTypes.class
+ABTOOLS/GRAMMAR/GSL.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/GSL.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/GSL.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/GSL.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/GSL.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/GSL.class: ABTOOLS/DEBUGGING/DEBUG.class
+# Additional dependencies for ABTOOLS.GRAMMAR.Normalize
+#
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/GRAMMAR/NormalizeTokenTypes.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/GRAMMAR/NormalizeTokenTypes.class
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/GRAMMAR/GSL.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/GRAMMAR/GSL.class
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/ANTLR_TOOLS/ListDefinition.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/ANTLR_TOOLS/ListDefinition.class
+ABTOOLS/GRAMMAR/Normalize.o: ABTOOLS/ANTLR_TOOLS/ADefinition.o
+ABTOOLS/GRAMMAR/Normalize.class: ABTOOLS/ANTLR_TOOLS/ADefinition.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BTypingTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BTyping
+#
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/GRAMMAR/BTypingTokenTypes.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/GRAMMAR/BTypingTokenTypes.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/ANTLR_TOOLS/MySymbolTable.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/ANTLR_TOOLS/MySymbolTable.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/ANTLR_TOOLS/Project.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/ANTLR_TOOLS/Project.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/ABType.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/ABType.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/EQUAL.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/EQUAL.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/ANTLR_TOOLS/ListAM.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/ANTLR_TOOLS/ListAM.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/ANTLR_TOOLS/AbstractMachine.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/ANTLR_TOOLS/AbstractMachine.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/BOOL.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/BOOL.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/Typing_ERROR.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/Typing_ERROR.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/JOKER.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/JOKER.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/FUNC_DEF.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/FUNC_DEF.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/CONSTANT.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/CONSTANT.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/PROD.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/PROD.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/ID.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/ID.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/SET.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/SET.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/SEQ.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/SEQ.class
+BTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/GIVENSET.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/GIVENSET.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/INTEGER.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/INTEGER.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/STRUCT.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/STRUCT.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/LIST.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/LIST.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/INT.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/INT.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/INT1.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/INT1.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/INTEGER1.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/INTEGER1.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/NAT.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/NAT.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/NAT1.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/NAT1.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/NATURAL.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/NATURAL.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/NATURAL1.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/NATURAL1.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/STRING.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/STRING.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/ENUM.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/ENUM.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/RANGE.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/RANGE.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/POW.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/POW.class
+ABTOOLS/GRAMMAR/BTyping.o: ABTOOLS/TYPING/EMPTYSEQ.o
+ABTOOLS/GRAMMAR/BTyping.class: ABTOOLS/TYPING/EMPTYSEQ.class
+# Additional dependencies for ABTOOLS.GRAMMAR.EventTreeWalker
+#
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/GRAMMAR/EventTreeWalkerTokenTypes.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/GRAMMAR/EventTreeWalkerTokenTypes.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/PRINTING/OUT.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/PRINTING/OutTEX.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/PRINTING/OutTEX.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/PRINTING/OutASCII.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/PRINTING/OutASCII.class
+ABTOOLS/GRAMMAR/EventTreeWalker.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/EventTreeWalker.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.SystemTreeWalkerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.SystemTreeWalker
+#
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/GRAMMAR/SystemTreeWalkerTokenTypes.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/GRAMMAR/SystemTreeWalkerTokenTypes.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/PRINTING/OUT.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/PRINTING/OUT.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/PRINTING/OutTEX.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/PRINTING/OutTEX.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/PRINTING/OutASCII.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/PRINTING/OutASCII.class
+ABTOOLS/GRAMMAR/SystemTreeWalker.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/SystemTreeWalker.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BXML
+#
+ABTOOLS/GRAMMAR/BXML.o: ABTOOLS/GRAMMAR/BXMLTokenTypes.o
+ABTOOLS/GRAMMAR/BXML.class: ABTOOLS/GRAMMAR/BXMLTokenTypes.class
+ABTOOLS/GRAMMAR/BXML.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BXML.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BXML.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BXML.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BXML.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BXML.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.BCodeGeneratorTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.BCodeGenerator
+#
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/GRAMMAR/BCodeGeneratorTokenTypes.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/GRAMMAR/BCodeGeneratorTokenTypes.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/CODE_GENERATOR/CodeGenerator.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/CODE_GENERATOR/CodeGenerator.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/CODE_GENERATOR/CG_JAVA.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/CODE_GENERATOR/CG_JAVA.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/CODE_GENERATOR/CG_ADA.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/CODE_GENERATOR/CG_ADA.class
+ABTOOLS/GRAMMAR/BCodeGenerator.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/BCodeGenerator.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.POTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.generic
+#
+ABTOOLS/GRAMMAR/generic.o: ABTOOLS/GRAMMAR/POTokenTypes.o
+ABTOOLS/GRAMMAR/generic.class: ABTOOLS/GRAMMAR/POTokenTypes.class
+ABTOOLS/GRAMMAR/generic.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/generic.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/generic.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/generic.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/generic.o: ABTOOLS/ANTLR_TOOLS/ASTterme.o
+ABTOOLS/GRAMMAR/generic.class: ABTOOLS/ANTLR_TOOLS/ASTterme.class
+ABTOOLS/GRAMMAR/generic.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/generic.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.PO_GSLTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.Substitution
+#
+ABTOOLS/GRAMMAR/Substitution.o: ABTOOLS/GRAMMAR/PO_GSLTokenTypes.o
+ABTOOLS/GRAMMAR/Substitution.class: ABTOOLS/GRAMMAR/PO_GSLTokenTypes.class
+ABTOOLS/GRAMMAR/Substitution.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/Substitution.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/Substitution.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/Substitution.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/Substitution.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/Substitution.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.POWalker
+#
+ABTOOLS/GRAMMAR/POWalker.o: ABTOOLS/GRAMMAR/POWalkerTokenTypes.o
+ABTOOLS/GRAMMAR/POWalker.class: ABTOOLS/GRAMMAR/POWalkerTokenTypes.class
+ABTOOLS/GRAMMAR/POWalker.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/POWalker.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/POWalker.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/POWalker.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/POWalker.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/POWalker.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/POWalker.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/POWalker.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.PredicatParser
+#
+ABTOOLS/GRAMMAR/PredicatParser.o: ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.o
+ABTOOLS/GRAMMAR/PredicatParser.class: ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.class
+ABTOOLS/GRAMMAR/PredicatParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/PredicatParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/PredicatParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/PredicatParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/PredicatParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/PredicatParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.Simple_Subst_Grammar
+#
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.o: ABTOOLS/GRAMMAR/Simple_Subst_GrammarTokenTypes.o
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.class: ABTOOLS/GRAMMAR/Simple_Subst_GrammarTokenTypes.class
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/Simple_Subst_Grammar.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.GeneralisedSubstitutionLanguageParser
+#
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.o: ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexerTokenTypes.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.class: ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexerTokenTypes.class
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.PredicateTreeWalkerTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.GeneralisedSubstitutionLanguageTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.GeneralisedSubstitutionLanguageLexer
+#
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.o: ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageTokenTypes.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.class: ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageTokenTypes.class
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class
+# Additional dependencies for ABTOOLS.GRAMMAR.PredicateTreeWalker
+#
+ABTOOLS/GRAMMAR/PredicateTreeWalker.o: ABTOOLS/GRAMMAR/PredicateTreeWalkerTokenTypes.o
+ABTOOLS/GRAMMAR/PredicateTreeWalker.class: ABTOOLS/GRAMMAR/PredicateTreeWalkerTokenTypes.class
+ABTOOLS/GRAMMAR/PredicateTreeWalker.o: ABTOOLS/PRINTING/INDEX.o
+ABTOOLS/GRAMMAR/PredicateTreeWalker.class: ABTOOLS/PRINTING/INDEX.class
+ABTOOLS/GRAMMAR/PredicateTreeWalker.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/GRAMMAR/PredicateTreeWalker.class: ABTOOLS/DEBUGGING/ErrorMessage.class
+ABTOOLS/GRAMMAR/PredicateTreeWalker.o: ABTOOLS/DEBUGGING/DEBUG.o
+ABTOOLS/GRAMMAR/PredicateTreeWalker.class: ABTOOLS/DEBUGGING/DEBUG.class
+ABTOOLS/GRAMMAR/PredicateTreeWalker.o: ABTOOLS/ANTLR_TOOLS/MyNode.o
+ABTOOLS/GRAMMAR/PredicateTreeWalker.class: ABTOOLS/ANTLR_TOOLS/MyNode.class
+# Additional dependencies for ABTOOLS.GRAMMAR.PredicatTokenTypes
+#
+# Additional dependencies for ABTOOLS.GRAMMAR.PredicatLexer
+#
+ABTOOLS/GRAMMAR/PredicatLexer.o: ABTOOLS/GRAMMAR/PredicatTokenTypes.o
+ABTOOLS/GRAMMAR/PredicatLexer.class: ABTOOLS/GRAMMAR/PredicatTokenTypes.class
+ABTOOLS/GRAMMAR/PredicatLexer.o: ABTOOLS/ANTLR_TOOLS/MyToken.o
+ABTOOLS/GRAMMAR/PredicatLexer.class: ABTOOLS/ANTLR_TOOLS/MyToken.class

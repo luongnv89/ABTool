@@ -1,0 +1,12 @@
+/* 
+   Description : Machine de test du typage
+   Author : Boulanger jean-louis
+*/
+
+REFINEMENT
+	 toto_r1 ( tt)
+
+REFINES
+	toto1
+
+END

@@ -1,0 +1,56 @@
+SYSTEM
+	toy_with_scheduler_dynamics_and_modality
+
+VARIABLES
+	xx, yy, cc, dd
+
+INVARIANT
+	xx, yy, cc, dd : NA*NAT*NAT*NAT 
+&	(cc >0 or dd>0)
+
+DYNAMICS
+	xx <= xx' & yy <= yy'
+
+INITIALISATION
+	xx,yy := 0,0 || cc,dd :: NAT1*NAT1
+
+EVENTS
+
+evt_xx = 
+SELECT
+	cc > 0
+THEN
+	xx,cc := xx+1,cc-1
+||	dd :: NAT1
+END;
+
+evt_yy = 
+SELECT
+	dd > 0
+THEN
+	yy,dd := yy+1,dd-1
+||	cc :: NAT1
+END
+
+MODALITIES
+SELECT
+	cc > 0
+LEADSTO
+	cc = 0
+WHILE
+	evt_xx
+VARIANT
+	cc
+END;
+
+SELECT
+	dd > 0
+LEADSTO
+	dd = 0
+WHILE
+	evt_yy
+VARIANT
+	dd
+END
+
+END

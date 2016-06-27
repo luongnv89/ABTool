@@ -1,0 +1,40 @@
+//
+//      File            : INSTALL.txt
+//      Author          : Boulanger Jean-Louis
+//      Email           : jean.louis.boulanger@gmail.com
+//
+//	
+//	Copyright 1999-2009 Boulanger Jean-Louis
+//
+// RELEASES
+//      April 2001       Creation
+//      February 2007    Completion
+//	March 2009	 Updated and change location (sourceforge)
+
+INSTALLATION for JAVA version:
+ 1. after correct compilation, edit the ABTOOLS file in bin directory and modify
+    ANTLR_PATH : where ANTLR is
+    ABPARSER   : where you put the bin directory of ABTOOLS
+ 2. put in your path the bin directory of ABTOOLS
+ 3. Ask ABTOOLS
+
+Requirements:
+-------------
+ABTools has been confirmed to compile with the following combinations of tools :
+- gcj-4.1, antlr-2.7.6, antlr-2.7.6 sources
+
+This current version must be compiled on MAC OS X on a intel mac book pro
+- antlr 2.7.7 and JDK 1.5
+
+------------------------------------------
+A detailed and up to date Install-Howto is available
+ 
+online at
+	xxxxx
+ 
+or offline in your ABTools release
+  file:[abtoolsdir]/Documentation/INSTALL_HTML/index.html
+  file:[abtoolsdir]/Documentation/Install.txt
+  (do not use http://... ,because that may complain about missing includes !)
+-----------------------------------------------
+

@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/p/abtools/code/!svn/ver/179/src/ABTOOLS/GRAMMAR
+END
+BModel.g
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/GRAMMAR/BModel.g
+END
+PredicateTreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/abtools/code/!svn/ver/169/src/ABTOOLS/GRAMMAR/PredicateTreeWalker.g
+END
+ExpressionTreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/169/src/ABTOOLS/GRAMMAR/ExpressionTreeWalker.g
+END
+Normalize.g
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/Normalize.g
+END
+Predicat.g
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/Predicat.g
+END
+EventTreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/EventTreeWalker.g
+END
+BSystem.g
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/GRAMMAR/BSystem.g
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/Makefile
+END
+TreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/abtools/code/!svn/ver/169/src/ABTOOLS/GRAMMAR/TreeWalker.g
+END
+BXML.g
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/BXML.g
+END
+POWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/POWalker.g
+END
+Makefile.gvars
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/abtools/code/!svn/ver/94/src/ABTOOLS/GRAMMAR/Makefile.gvars
+END
+Makefile.grammars
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/170/src/ABTOOLS/GRAMMAR/Makefile.grammars
+END
+Makefile.vars
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/abtools/code/!svn/ver/104/src/ABTOOLS/GRAMMAR/Makefile.vars
+END
+generic.g
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/generic.g
+END
+ReadMe.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/ReadMe.txt
+END
+Expression.g
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/abtools/code/!svn/ver/169/src/ABTOOLS/GRAMMAR/Expression.g
+END
+BEvent.g
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/GRAMMAR/BEvent.g
+END
+BTyping.g
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/171/src/ABTOOLS/GRAMMAR/BTyping.g
+END
+Simple_Subst_Grammar.g
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/Simple_Subst_Grammar.g
+END
+toJML_ExpressionTreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/abtools/code/!svn/ver/176/src/ABTOOLS/GRAMMAR/toJML_ExpressionTreeWalker.g
+END
+Substitution.g
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/Substitution.g
+END
+BPrime.g
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/GRAMMAR/BPrime.g
+END
+Makefile.classdeps
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/129/src/ABTOOLS/GRAMMAR/Makefile.classdeps
+END
+GSL.g
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/GSL.g
+END
+B.g
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/abtools/code/!svn/ver/169/src/ABTOOLS/GRAMMAR/B.g
+END
+SystemTreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/SystemTreeWalker.g
+END
+BCodeGenerator.g
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/BCodeGenerator.g
+END
+toJML_TreeWalker.g
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/p/abtools/code/!svn/ver/179/src/ABTOOLS/GRAMMAR/toJML_TreeWalker.g
+END
+GeneralisedSubstitutionLanguage.g
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguage.g
+END

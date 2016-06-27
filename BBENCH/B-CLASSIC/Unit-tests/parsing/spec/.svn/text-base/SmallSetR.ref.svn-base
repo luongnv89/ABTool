@@ -1,0 +1,40 @@
+REFINEMENT
+   SmallSetR
+
+REFINES SmallSet
+
+VARIABLES numarr
+
+INVARIANT numarr : NAT1>+>NAT1 & ran(numarr)=numset
+
+INITIALISATION numarr:={}
+
+OPERATIONS
+ enter(nn)=
+  PRE
+  nn:NAT1 & nn/:ran(numarr)
+  THEN
+  ANY x
+  WHERE
+   x:NAT1 & x<=maxsize & x/:dom(numarr)
+ THEN
+  numarr(x):=nn
+ END
+ END;
+
+remove(nn)=
+  PRE
+  nn:NAT1 & nn:ran(numarr)
+  THEN
+   numarr:=numarr |>> {nn}
+  END;
+
+nn<-- minimum=
+PRE
+  ran(numarr)/={}
+ THEN
+  nn:=min(ran(numarr))
+ END
+ 
+END
+

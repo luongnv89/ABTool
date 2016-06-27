@@ -1,0 +1,17 @@
+/*
+	AUTHOR		:	Boulanger JL
+	MAIL		:	jean-louis.boulanger@utc.fr
+	FILE		:	simple.sys
+	DESCRIPTION	: 	This example is a simple example 
+*/
+
+/*
+	RELEASES
+		18 September 2001	:	Creation
+*/
+
+
+SYSTEM
+	Simple
+
+END

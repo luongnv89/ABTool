@@ -1,0 +1,21 @@
+# Automatically generated, contains relevant variables
+#
+# $Id$
+
+
+CLASSES+=  \
+	ABTOOLS/ANTLR_TOOLS/LinkedAM.class \
+	ABTOOLS/ANTLR_TOOLS/ListAM.class \
+	ABTOOLS/ANTLR_TOOLS/MyToken.class \
+	ABTOOLS/ANTLR_TOOLS/Metrics.class \
+	ABTOOLS/ANTLR_TOOLS/MyNode.class \
+	ABTOOLS/ANTLR_TOOLS/ASTterme.class \
+	ABTOOLS/ANTLR_TOOLS/MySymbolTable.class \
+	ABTOOLS/ANTLR_TOOLS/AbstractMachine.class \
+	ABTOOLS/ANTLR_TOOLS/Project.class \
+	ABTOOLS/ANTLR_TOOLS/Defaults.class \
+	ABTOOLS/ANTLR_TOOLS/info.class \
+	ABTOOLS/ANTLR_TOOLS/ADefinition.class \
+	ABTOOLS/ANTLR_TOOLS/ListDefinition.class \
+	ABTOOLS/ANTLR_TOOLS/PO.class \
+	ABTOOLS/ANTLR_TOOLS/MyStack.class

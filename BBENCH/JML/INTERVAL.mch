@@ -1,0 +1,6 @@
+MACHINE INTERVAL
+  VARIABLES i
+  
+  INVARIANT i : 0 .. 5
+  
+END

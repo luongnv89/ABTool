@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/p/abtools/code/!svn/ver/130/src/ABTOOLS/TYPING
+END
+NAT1.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/NAT1.java
+END
+NATURAL1.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/NATURAL1.java
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/Makefile
+END
+INT1.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/INT1.java
+END
+SET.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/SET.java
+END
+Makefile.vars
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/abtools/code/!svn/ver/129/src/ABTOOLS/TYPING/Makefile.vars
+END
+Typing_ERROR.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/Typing_ERROR.java
+END
+RANGE.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/RANGE.java
+END
+ID.java
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/ID.java
+END
+POW.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/POW.java
+END
+Makefile.classdeps
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/129/src/ABTOOLS/TYPING/Makefile.classdeps
+END
+PROD.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/126/src/ABTOOLS/TYPING/PROD.java
+END
+INFIXE.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/INFIXE.java
+END
+STRUCT.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/STRUCT.java
+END
+JOKER.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/JOKER.java
+END
+INTEGER1.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/INTEGER1.java
+END
+EMPTYSEQ.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/abtools/code/!svn/ver/128/src/ABTOOLS/TYPING/EMPTYSEQ.java
+END
+STRING.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/STRING.java
+END
+INT.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/INT.java
+END
+UNARY.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/UNARY.java
+END
+BOOL.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/BOOL.java
+END
+FUNC_DEF.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/FUNC_DEF.java
+END
+NATURAL.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/NATURAL.java
+END
+GIVENSET.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/abtools/code/!svn/ver/130/src/ABTOOLS/TYPING/GIVENSET.java
+END
+CONSTANT.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/CONSTANT.java
+END
+ENUM.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/ENUM.java
+END
+NAT.java
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/NAT.java
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/README.txt
+END
+SEQ.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/128/src/ABTOOLS/TYPING/SEQ.java
+END
+INTEGER.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/INTEGER.java
+END
+LIST.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/LIST.java
+END
+ABType.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/ABType.java
+END
+EMPTYSET.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/EMPTYSET.java
+END
+EQUAL.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/TYPING/EQUAL.java
+END

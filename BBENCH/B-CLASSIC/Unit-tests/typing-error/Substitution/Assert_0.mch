@@ -1,0 +1,14 @@
+MACHINE
+	Assert_0
+
+OPERATIONS
+
+aa <-- OP =
+BEGIN
+	ASSERT
+		aa : INT
+	THEN
+		aa:= TRUE
+	END
+END
+END

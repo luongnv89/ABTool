@@ -1,0 +1,461 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar ./expandedBEvent.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar BEventLexer</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from ./expandedBEvent.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.7 (2006-11-01); 1989-2005
+</td>
+</tr>
+</table>
+<PRE>
+
+Definition of lexer BEventLexer, which is a subclass of CharScanner.
+
+/** Lexer nextToken rule:
+ *  The lexer nextToken rule is synthesized from all of the user-defined
+ *  lexer rules.  It logically consists of one big alternative block with
+ *  each user-defined rule being an alternative.
+ */
+<a href="BEventLexer.html#mB_ref">mB_ref</a> 
+|	<a href="BEventLexer.html#mSUBST_TO">mSUBST_TO</a> 
+|	<a href="BEventLexer.html#mWS">mWS</a> 
+|	<a href="BEventLexer.html#mML_COMMENT">mML_COMMENT</a> 
+|	<a href="BEventLexer.html#mB_LPAREN">mB_LPAREN</a> 
+|	<a href="BEventLexer.html#mB_COMMA">mB_COMMA</a> 
+|	<a href="BEventLexer.html#mB_RPAREN">mB_RPAREN</a> 
+|	<a href="BEventLexer.html#mB_PARALLEL">mB_PARALLEL</a> 
+|	<a href="BEventLexer.html#mB_DOUBLE_EQUAL">mB_DOUBLE_EQUAL</a> 
+|	<a href="BEventLexer.html#mB_MINUS">mB_MINUS</a> 
+|	<a href="BEventLexer.html#mB_ADD">mB_ADD</a> 
+|	<a href="BEventLexer.html#mB_POWER">mB_POWER</a> 
+|	<a href="BEventLexer.html#mB_MULT">mB_MULT</a> 
+|	<a href="BEventLexer.html#mB_DIV">mB_DIV</a> 
+|	<a href="BEventLexer.html#mB_AND">mB_AND</a> 
+|	<a href="BEventLexer.html#mB_dollars">mB_dollars</a> 
+|	<a href="BEventLexer.html#mB_OUT">mB_OUT</a> 
+|	<a href="BEventLexer.html#mB_garde">mB_garde</a> 
+|	<a href="BEventLexer.html#mB_SEMICOLON">mB_SEMICOLON</a> 
+|	<a href="BEventLexer.html#mB_BECOME_ELEM">mB_BECOME_ELEM</a> 
+|	<a href="BEventLexer.html#mB_SIMPLESUBST">mB_SIMPLESUBST</a> 
+|	<a href="BEventLexer.html#mB_IMPLIES">mB_IMPLIES</a> 
+|	<a href="BEventLexer.html#mB_EQUIV">mB_EQUIV</a> 
+|	<a href="BEventLexer.html#mB_INSET">mB_INSET</a> 
+|	<a href="BEventLexer.html#mB_NOTINSET">mB_NOTINSET</a> 
+|	<a href="BEventLexer.html#mB_SUBSET">mB_SUBSET</a> 
+|	<a href="BEventLexer.html#mB_NOTSUBSET">mB_NOTSUBSET</a> 
+|	<a href="BEventLexer.html#mB_STRICTSUBSET">mB_STRICTSUBSET</a> 
+|	<a href="BEventLexer.html#mB_NOTSTRICTSBSET">mB_NOTSTRICTSBSET</a> 
+|	<a href="BEventLexer.html#mB_EMPTYSET">mB_EMPTYSET</a> 
+|	<a href="BEventLexer.html#mB_CURLYOPEN">mB_CURLYOPEN</a> 
+|	<a href="BEventLexer.html#mB_CURLYCLOSE">mB_CURLYCLOSE</a> 
+|	<a href="BEventLexer.html#mB_EQUAL">mB_EQUAL</a> 
+|	<a href="BEventLexer.html#mB_LESS">mB_LESS</a> 
+|	<a href="BEventLexer.html#mB_GREATER">mB_GREATER</a> 
+|	<a href="BEventLexer.html#mB_NOTEQUAL">mB_NOTEQUAL</a> 
+|	<a href="BEventLexer.html#mB_LESSTHANEQUAL">mB_LESSTHANEQUAL</a> 
+|	<a href="BEventLexer.html#mB_GREATERTHANEQUAL">mB_GREATERTHANEQUAL</a> 
+|	<a href="BEventLexer.html#mB_PARTIAL">mB_PARTIAL</a> 
+|	<a href="BEventLexer.html#mB_RELATION">mB_RELATION</a> 
+|	<a href="BEventLexer.html#mB_TOTAL">mB_TOTAL</a> 
+|	<a href="BEventLexer.html#mB_PARTIAL_INJECT">mB_PARTIAL_INJECT</a> 
+|	<a href="BEventLexer.html#mB_TOTAL_INJECT">mB_TOTAL_INJECT</a> 
+|	<a href="BEventLexer.html#mB_PARTIAL_SURJECT">mB_PARTIAL_SURJECT</a> 
+|	<a href="BEventLexer.html#mB_TOTAL_SURJECT">mB_TOTAL_SURJECT</a> 
+|	<a href="BEventLexer.html#mB_BIJECTION">mB_BIJECTION</a> 
+|	<a href="BEventLexer.html#mB_TILDE">mB_TILDE</a> 
+|	<a href="BEventLexer.html#mB_BRACKOPEN">mB_BRACKOPEN</a> 
+|	<a href="BEventLexer.html#mB_BRACKCLOSE">mB_BRACKCLOSE</a> 
+|	<a href="BEventLexer.html#mB_QUOTEIDENT">mB_QUOTEIDENT</a> 
+|	<a href="BEventLexer.html#mB_MAPLET">mB_MAPLET</a> 
+|	<a href="BEventLexer.html#mB_DOMAINRESTRICT">mB_DOMAINRESTRICT</a> 
+|	<a href="BEventLexer.html#mB_RANGERESTRICT">mB_RANGERESTRICT</a> 
+|	<a href="BEventLexer.html#mB_DOMAINSUBSTRACT">mB_DOMAINSUBSTRACT</a> 
+|	<a href="BEventLexer.html#mB_RANGESUBSTRACT">mB_RANGESUBSTRACT</a> 
+|	<a href="BEventLexer.html#mB_OVERRIDEFORWARD">mB_OVERRIDEFORWARD</a> 
+|	<a href="BEventLexer.html#mB_OVERRIDEBACKWARD">mB_OVERRIDEBACKWARD</a> 
+|	<a href="BEventLexer.html#mB_RELPROD">mB_RELPROD</a> 
+|	<a href="BEventLexer.html#mB_CONCATSEQ">mB_CONCATSEQ</a> 
+|	<a href="BEventLexer.html#mB_PREAPPSEQ">mB_PREAPPSEQ</a> 
+|	<a href="BEventLexer.html#mB_APPSEQ">mB_APPSEQ</a> 
+|	<a href="BEventLexer.html#mB_PREFIXSEQ">mB_PREFIXSEQ</a> 
+|	<a href="BEventLexer.html#mB_SUFFIXSEQ">mB_SUFFIXSEQ</a> 
+|	<a href="BEventLexer.html#mB_RANGE">mB_RANGE</a> 
+|	<a href="BEventLexer.html#mB_UNION">mB_UNION</a> 
+|	<a href="BEventLexer.html#mB_INTER">mB_INTER</a> 
+|	<a href="BEventLexer.html#mB_LAMBDA">mB_LAMBDA</a> 
+|	<a href="BEventLexer.html#mB_FORALL">mB_FORALL</a> 
+|	<a href="BEventLexer.html#mB_EXISTS">mB_EXISTS</a> 
+|	<a href="BEventLexer.html#mB_SEQEMPTY">mB_SEQEMPTY</a> 
+|	<a href="BEventLexer.html#mB_POINT">mB_POINT</a> 
+|	<a href="BEventLexer.html#mB_SUCH">mB_SUCH</a> 
+|	<a href="BEventLexer.html#mB_CPRED">mB_CPRED</a> 
+|	<a href="BEventLexer.html#mB_NUMBER">mB_NUMBER</a> 
+|	<a href="BEventLexer.html#mB_ASTRING">mB_ASTRING</a> 
+|	<a href="BEventLexer.html#mB_IDENTIFIER">mB_IDENTIFIER</a> 
+<a name="mB_ref">mB_ref</a>
+	:	&quot;ref&quot; 
+	;
+
+<a name="mSUBST_TO">mSUBST_TO</a>
+	:	&quot;[[&quot; 
+	;
+
+<a name="mWS">mWS</a>
+	:	(	&#039; &#039; 
+		|	&#039;\t&#039; 
+		|	&#039;\f&#039; 
+		|	(	&quot;\r\n&quot; 
+			|	&#039;\r&#039; 
+			|	&#039;\n&#039; 
+			) 
+			
+		) 
+		
+	;
+
+<a name="mML_COMMENT">mML_COMMENT</a>
+	:	&quot;/*&quot; 
+		(	&#039;*&#039; 
+		|	<a href="BEventLexer.html#mML_COMMENT">mML_COMMENT</a> 
+		|	<a href="BEventLexer.html#mNEWLINE">mNEWLINE</a> 
+		|	(	&#039;*&#039; 
+			|	&#039;\n&#039; 
+			|	&#039;\r&#039; 
+			) 
+		)* 
+		&quot;*/&quot; 
+	|	&quot;/*?&quot; 
+		(	&quot;?*&quot; 
+		|	<a href="BEventLexer.html#mML_COMMENT">mML_COMMENT</a> 
+		|	<a href="BEventLexer.html#mNEWLINE">mNEWLINE</a> 
+		|	(	&#039;?&#039; 
+			|	&#039;\n&#039; 
+			|	&#039;\r&#039; 
+			) 
+		)* 
+		&quot;?*/&quot; 
+	;
+
+protected <a name="mNEWLINE">mNEWLINE</a>
+	:	(	&#039;\n&#039; 
+		|	( &#039;\r&#039; 
+				(	&#039;\n&#039; 
+				|	
+				) ) 
+		) 
+		
+	;
+
+<a name="mB_LPAREN">mB_LPAREN</a>
+	:	&#039;(&#039; 
+	;
+
+<a name="mB_COMMA">mB_COMMA</a>
+	:	&#039;,&#039; 
+	;
+
+<a name="mB_RPAREN">mB_RPAREN</a>
+	:	&#039;)&#039; 
+	;
+
+<a name="mB_PARALLEL">mB_PARALLEL</a>
+	:	&quot;||&quot; 
+	;
+
+<a name="mB_DOUBLE_EQUAL">mB_DOUBLE_EQUAL</a>
+	:	&quot;==&quot; 
+	;
+
+<a name="mB_MINUS">mB_MINUS</a>
+	:	&#039;-&#039; 
+	;
+
+<a name="mB_ADD">mB_ADD</a>
+	:	&#039;+&#039; 
+	;
+
+<a name="mB_POWER">mB_POWER</a>
+	:	&quot;**&quot; 
+	;
+
+<a name="mB_MULT">mB_MULT</a>
+	:	&#039;*&#039; 
+	;
+
+<a name="mB_DIV">mB_DIV</a>
+	:	&#039;/&#039; 
+	;
+
+<a name="mB_AND">mB_AND</a>
+	:	&#039;&amp;&#039; 
+	;
+
+<a name="mB_dollars">mB_dollars</a>
+	:	&#039;$&#039; 
+	;
+
+<a name="mB_OUT">mB_OUT</a>
+	:	&quot;&lt;--&quot; 
+	;
+
+<a name="mB_garde">mB_garde</a>
+	:	&quot;==&gt;&quot; 
+	;
+
+<a name="mB_SEMICOLON">mB_SEMICOLON</a>
+	:	&#039;;&#039; 
+	;
+
+<a name="mB_BECOME_ELEM">mB_BECOME_ELEM</a>
+	:	&quot;::&quot; 
+	;
+
+<a name="mB_SIMPLESUBST">mB_SIMPLESUBST</a>
+	:	&quot;:=&quot; 
+	;
+
+<a name="mB_IMPLIES">mB_IMPLIES</a>
+	:	&quot;=&gt;&quot; 
+	;
+
+<a name="mB_EQUIV">mB_EQUIV</a>
+	:	&quot;&lt;=&gt;&quot; 
+	;
+
+<a name="mB_INSET">mB_INSET</a>
+	:	&#039;:&#039; 
+	;
+
+<a name="mB_NOTINSET">mB_NOTINSET</a>
+	:	&quot;/:&quot; 
+	;
+
+<a name="mB_SUBSET">mB_SUBSET</a>
+	:	&quot;&lt;:&quot; 
+	;
+
+<a name="mB_NOTSUBSET">mB_NOTSUBSET</a>
+	:	&quot;/&lt;:&quot; 
+	;
+
+<a name="mB_STRICTSUBSET">mB_STRICTSUBSET</a>
+	:	&quot;&lt;&lt;:&quot; 
+	;
+
+<a name="mB_NOTSTRICTSBSET">mB_NOTSTRICTSBSET</a>
+	:	&quot;/&lt;&lt;:&quot; 
+	;
+
+<a name="mB_EMPTYSET">mB_EMPTYSET</a>
+	:	&quot;{}&quot; 
+	;
+
+<a name="mB_CURLYOPEN">mB_CURLYOPEN</a>
+	:	&#039;{&#039; 
+	;
+
+<a name="mB_CURLYCLOSE">mB_CURLYCLOSE</a>
+	:	&#039;}&#039; 
+	;
+
+<a name="mB_EQUAL">mB_EQUAL</a>
+	:	&#039;=&#039; 
+	;
+
+<a name="mB_LESS">mB_LESS</a>
+	:	&#039;&lt;&#039; 
+	;
+
+<a name="mB_GREATER">mB_GREATER</a>
+	:	&#039;&gt;&#039; 
+	;
+
+<a name="mB_NOTEQUAL">mB_NOTEQUAL</a>
+	:	&quot;/=&quot; 
+	;
+
+<a name="mB_LESSTHANEQUAL">mB_LESSTHANEQUAL</a>
+	:	&quot;&lt;=&quot; 
+	;
+
+<a name="mB_GREATERTHANEQUAL">mB_GREATERTHANEQUAL</a>
+	:	&quot;&gt;=&quot; 
+	;
+
+<a name="mB_PARTIAL">mB_PARTIAL</a>
+	:	&quot;+-&gt;&quot; 
+	;
+
+<a name="mB_RELATION">mB_RELATION</a>
+	:	&quot;&lt;-&gt;&quot; 
+	;
+
+<a name="mB_TOTAL">mB_TOTAL</a>
+	:	&quot;--&gt;&quot; 
+	;
+
+<a name="mB_PARTIAL_INJECT">mB_PARTIAL_INJECT</a>
+	:	&quot;&gt;+&gt;&quot; 
+	;
+
+<a name="mB_TOTAL_INJECT">mB_TOTAL_INJECT</a>
+	:	&quot;&gt;-&gt;&quot; 
+	;
+
+<a name="mB_PARTIAL_SURJECT">mB_PARTIAL_SURJECT</a>
+	:	&quot;+-&gt;&gt;&quot; 
+	;
+
+<a name="mB_TOTAL_SURJECT">mB_TOTAL_SURJECT</a>
+	:	&quot;--&gt;&gt;&quot; 
+	;
+
+<a name="mB_BIJECTION">mB_BIJECTION</a>
+	:	&quot;&gt;-&gt;&gt;&quot; 
+	;
+
+<a name="mB_TILDE">mB_TILDE</a>
+	:	&#039;~&#039; 
+	;
+
+<a name="mB_BRACKOPEN">mB_BRACKOPEN</a>
+	:	&#039;[&#039; 
+	;
+
+<a name="mB_BRACKCLOSE">mB_BRACKCLOSE</a>
+	:	&#039;]&#039; 
+	;
+
+<a name="mB_QUOTEIDENT">mB_QUOTEIDENT</a>
+	:	&quot;&#039;&quot; 
+	;
+
+<a name="mB_MAPLET">mB_MAPLET</a>
+	:	&quot;|-&gt;&quot; 
+	;
+
+<a name="mB_DOMAINRESTRICT">mB_DOMAINRESTRICT</a>
+	:	&quot;&lt;|&quot; 
+	;
+
+<a name="mB_RANGERESTRICT">mB_RANGERESTRICT</a>
+	:	&quot;|&gt;&quot; 
+	;
+
+<a name="mB_DOMAINSUBSTRACT">mB_DOMAINSUBSTRACT</a>
+	:	&quot;&lt;&lt;|&quot; 
+	;
+
+<a name="mB_RANGESUBSTRACT">mB_RANGESUBSTRACT</a>
+	:	&quot;|&gt;&gt;&quot; 
+	;
+
+<a name="mB_OVERRIDEFORWARD">mB_OVERRIDEFORWARD</a>
+	:	&quot;&lt;+&quot; 
+	;
+
+<a name="mB_OVERRIDEBACKWARD">mB_OVERRIDEBACKWARD</a>
+	:	&quot;+&gt;&quot; 
+	;
+
+<a name="mB_RELPROD">mB_RELPROD</a>
+	:	&quot;&gt;&lt;&quot; 
+	;
+
+<a name="mB_CONCATSEQ">mB_CONCATSEQ</a>
+	:	&#039;^&#039; 
+	;
+
+<a name="mB_PREAPPSEQ">mB_PREAPPSEQ</a>
+	:	&quot;-&gt;&quot; 
+	;
+
+<a name="mB_APPSEQ">mB_APPSEQ</a>
+	:	&quot;&lt;-&quot; 
+	;
+
+<a name="mB_PREFIXSEQ">mB_PREFIXSEQ</a>
+	:	&quot;/|\\&quot; 
+	;
+
+<a name="mB_SUFFIXSEQ">mB_SUFFIXSEQ</a>
+	:	&quot;\\|/&quot; 
+	;
+
+<a name="mB_RANGE">mB_RANGE</a>
+	:	&quot;..&quot; 
+	;
+
+<a name="mB_UNION">mB_UNION</a>
+	:	&quot;\\/&quot; 
+	;
+
+<a name="mB_INTER">mB_INTER</a>
+	:	&quot;/\\&quot; 
+	;
+
+<a name="mB_LAMBDA">mB_LAMBDA</a>
+	:	&#039;%&#039; 
+	;
+
+<a name="mB_FORALL">mB_FORALL</a>
+	:	&#039;!&#039; 
+	;
+
+<a name="mB_EXISTS">mB_EXISTS</a>
+	:	&#039;#&#039; 
+	;
+
+<a name="mB_SEQEMPTY">mB_SEQEMPTY</a>
+	:	&quot;&lt;&gt;&quot; 
+	|	&quot;[]&quot; 
+	;
+
+<a name="mB_POINT">mB_POINT</a>
+	:	&#039;.&#039; 
+	;
+
+<a name="mB_SUCH">mB_SUCH</a>
+	:	&#039;|&#039; 
+	;
+
+<a name="mB_CPRED">mB_CPRED</a>
+	:	&quot;$0&quot; 
+	;
+
+protected <a name="mDIGIT">mDIGIT</a>
+	:			'0'..'9' 
+	;
+
+<a name="mB_NUMBER">mB_NUMBER</a>
+	:	( <a href="BEventLexer.html#mDIGIT">mDIGIT</a> )+ 
+	;
+
+protected <a name="mALPHA">mALPHA</a>
+	:			'a'..'z' 
+	|			'A'..'Z' 
+	;
+
+<a name="mB_ASTRING">mB_ASTRING</a>
+	:	&#039;&quot;&#039; ( ( &#039;&quot;&#039; ) )* &#039;&quot;&#039; 
+	;
+
+protected <a name="mVOCAB">mVOCAB</a>
+	:			'\3'..'\377' 
+	;
+
+<a name="mB_IDENTIFIER">mB_IDENTIFIER</a>
+	:	( <a href="BEventLexer.html#mALPHA">mALPHA</a> ) 
+		(	<a href="BEventLexer.html#mALPHA">mALPHA</a> 
+		|	<a href="BEventLexer.html#mDIGIT">mDIGIT</a> 
+		|	&#039;_&#039; 
+		)* 
+	;

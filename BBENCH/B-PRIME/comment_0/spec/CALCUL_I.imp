@@ -1,0 +1,28 @@
+IMPLEMENTATION
+  CALCUL_I
+
+ REFINES
+  CALCUL_R
+ 
+ SEES
+  BASIC_BOOL,
+  Vitesse
+
+ IMPORTS
+  BASIC_ARITHMETIC
+
+ OPERATIONS
+
+  V_ref,d1,d2,d3,arme_tempo    <-- CHOIX_Vitesse(V1,V2,V3) =
+  BEGIN
+    d1 <-- false ;
+    d2 <-- false ;
+    d3 <-- false ;
+    arme_tempo <--false ;
+    IF (V2 = V1) 
+    THEN 
+	xx:= xx +1
+//         V_ref     <-- COPY(V1) 
+    END
+  END
+END

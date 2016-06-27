@@ -1,0 +1,8 @@
+/* 
+   Description : Machine de test des commentaires
+   Author : Boulanger jean-louis
+   Copyright 2000-2010 Jean-Louis Boulanger
+*/
+
+
+IMPLEMENTATION /*? titi ?*/ comment_3 END

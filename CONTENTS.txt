@@ -1,0 +1,35 @@
+//
+// Part of	: ABTools distribution
+// Authors	: Boulanger Jean-Louis
+// Mails	: jean.louis.boulanger@gmail.com
+//	
+//	Copyright 1999-2009 Boulanger Jean-Louis
+//
+// File		: CONTENTS.txt
+// Description	: Describe the content of this directory
+// 
+
+Some text file:
+	BUGS.txt      		: A list of current BUG. 
+	- LICENSE.txt   	: The license applicable to this distribution 
+	- CONTENTS.txt  	: This file.
+	- INSTALL.txt 		: How Install this software 
+	- README.txt 		: More general information. 
+	- VERSION.txt		: This file describe the current version
+	- TODO.txt		: What is plannified to do
+	- CONTRIBUTORS.txt	: Listed the people who worked on abtools.
+
+Somes Directories :
+	- Documentation :
+         Documentation for compilation, insallation and using  
+
+	- Binary : 
+         Directory that received the abtools.jar and that give the basic command ABTOOLS
+
+        - Logo :
+         The ABTOOLS Logo
+
+	- Source :
+         All sources for generate and compile ABTOOLS
+
+// End of file "Contents.txt"

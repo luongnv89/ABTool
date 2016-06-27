@@ -1,0 +1,15 @@
+//
+//	AUTHOR 		: Boulanger Jean-Louis
+//	EMAIL		: jean.louis.boulanger@wanadoo.fr
+//	FILE		: File.txt
+//	Copyright	: 2000-2009 Jean-Louis Boulanger
+
+// RELEASES
+//	March 2007	Creation	  v 0.1
+
+1. In module ErrorMessage introduced a tab of messages (actually we have dedicated message in method and in code ..)
+
+2. When the list message exist provide the capability to have french or english messages.
+
+
+// end of Todo.txt

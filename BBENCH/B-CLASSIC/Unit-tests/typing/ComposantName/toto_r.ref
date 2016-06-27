@@ -1,0 +1,13 @@
+/* 
+   Description : Machine de test du typage
+   Author : Boulanger jean-louis
+   Copyright 2000-2009 Jean-Louis Boulanger
+*/
+
+REFINEMENT
+	 toto_r
+
+REFINES
+	toto
+
+END

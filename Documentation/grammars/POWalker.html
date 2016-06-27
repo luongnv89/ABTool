@@ -1,0 +1,490 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar POWalker.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar POWalker</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from POWalker.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.7 (2006-11-01); 1989-2005
+</td>
+</tr>
+</table>
+<PRE>
+
+
+Definition of tree parser POWalker, which is a subclass of TreeParser.
+
+	
+	
+<a name="analyze_PO">analyze_PO</a>
+		:				 #( PO analyze_PO analyze_PO ) 
+		|	<a href="POWalker.html#analyze_APO">analyze_APO</a> 
+		;
+	
+	
+<a name="analyze_APO">analyze_APO</a>
+		:				 #( APO 
+   initializeString();
+
+   printToString("<ProofObligation>");
+ 
+   printToString("<Predicate>");
+ predicate 
+   printToString("</Predicate>");
+ 
+   printToString("</ProofObligation>");
+
+   finalizeString();
+ ) 
+		;
+	
+	
+/** 
+ *  PREDICATE 
+ **/
+<a name="predicate">predicate</a>
+		:				 #( BTRUE 
+   printToString("<BTRUE>");
+ ) 
+		|				 #( B_NOT 
+	printToString("<Neg>");
+ predicate 
+	printToString("</Neg>");
+ ) 
+		|				 #( B_AND 
+	printToString("<And>");
+ predicate predicate 
+	printToString("</And");
+ ) 
+		|				 #( "or" 
+	printToString("<Or>");
+ predicate predicate 
+	printToString("</Or>");
+ ) 
+		|				 #( B_IMPLIES 
+	printToString("<Implies>");
+ predicate predicate 
+	printToString("</Implies>");
+ ) 
+		|				 #( B_EQUIV 
+	printToString("<Equiv>");
+ predicate predicate 
+	printToString("</Equiv>");
+ ) 
+		|				 #( B_MULT 
+	printToString("<Mul>");
+ predicate predicate 
+	printToString("</Mul>");
+ ) 
+		|				 #( B_POWER 
+	printToString("<Puissance>");
+ predicate predicate 
+	printToString("</Puissance>");
+ ) 
+		|				 #( B_DIV 
+	printToString("<Div>");
+ predicate predicate 
+	printToString("</Div>");
+ ) 
+		|				 #( "mod" 
+	printToString("<Modulo>");
+ predicate predicate 
+	printToString("</Modulo>");
+ ) 
+		|				 #( UNARY_ADD 
+	printToString("<Plus>");
+ predicate 
+	printToString("</Plus>");
+ ) 
+		|				 #( UNARY_MINUS 
+	printToString("<UMinus>");
+ predicate 
+	printToString("</UMinus>");
+ ) 
+		|				 #( B_ADD 
+	printToString("<Plus>");
+ predicate predicate 
+	printToString("</Plus>");
+ ) 
+		|				 #( B_MINUS 
+	printToString("<Minus>");
+ predicate predicate 
+	printToString("</Minus>");
+ ) 
+		|				 #( B_EQUAL 
+	printToString("<Equal>");
+ predicate predicate 
+	printToString("</Equal>");
+ ) 
+		|				 #( B_LESS 
+	printToString("<Less>");
+ predicate predicate 
+	printToString("</Less>");
+ ) 
+		|				 #( B_GREATER 
+	printToString("<Greater>");
+ predicate predicate 
+	printToString("</Greater>");
+ ) 
+		|				 #( B_NOTEQUAL 
+	printToString("<NotEqual>");
+ predicate predicate 
+	printToString("</NotEqual>");
+ ) 
+		|				 #( B_LESSTHANEQUAL 
+	printToString("<LessEqual>");
+ predicate predicate 
+	printToString("</LessEqual>");
+ ) 
+		|				 #( B_GREATERTHANEQUAL 
+	printToString("<GreaterEqual>");
+ predicate predicate 
+	printToString("</GreaterEqual>");
+ ) 
+		|				 #( B_INSET 
+	printToString("<In>");
+ predicate predicate 
+	printToString("</In>");
+ ) 
+		|				 #( B_NOTINSET 
+	printToString("<NotIn>");
+ predicate predicate 
+	printToString("</NotIn>");
+ ) 
+		|				 #( B_SUBSET 
+	printToString("<SubSet>");
+ predicate predicate 
+	printToString("</SubSet>");
+ ) 
+		|				 #( B_NOTSUBSET 
+	printToString("<NotSubSet>");
+ predicate predicate 
+	printToString("</NotSubSet>");
+ ) 
+		|				 #( B_STRICTSUBSET 
+	printToString("<StrictSubSet>");
+ predicate predicate 
+	printToString("</StrictSubSet>");
+ ) 
+		|				 #( B_NOTSTRICTSBSET 
+	printToString("<NotStrictSubSet>");
+ predicate predicate 
+	printToString("</NotStrictSubSet>");
+ ) 
+		|				 #( B_CONCATSEQ 
+	printToString("<ConcatSeq>");
+ predicate predicate 
+	printToString("</ConcatSeq>");
+ ) 
+		|				 #( B_PREAPPSEQ 
+	printToString("<>");
+ predicate predicate ) 
+		|				 #( B_APPSEQ predicate predicate ) 
+		|				 #( B_PREFIXSEQ 
+	printToString("<PrefixSeq>");
+ predicate predicate 
+	printToString("</PrefixSeq>");
+ ) 
+		|				 #( B_SUFFIXSEQ 
+	printToString("<SuffixSeq>");
+ predicate predicate 
+	printToString("</SuffixSeq>");
+ ) 
+		|				 #( B_RELATION predicate predicate ) 
+		|				 #( B_PARTIAL 
+	printToString("<PartialFunc>");
+ predicate predicate 
+	printToString("</PartialFunc>");
+ ) 
+		|				 #( B_TOTAL 
+	printToString("<TotalFunc>");
+ predicate predicate 
+	printToString("</TotalFunc>");
+ ) 
+		|				 #( B_PARTIAL_INJECT 
+	printToString("<PartialInj>");
+ predicate predicate 
+	printToString("</PartialInj>");
+ ) 
+		|				 #( B_TOTAL_INJECT 
+	printToString("<TotalInj>");
+ predicate predicate 
+	printToString("</TotalInj>");
+ ) 
+		|				 #( B_PARTIAL_SURJECT 
+	printToString("<PartialSurj>");
+ predicate predicate 
+	printToString("</PartialSurj>");
+ ) 
+		|				 #( B_TOTAL_SURJECT 
+	printToString("<TotalSurj>");
+ predicate predicate 
+	printToString("</TotalSurj>");
+ ) 
+		|				 #( B_BIJECTION 
+	printToString("<TotalBij>");
+ predicate predicate 
+	printToString("</TotalBij>");
+ ) 
+		|				 #( B_DOMAINRESTRICT 
+	printToString("<DomRestrict>");
+ predicate predicate 
+	printToString("</DomRestrict>");
+ ) 
+		|				 #( B_RANGERESTRICT 
+	printToString("<RanRestrict>");
+ predicate predicate 
+	printToString("</RanRestrict>");
+ ) 
+		|				 #( B_DOMAINSUBSTRACT 
+	printToString("<DomSubstract>");
+ predicate predicate 
+	printToString("</DomSubstract>");
+ ) 
+		|				 #( B_RANGESUBSTRACT 
+	printToString("<RanSubstract>");
+ predicate predicate 
+	printToString("</RanSubstract>");
+ ) 
+		|				 #( B_OVERRIDEFORWARD 
+	printToString("<OverRideFwd>");
+ predicate predicate 
+	printToString("</OverRideFwd>");
+ ) 
+		|				 #( B_OVERRIDEBACKWARD 
+	printToString("<OverRideBck>");
+ predicate predicate 
+	printToString("</OverRideBck>");
+ ) 
+		|				 #( B_RELPROD 
+	printToString("<RelProd>");
+ predicate predicate 
+	printToString("</RelProd>");
+ ) 
+		|				 #( B_UNION 
+	printToString("<UnionSets>");
+ predicate predicate 
+	printToString("</UnionSets>");
+ ) 
+		|				 #( B_INTER 
+	printToString("<InterSets>");
+ predicate predicate 
+	printToString("</InterSets>");
+ ) 
+		|				 #( B_MAPLET 
+	printToString("<Maplet>");
+ predicate predicate 
+	printToString("</Maplet>");
+ ) 
+		|				 #( LIST_VAR predicate predicate ) 
+		|				 #( B_RAN 
+	printToString("<Ran>");
+ predicate 
+	printToString("</Ran>");
+ ) 
+		|				 #( B_DOM 
+	printToString("<Dom>");
+ predicate 
+	printToString("</Dom>");
+ ) 
+		|	<a href="POWalker.html#basic_sets">basic_sets</a> 
+		|	<a href="POWalker.html#cbasic_value">cbasic_value</a> 
+		|				 #( "bool" 
+	printToString("<BoolEvaluation>");
+ predicate 
+	printToString("</BoolEvaluation>");
+ ) 
+		|				 #( B_BRACKOPEN listPredicate ) 
+		|				 #( B_RANGE 
+	printToString("<SetRange>");
+ predicate predicate 
+	printToString("</SetRange>");
+ ) 
+		|				 #( B_CURLYOPEN cvalue_set ) 
+		|	( B_SEQEMPTY ) 
+		|	<a href="POWalker.html#is_record">is_record</a> 
+		|	<a href="POWalker.html#quantification">quantification</a> 
+		|	<a href="POWalker.html#q_lambda">q_lambda</a> 
+		;
+	
+	
+<a name="a_record">a_record</a>
+		:				 #( B_SELECTOR B_IDENTIFIER predicate ) 
+		|	<a href="POWalker.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="listrecord">listrecord</a>
+		:				 #( B_COMMA listrecord a_record ) 
+		|	<a href="POWalker.html#a_record">a_record</a> 
+		;
+	
+	
+<a name="is_record">is_record</a>
+		:				 #( "rec" listrecord ) 
+		|				 #( "struct" listrecord ) 
+		;
+	
+	
+<a name="list_New_Predicate">list_New_Predicate</a>
+		:				 #( B_COMMA list_New_Predicate new_predicate ) 
+		|	<a href="POWalker.html#new_predicate">new_predicate</a> 
+		;
+	
+	
+<a name="new_predicate">new_predicate</a>
+		:				 #( B_SEMICOLON new_predicate predicate ) 
+		|				 #( B_PARALLEL new_predicate predicate ) 
+		|	<a href="POWalker.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="nameRenamed">nameRenamed</a>
+		:	B_IDENTIFIER 
+		|				 #( B_POINT nameRenamed nameRenamed ) 
+		;
+	
+	
+<a name="nameRenamedDecorated">nameRenamedDecorated</a>
+		:				 #( B_CPRED nameRenamed ) 
+		|	<a href="POWalker.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="nameRenameDecoratedInverted">nameRenameDecoratedInverted</a>
+		:				 #( B_TILDE nameRenamedDecorated ) 
+		|	<a href="POWalker.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		;
+	
+	
+<a name="list_identifier">list_identifier</a>
+		:				 #( B_COMMA list_identifier n1:B_IDENTIFIER ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="listPredicate">listPredicate</a>
+		:				 #( B_COMMA listPredicate predicate ) 
+		|	<a href="POWalker.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="basic_sets">basic_sets</a>
+		:	
+			(	&quot;INT&quot; 
+			|	&quot;INTEGER&quot; 
+			|	&quot;BOOL&quot; 
+			|	&quot;NAT&quot; 
+			|	&quot;NAT1&quot; 
+			|	&quot;NATURAL&quot; 
+			|	&quot;NATURAL1&quot; 
+			|	&quot;STRING&quot; 
+			|	B_EMPTYSET 
+			) 
+			
+		;
+	
+	
+<a name="cbasic_value">cbasic_value</a>
+		:	B_ASTRING 
+		|	B_NUMBER 
+		|				 #( B_TILDE 
+    printToString("<Tilde>");
+ predicate 
+    printToString("</Tilde>");
+ ) 
+		|	<a href="POWalker.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		|				 #( B_LPAREN predicate 
+	printToString("<PredParen>");
+ list_New_Predicate 
+	printToString("</PredParen>");
+ ) 
+		|				 #( PARENT 
+	printToString("<PredParen>");
+ pred_func_composition 
+	printToString("</PredParen>");
+ ) 
+		|				 #( B_QUOTEIDENT predicate predicate ) 
+		|				 #( APPLY_TO predicate predicate ) 
+		|	( &quot;TRUE&quot; ) 
+		|	( &quot;FALSE&quot; ) 
+		;
+	
+	
+<a name="cvalue_set">cvalue_set</a>
+		:				 #( t1:B_SUCH list_var predicate ) 
+		|				 #( t2:B_COMMA cvalue_set predicate ) 
+		|	<a href="POWalker.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="quantification">quantification</a>
+		:				 #( B_FORALL printToString("<ForAll>"); list_var predicate printToString("</ForAll>"); ) 
+		|				 #( B_EXISTS printToString("<Exists>"); list_var predicate printToString("</Exists>"); ) 
+		;
+	
+	
+<a name="q_lambda">q_lambda</a>
+		:				 #( B_LAMBDA 
+	printToString("<Lambda>");
+ q_operande 
+	printToString("</Lambda>");
+ ) 
+		|				 #( "PI" 
+	printToString("<PI>");
+ q_operande 
+	printToString("</PI>");
+ ) 
+		|				 #( "SIGMA" 
+	printToString("<SIGMA>");
+ q_operande 
+	printToString("</SIGMA>");
+ ) 
+		|				 #( "UNION" 
+	printToString("<UnionQ>");
+ q_operande 
+	printToString("</UnionQ>");
+ ) 
+		|				 #( "INTER" 
+	printToString("<InterQ>");
+ q_operande 
+	printToString("</InterQ>");
+ ) 
+		;
+	
+	
+<a name="list_var">list_var</a>
+		:	
+			(					 #( B_LPAREN list_identifier ) 
+			|	<a href="POWalker.html#list_identifier">list_identifier</a> 
+			) 
+			
+		;
+	
+	
+<a name="pred_func_composition">pred_func_composition</a>
+		:				 #( B_SEMICOLON 
+	printToString("<RelSeqComp>");
+ pred_func_composition predicate 
+	printToString("</RelSeqComp>");
+ ) 
+		|				 #( B_PARALLEL 
+	printToString("<ParallelComp>");
+ pred_func_composition predicate 
+	printToString("</ParallelComp>");
+ ) 
+		|				 #( B_COMMA pred_func_composition predicate ) 
+		|	<a href="POWalker.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="q_operande">q_operande</a>
+		:				 #( B_SUCH list_var predicate predicate ) 
+		;
+

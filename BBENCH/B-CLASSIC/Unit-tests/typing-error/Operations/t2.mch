@@ -1,0 +1,18 @@
+MACHINE
+	t2
+
+VARIABLES
+	tt
+
+INVARIANT
+	tt : NAT
+
+INITIALISATION
+	tt := 0
+
+OPERATIONS
+
+TT = 
+	tt := TRUE
+
+END

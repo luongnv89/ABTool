@@ -1,0 +1,67 @@
+# Automatically generated, contains relevant variables
+#
+# $Id$
+
+
+CLASSES+=  \
+	ABTOOLS/GRAMMAR/BLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/BTokenTypes.class \
+	ABTOOLS/GRAMMAR/BLexer.class \
+	ABTOOLS/GRAMMAR/BParser.class \
+	ABTOOLS/GRAMMAR/BModelTokenTypes.class \
+	ABTOOLS/GRAMMAR/BModelLexer.class \
+	ABTOOLS/GRAMMAR/BPrimeTokenTypes.class \
+	ABTOOLS/GRAMMAR/BXMLTokenTypes.class \
+	ABTOOLS/GRAMMAR/POWalkerTokenTypes.class \
+	ABTOOLS/GRAMMAR/Simple_Subst_GrammarTokenTypes.class \
+	ABTOOLS/GRAMMAR/BSystemTokenTypes.class \
+	ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/BSystemLexer.class \
+	ABTOOLS/GRAMMAR/PredicatLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/TreeWalkerTokenTypes.class \
+	ABTOOLS/GRAMMAR/TreeWalker.class \
+	ABTOOLS/GRAMMAR/ExpressionTreeWalkerTokenTypes.class \
+	ABTOOLS/GRAMMAR/ExpressionTreeWalker.class \
+	ABTOOLS/GRAMMAR/EventTreeWalkerTokenTypes.class \
+	ABTOOLS/GRAMMAR/ExpressionLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/ExpressionParser.class \
+	ABTOOLS/GRAMMAR/BModelLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/BModelParser.class \
+	ABTOOLS/GRAMMAR/ExpressionTokenTypes.class \
+	ABTOOLS/GRAMMAR/ExpressionLexer.class \
+	ABTOOLS/GRAMMAR/BSystemParser.class \
+	ABTOOLS/GRAMMAR/BPrimeLexer.class \
+	ABTOOLS/GRAMMAR/BPrimeLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/BPrimeParser.class \
+	ABTOOLS/GRAMMAR/BEventTokenTypes.class \
+	ABTOOLS/GRAMMAR/BEventLexer.class \
+	ABTOOLS/GRAMMAR/BEventLexerTokenTypes.class \
+	ABTOOLS/GRAMMAR/BEventParser.class \
+	ABTOOLS/GRAMMAR/NormalizeTokenTypes.class \
+	ABTOOLS/GRAMMAR/GSLTokenTypes.class \
+	ABTOOLS/GRAMMAR/GSL.class \
+	ABTOOLS/GRAMMAR/Normalize.class \
+	ABTOOLS/GRAMMAR/BTypingTokenTypes.class \
+	ABTOOLS/GRAMMAR/BTyping.class \
+	ABTOOLS/GRAMMAR/EventTreeWalker.class \
+	ABTOOLS/GRAMMAR/SystemTreeWalkerTokenTypes.class \
+	ABTOOLS/GRAMMAR/SystemTreeWalker.class \
+	ABTOOLS/GRAMMAR/BXML.class \
+	ABTOOLS/GRAMMAR/BCodeGeneratorTokenTypes.class \
+	ABTOOLS/GRAMMAR/BCodeGenerator.class \
+	ABTOOLS/GRAMMAR/POTokenTypes.class \
+	ABTOOLS/GRAMMAR/generic.class \
+	ABTOOLS/GRAMMAR/PO_GSLTokenTypes.class \
+	ABTOOLS/GRAMMAR/Substitution.class \
+	ABTOOLS/GRAMMAR/POWalker.class \
+	ABTOOLS/GRAMMAR/PredicatParser.class \
+	ABTOOLS/GRAMMAR/Simple_Subst_Grammar.class \
+	ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageParser.class \
+	ABTOOLS/GRAMMAR/PredicateTreeWalkerTokenTypes.class \
+	ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageTokenTypes.class \
+	ABTOOLS/GRAMMAR/GeneralisedSubstitutionLanguageLexer.class \
+	ABTOOLS/GRAMMAR/PredicateTreeWalker.class \
+	ABTOOLS/GRAMMAR/PredicatTokenTypes.class \
+	ABTOOLS/GRAMMAR/PredicatLexer.class \
+	ABTOOLS/GRAMMAR/toJML_TreeWalker.class \
+	ABTOOLS/GRAMMAR/toJML_TreeWalkerTokenTypes.class

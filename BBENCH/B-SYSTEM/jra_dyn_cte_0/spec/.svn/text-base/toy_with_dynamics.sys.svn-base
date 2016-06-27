@@ -1,0 +1,33 @@
+/*
+	AUTHOR		:	Boulanger JL
+	FILE		:	toy_with_dynamics.sys
+	DESCRIPTION	: 	This example is presented by JRA in the paper
+				"Introducing Dynamic Constraints in B"
+*/
+
+/*
+	RELEASES
+		18 July 2001	:	Creation
+*/
+
+
+SYSTEM
+	toy
+
+VARIABLES
+	xx,yy
+
+INVARIANT
+	xx,yy : NAT * NAT
+
+DYNAMICS
+	xx < xx' & yy < yy'
+
+INITIALISATION
+	xx,yy := 0,0
+
+EVENTS
+	evt_xx 	= 	xx := xx +1;
+	evt_yy	=	yy := yy +1
+
+END

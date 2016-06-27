@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>Grammar Simple_Subst_Grammar.g</TITLE>
+</HEAD>
+<BODY>
+<table summary="" border="1" cellpadding="5">
+<tr>
+<td>
+<font size="+2">Grammar Simple_Subst_Grammar</font><br>
+<a href="http://www.ANTLR.org">ANTLR</a>-generated HTML file from Simple_Subst_Grammar.g
+<p>
+Terence Parr, <a href="http://www.magelang.com">MageLang Institute</a>
+<br>ANTLR Version 2.7.7 (2006-11-01); 1989-2005
+</td>
+</tr>
+</table>
+<PRE>
+
+
+/**
+ * @author &lt;a href=&quot;mailto:jl.boulanger@wanadoo.fr&quot;&gt;Jean-Louis Boulanger&lt;/a&gt;
+ **/
+Definition of tree parser Simple_Subst_Grammar, which is a subclass of TreeParser.
+
+	
+	
+<a name="traitement">traitement</a>
+		:	
+		;
+	
+	
+/** 
+ *  PREDICATE 
+ **/
+<a name="predicate">predicate</a>
+		:	BTRUE 
+		|				 #( t51:B_NOT predicatevar,expr ) 
+		|				 #( t52:B_RAN predicatevar,expr ) 
+		|				 #( t53:B_DOM predicatevar,expr ) 
+		|				 #( t54:B_AND predicatevar,expr predicatevar,expr ) 
+		|				 #( t2:"or" predicatevar,expr predicatevar,expr ) 
+		|				 #( t3:B_IMPLIES predicatevar,expr predicatevar,expr ) 
+		|				 #( t4:B_EQUIV predicatevar,expr predicatevar,expr ) 
+		|				 #( t5:B_MULT predicatevar,expr predicatevar,expr ) 
+		|				 #( t6:B_POWER predicatevar,expr predicatevar,expr ) 
+		|				 #( t7:B_DIV predicatevar,expr predicatevar,expr ) 
+		|				 #( t8:"mod" predicatevar,expr predicatevar,expr ) 
+		|				 #( t9:UNARY_ADD predicatevar,expr ) 
+		|				 #( t10:UNARY_MINUS predicatevar,expr ) 
+		|				 #( t11:B_ADD predicatevar,expr predicatevar,expr ) 
+		|				 #( t12:B_MINUS predicatevar,expr predicatevar,expr ) 
+		|				 #( t13:B_EQUAL predicatevar,expr predicatevar,expr ) 
+		|				 #( t14:B_LESS predicatevar,expr predicatevar,expr ) 
+		|				 #( t15:B_GREATER predicatevar,expr predicatevar,expr ) 
+		|				 #( t16:B_NOTEQUAL predicatevar,expr predicatevar,expr ) 
+		|				 #( t17:B_LESSTHANEQUAL predicatevar,expr predicatevar,expr ) 
+		|				 #( t18:B_GREATERTHANEQUAL predicatevar,expr predicatevar,expr ) 
+		|				 #( t19:B_INSET predicatevar,expr predicatevar,expr ) 
+		|				 #( t20:B_NOTINSET predicatevar,expr predicatevar,expr ) 
+		|				 #( t21:B_SUBSET predicatevar,expr predicatevar,expr ) 
+		|				 #( t22:B_NOTSUBSET predicatevar,expr predicatevar,expr ) 
+		|				 #( t23:B_STRICTSUBSET predicatevar,expr predicatevar,expr ) 
+		|				 #( t24:B_NOTSTRICTSBSET predicatevar,expr predicatevar,expr ) 
+		|				 #( t25:B_CONCATSEQ predicatevar,expr predicatevar,expr ) 
+		|				 #( t26:B_PREAPPSEQ predicatevar,expr predicatevar,expr ) 
+		|				 #( t27:B_APPSEQ predicatevar,expr predicatevar,expr ) 
+		|				 #( t28:B_PREFIXSEQ predicatevar,expr predicatevar,expr ) 
+		|				 #( t29:B_SUFFIXSEQ predicatevar,expr predicatevar,expr ) 
+		|				 #( t30:B_RELATION predicatevar,expr predicatevar,expr ) 
+		|				 #( t31:B_PARTIAL predicatevar,expr predicatevar,expr ) 
+		|				 #( t32:B_TOTAL predicatevar,expr predicatevar,expr ) 
+		|				 #( t33:B_PARTIAL_INJECT predicatevar,expr predicatevar,expr ) 
+		|				 #( t34:B_TOTAL_INJECT predicatevar,expr predicatevar,expr ) 
+		|				 #( t35:B_PARTIAL_SURJECT predicatevar,expr predicatevar,expr ) 
+		|				 #( t36:B_TOTAL_SURJECT predicatevar,expr predicatevar,expr ) 
+		|				 #( t37:B_BIJECTION predicatevar,expr predicatevar,expr ) 
+		|				 #( t38:B_DOMAINRESTRICT predicatevar,expr predicatevar,expr ) 
+		|				 #( t39:B_RANGERESTRICT predicatevar,expr predicatevar,expr ) 
+		|				 #( B_DOMAINSUBSTRACT predicatevar,expr predicatevar,expr ) 
+		|				 #( B_RANGESUBSTRACT predicatevar,expr predicatevar,expr ) 
+		|				 #( B_OVERRIDEFORWARD predicatevar,expr predicatevar,expr ) 
+		|				 #( B_OVERRIDEBACKWARD predicatevar,expr predicatevar,expr ) 
+		|				 #( B_RELPROD predicatevar,expr predicatevar,expr ) 
+		|				 #( B_UNION predicatevar,expr predicatevar,expr ) 
+		|				 #( B_INTER predicatevar,expr predicatevar,expr ) 
+		|				 #( B_MAPLET predicatevar,expr predicatevar,expr ) 
+		|				 #( LIST_VAR predicatevar,expr predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#basic_sets">basic_sets</a> 
+		|	<a href="Simple_Subst_Grammar.html#cbasic_value">cbasic_value</a> 
+		|				 #( "bool" predicatevar,expr ) 
+		|				 #( B_BRACKOPEN listPredicatevar,expr ) 
+		|				 #( B_RANGE predicatevar,expr predicatevar,expr ) 
+		|	B_EMPTYSET 
+		|				 #( B_CURLYOPEN cvalue_setvar,expr ) 
+		|	B_SEQEMPTY 
+		|	<a href="Simple_Subst_Grammar.html#is_record">is_record</a> 
+		|	<a href="Simple_Subst_Grammar.html#quantification">quantification</a> 
+		|	<a href="Simple_Subst_Grammar.html#q_lambda">q_lambda</a> 
+		;
+	
+	
+<a name="basic_sets">basic_sets</a>
+		:	&quot;INT&quot; 
+		|	&quot;INT1&quot; 
+		|	&quot;INTEGER&quot; 
+		|	&quot;INTEGER1&quot; 
+		|	&quot;BOOL&quot; 
+		|	&quot;NAT&quot; 
+		|	&quot;NAT1&quot; 
+		|	&quot;NATURAL&quot; 
+		|	&quot;NATURAL1&quot; 
+		|	&quot;STRING&quot; 
+		;
+	
+	
+<a name="cbasic_value">cbasic_value</a>
+		:	B_ASTRING 
+		|	B_NUMBER 
+		|				 #( t3:B_TILDE predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#nameRenamedDecorated">nameRenamedDecorated</a> 
+		|				 #( B_LPAREN predicatevar,expr list_New_Predicatevar,expr ) 
+		|				 #( PARENT pred_func_compositionvar,expr ) 
+		|				 #( t4:B_QUOTEIDENT predicatevar,expr predicatevar,expr ) 
+		|				 #( APPLY_TO predicatevar,expr predicatevar,expr ) 
+		|	&quot;TRUE&quot; 
+		|	&quot;FALSE&quot; 
+		;
+	
+	
+<a name="listPredicate">listPredicate</a>
+		:				 #( tt:B_COMMA listPredicatevar,expr predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="cvalue_set">cvalue_set</a>
+		:				 #( t1:B_SUCH list_varvar,expr predicatevar,expr ) 
+		|				 #( t2:B_COMMA cvalue_setvar,expr predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="is_record">is_record</a>
+		:				 #( t1:"rec" listrecordvar,expr ) 
+		|				 #( t01:"struct" listrecordvar,expr ) 
+		;
+	
+	
+<a name="quantification">quantification</a>
+		:				 #( t70:B_FORALL list_varvar,expr predicatevar,expr ) 
+		|				 #( t71:B_EXISTS list_varvar,expr predicatevar,expr ) 
+		;
+	
+	
+<a name="q_lambda">q_lambda</a>
+		:				 #( t1:B_LAMBDA q_operandevar,expr ) 
+		|				 #( t2:"PI" q_operandevar,expr ) 
+		|				 #( t3:"SIGMA" q_operandevar,expr ) 
+		|				 #( t4:"UNION" q_operandevar,expr ) 
+		|				 #( t5:"INTER" q_operandevar,expr ) 
+		;
+	
+	
+<a name="list_var">list_var</a>
+		:				 #( B_LPAREN list_identifiervar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#list_identifier">list_identifier</a> 
+		;
+	
+	
+<a name="nameRenamedDecorated">nameRenamedDecorated</a>
+		:				 #( tt:B_CPRED nameRenamedvar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="list_New_Predicate">list_New_Predicate</a>
+		:				 #( tt:B_COMMA list_New_Predicatevar,expr new_predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#new_predicate">new_predicate</a> 
+		;
+	
+	
+<a name="pred_func_composition">pred_func_composition</a>
+		:				 #( t1:B_SEMICOLON pred_func_compositionvar,expr predicatevar,expr ) 
+		|				 #( t2:B_PARALLEL pred_func_compositionvar,expr predicatevar,expr ) 
+		|				 #( t3:B_COMMA pred_func_compositionvar,expr predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="q_operande">q_operande</a>
+		:				 #( t1:B_SUCH list_varvar,expr predicatevar,expr predicatevar,expr ) 
+		;
+	
+	
+<a name="list_identifier">list_identifier</a>
+		:				 #( tt:B_COMMA list_identifiervar,expr n1:B_IDENTIFIER ) 
+		|	B_IDENTIFIER 
+		;
+	
+	
+<a name="listTypedIdentifier">listTypedIdentifier</a>
+		:				 #( B_COMMA listTypedIdentifiervar,expr 
+
+ listTypedIdentifiervar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#typedIdentifier">typedIdentifier</a> 
+		;
+	
+	
+<a name="typedIdentifier">typedIdentifier</a>
+		:				 #( B_INSET nameRenamedvar,expr predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#nameRenamed">nameRenamed</a> 
+		;
+	
+	
+<a name="nameRenamed">nameRenamed</a>
+		:	B_IDENTIFIER 
+		|				 #( tt:B_POINT nameRenamedvar,expr nameRenamedvar,expr ) 
+		;
+	
+	
+<a name="listrecord">listrecord</a>
+		:				 #( tt:B_COMMA listrecordvar,expr a_recordvar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#a_record">a_record</a> 
+		;
+	
+	
+<a name="a_record">a_record</a>
+		:				 #( B_SELECTOR name:B_IDENTIFIER predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#predicate">predicate</a> 
+		;
+	
+	
+<a name="new_predicate">new_predicate</a>
+		:				 #( t1:B_SEMICOLON new_predicatevar,expr predicatevar,expr ) 
+		|				 #( t2:B_PARALLEL new_predicatevar,expr predicatevar,expr ) 
+		|	<a href="Simple_Subst_Grammar.html#predicate">predicate</a> 
+		;
+

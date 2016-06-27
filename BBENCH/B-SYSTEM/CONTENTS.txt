@@ -1,0 +1,28 @@
+//
+// AUTHOR      	: BOULANGER Jean-Louis
+// MAIL		: jean.louis.boulanger@gmail.com
+// FILE        	: CONTENTS
+//
+// DESCRIPTION 	: Ce fichier permet de presenter l'arborescence d'exemple liee a BSYSTEM
+//                Il fait partie integrante de la distribution ABTOOLS
+//                Il permet de tester l'extension de JR ABRIAL de la methode B intitule BSYSTEM
+//
+// DATE		: Septembre 2001
+// MAJ		: November 2008
+// MAJ		: March 2009
+//  Retrait de BRILLANT
+//  Passage a sourceforge et reorganisation
+//
+// Copyright 2001-2009 Boulanger Jean-Louis
+//
+
+Le langage que nous appelons "B SYSTEM" est constitue du langage B SYSTEM introduit par JR ABRIAL
+qui est une extension du B Classique defini dans le BBOOK
+
+Ce Repertoire contient:
+	CONTENTS.txt		Ce fichier
+	README.txt 		Other explanation on Bsystem
+	examples_0		Un repertoire d'exemples representatifs
+	jra_dyn_cte_0		Des exemples inspires de l'article de JR-ABrial
+
+// End of file CONTENTS

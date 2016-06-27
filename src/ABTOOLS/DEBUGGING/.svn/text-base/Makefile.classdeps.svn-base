@@ -1,0 +1,11 @@
+# Automatically generated, contains additional dependencies
+#
+# $Id$
+
+
+# Additional dependencies for ABTOOLS.DEBUGGING.ErrorMessage
+#
+# Additional dependencies for ABTOOLS.DEBUGGING.DEBUG
+#
+ABTOOLS/DEBUGGING/DEBUG.o: ABTOOLS/DEBUGGING/ErrorMessage.o
+ABTOOLS/DEBUGGING/DEBUG.class: ABTOOLS/DEBUGGING/ErrorMessage.class

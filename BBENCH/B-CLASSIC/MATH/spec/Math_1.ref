@@ -1,0 +1,26 @@
+/*
+ 
+Auhor	:	BOULANGER Jean-Louis	CNAM/CESIR
+Date	:	JUILLET 96
+Descr	:	Quelques operations mathematiques connues
+File	: 	Math_1.ref
+
+*/
+
+REFINEMENT
+	Math_1
+
+REFINES
+	Math_0
+
+OPERATIONS
+	xx <-- Abs (zz) =
+	SELECT
+		zz >= 0 
+	THEN 	
+		xx :=  zz
+	ELSE 	
+		xx := -zz
+	END
+
+END /* of file Math_1.ref */

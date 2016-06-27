@@ -1,0 +1,45 @@
+/*
+	AUTHOR		:	Boulanger JL
+	FILE		:	toy_with_scheduler.sys
+	DESCRIPTION	: 	This example is presented by JRA in the paper
+					"Introducing Dynamic Constraints in B
+*/
+
+/*
+	RELEASES
+		18 July 2001	:	Creation
+*/
+
+
+SYSTEM
+	toy_with_scheduler
+
+VARIABLES
+	xx, yy, cc, dd
+
+INVARIANT
+	xx,yy,cc,dd : NAT * NAT * NAT * NAT
+&	((cc > 0)  or (dd > 0) )
+
+INITIALISATION
+	xx,yy := 0,0
+||	cc, dd :( cc, dd : NAT1 * NAT1)
+
+EVENTS
+evt_xx 	= 
+	SELECT 
+		cc >0 
+	THEN
+		xx,cc := xx + 1 , cc - 1
+	|| 	dd :( dd : NAT1) 
+	END;
+
+evt_yy	=
+	SELECT 
+		cc >0 
+	THEN
+		yy,dd := yy + 1 , dd - 1
+	||	cc :( cc : NAT1)
+	END
+
+END

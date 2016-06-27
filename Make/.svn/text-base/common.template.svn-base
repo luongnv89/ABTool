@@ -1,0 +1,153 @@
+# $Id$ 
+include $(TOP_PATH)/Make/Makefile.conf
+
+#
+help:
+	@echo "Self-help of the Makefile"
+	@echo "Format of the help:"
+	@echo "#Purpose (double ## means mandatory for GNU make good practices)"
+	@echo "Target: prerequisites"
+	@echo "######################################################################"
+	@GREP_OPTIONS="--color=auto" grep -B 1 '^[a-zA-Z0-9_%-/$$]*\:' $(TOP_PATH)/Make/common.template
+
+##
+all: $(call NEEDS_GCJ,abtools-native) abtools-java-nodeps abtools-java doc
+
+# This target creates a self-contained jar file
+abtools-java-nodeps: $(ABTOOLS_NODEPS)
+	$(CP) $(ABTOOLSONEJARDIR)/`basename $(ABTOOLS_NODEPS)` $(ABTOOLSBINDIR)
+#
+abtools-java: $(ABTOOLS)
+
+#
+abtools-native: $(ABTOOLS_NATIVE)
+
+## Installation
+install:
+
+#
+doc: html
+##
+info:
+##
+dvi:
+##
+html: grammar-html javadoc-html
+
+#
+grammar-html: $(filter %.html,$(GRAMMAR_FILES))
+	if [ ! -d $(ABTOOLS_GDOC) ]; then mkdir $(ABTOOLS_GDOC); fi
+	$(MV) $^ $(ABTOOLS_GDOC)
+
+#
+javadoc-html:$(CLASSES:.class=.java)
+	if [ ! -d $(ABTOOLS_JAVADOC) ]; then mkdir $(ABTOOLS_JAVADOC); fi
+	$(JAVADOC) $(JAVADOCFLAGS) $^
+
+##
+ps:
+##
+pdf:
+
+##
+install-dvi: dvi
+
+##
+install-html: html
+
+##
+install-ps: ps
+
+##
+install-pdf: pdf
+
+##
+uninstall:
+
+##
+install-strip:
+
+## Keeps libraries/binaries (+keep configuration, here)
+mostlyclean:
+	-$(RM) $(CLASSES) $(CLASSES:.class=.o) $(ABTOOLSONEJARDIR)
+
+## Cleaning (cleans everything built, except configuration)
+clean: mostlyclean
+	-$(RM) $(GRAMMAR_FILES)
+	-$(RM) $(ABTOOLS_JAVADOC) $(ABTOOLS_GDOC)
+
+## Cleaning and purging (deletes even configuration, keeps only sources)
+distclean: clean
+	-$(RM) ABTOOLS/ANTLR_TOOLS/Defaults.java
+	-$(RM) Manifest.txt
+
+## clean all that can be rebuilt, thus distclean plus more
+maintainer-clean: distclean
+	-$(RM) $(ABTOOLS) $(ABTOOLS_NODEPS) $(ABTOOLS_NATIVE) 
+
+## Generates a TAGS file for use with emacs/vi
+TAGS:
+
+# Build Linux packages
+packages:
+
+## Builds a tarball of the sources (not relevant here)
+dist: 
+
+## Unit tests go here, should work even when not installed
+check:
+
+## like check, but once installed. $bindir not in path
+installcheck:
+
+## build install dirs
+installdirs:
+
+#
+%.class: %.java
+	$(JAVAC) $(JAVACFLAGS) $<
+
+#
+%.o: %.java
+	$(GCJ) $(GCJFLAGS) -o $@ $<
+
+#
+$(ABTOOLS): Manifest.txt $(CLASSES)
+	$(JARMANIFEST) $@ $< $(filter-out Manifest.txt,$^)
+
+#
+$(ABTOOLS_NATIVE): $(CLASSES:.class=.o)
+	$(GCJ) --main=ABTOOLS.INTERFACE_TEXTE.ABTools -o $@ $(ANTLR_PATH) $^
+
+#
+ABTOOLS/ANTLR_TOOLS/Defaults.java: $(TOP_PATH)/Make/Defaults.java.template
+	sed -e 's/MAJOR_REVISION/$(MAJOR_REVISION)/' $(TOP_PATH)/Make/$(@F).template | \
+	sed -e 's/MINOR_REVISION/$(MINOR_REVISION)/' | \
+	sed -e 's/PATCHLEVEL/$(PATCHLEVEL)/' | \
+	sed -e 's/DATESTAMP/$(DATEISO)/' | \
+	sed -e 's/ANTLR_VERSION/$(ANTLR_VERSION)/' >$@
+
+#
+Manifest.txt:$(TOP_PATH)/Make/Makefile.conf
+	echo Main-Class: ABTOOLS.INTERFACE_TEXTE.ABTools >$@
+	echo Class-Path: $(ANTLR_PATH) >>$@
+
+#
+$(ABTOOLS_NODEPS): $(ABTOOLS)
+	if [ -e $(ABTOOLSONEJARDIR) ]; then $(RM) $(ABTOOLSONEJARDIR); fi
+	mkdir -p $(ABTOOLSONEJARDIR)/boot
+	mkdir -p $(ABTOOLSONEJARDIR)/lib
+	mkdir -p $(ABTOOLSONEJARDIR)/main
+	$(CP) $< $(ABTOOLSONEJARDIR)/main/main.jar
+	$(CP) $(ANTLR_PATH) $(ABTOOLSONEJARDIR)/lib
+	$(CP) $(ONEJARJAR) $(ABTOOLSONEJARDIR)/boot
+	$(CD) $(ABTOOLSONEJARDIR)/boot && jar xf `basename $(ONEJARJAR)`
+	$(CD) $(ABTOOLSONEJARDIR)/boot && $(RM) `basename $(ONEJARJAR)`
+	$(CD) $(ABTOOLSONEJARDIR) && jar cf `basename $(ABTOOLS_NODEPS)` -C . main -C . lib
+	$(CD) $(ABTOOLSONEJARDIR) && jar -uvfm `basename $(ABTOOLS_NODEPS)` ./boot/boot-manifest.mf -C ./boot/ .
+
+# Emacs variables
+# 
+# Local Variables:
+# mode:makefile
+# End:

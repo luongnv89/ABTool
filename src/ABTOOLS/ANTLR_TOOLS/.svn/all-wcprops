@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/ANTLR_TOOLS
+END
+MyNode.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/MyNode.java
+END
+info.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/info.java
+END
+MyToken.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/MyToken.java
+END
+MySymbolTable.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/MySymbolTable.java
+END
+ListAM.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/ListAM.java
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/Makefile
+END
+LinkedAM.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/ANTLR_TOOLS/LinkedAM.java
+END
+AbstractMachine.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/ANTLR_TOOLS/AbstractMachine.java
+END
+Metrics.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/Metrics.java
+END
+Makefile.vars
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/Makefile.vars
+END
+PO.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/PO.java
+END
+MyStack.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/MyStack.java
+END
+Project.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/abtools/code/!svn/ver/165/src/ABTOOLS/ANTLR_TOOLS/Project.java
+END
+Makefile.classdeps
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/Makefile.classdeps
+END
+ASTterme.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/ASTterme.java
+END
+ADefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/ADefinition.java
+END
+Defaults.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/abtools/code/!svn/ver/105/src/ABTOOLS/ANTLR_TOOLS/Defaults.java
+END
+ListDefinition.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/abtools/code/!svn/ver/81/src/ABTOOLS/ANTLR_TOOLS/ListDefinition.java
+END

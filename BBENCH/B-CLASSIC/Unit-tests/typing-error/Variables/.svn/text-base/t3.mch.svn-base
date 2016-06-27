@@ -1,0 +1,13 @@
+MACHINE
+	t3
+
+VARIABLES
+	tt
+
+INVARIANT
+	tt : BOOL
+
+INITIALISATION
+	tt := 0
+
+END

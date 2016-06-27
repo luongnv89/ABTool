@@ -1,0 +1,1 @@
+IF (x>1) THEN IF (y>2) THEN skip ELSE x:= x+1 END
