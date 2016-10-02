@@ -1,0 +1,2 @@
+Main-Class: ABTOOLS.INTERFACE_TEXTE.ABTools
+Class-Path: /usr/local/lib/antlr.jar

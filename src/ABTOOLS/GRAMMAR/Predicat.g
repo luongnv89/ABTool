@@ -17,7 +17,7 @@
 // You may study, use, modify, and distribute it for non-commercial purposes.  
 //
 
-header 
+header
 {
     package ABTOOLS.GRAMMAR;
     

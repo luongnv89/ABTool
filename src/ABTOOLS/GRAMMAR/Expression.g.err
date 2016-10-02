@@ -1,0 +1,49 @@
+ANTLR Parser Generator   Version 2.7.6 (2005-12-22)   1989-2005
+./expandedExpression.g:211: warning:nondeterminism upon
+./expandedExpression.g:211:     k==1:B_MULT
+./expandedExpression.g:211:     between alt 1 and exit branch of block
+./expandedExpression.g:219: warning:nondeterminism upon
+./expandedExpression.g:219:     k==1:B_MULT,B_POWER
+./expandedExpression.g:219:     between alt 1 and exit branch of block
+./expandedExpression.g:229: warning:nondeterminism upon
+./expandedExpression.g:229:     k==1:B_DIV,"mod"
+./expandedExpression.g:229:     between alt 1 and exit branch of block
+./expandedExpression.g:239: warning:nondeterminism upon
+./expandedExpression.g:239:     k==1:B_ADD,B_MINUS
+./expandedExpression.g:239:     between alt 1 and exit branch of block
+./expandedExpression.g:296:44: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedExpression.g:296:44:     k==1:B_TILDE
+./expandedExpression.g:315:27: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedExpression.g:315:27:     k==1:B_TILDE
+./expandedExpression.g:453: warning:nondeterminism upon
+./expandedExpression.g:453:     k==1:B_COMMA
+./expandedExpression.g:453:     between alt 1 and exit branch of block
+./expandedExpression.g:464: warning:nondeterminism upon
+./expandedExpression.g:464:     k==1:B_GREATER
+./expandedExpression.g:464:     between alt 1 and exit branch of block
+./expandedExpression.g:548: warning:nondeterminism upon
+./expandedExpression.g:548:     k==1:B_MULT
+./expandedExpression.g:548:     between alt 1 and exit branch of block
+./expandedExpression.g:556: warning:nondeterminism upon
+./expandedExpression.g:556:     k==1:B_MULT,B_POWER
+./expandedExpression.g:556:     between alt 1 and exit branch of block
+./expandedExpression.g:566: warning:nondeterminism upon
+./expandedExpression.g:566:     k==1:B_DIV,"mod"
+./expandedExpression.g:566:     between alt 1 and exit branch of block
+./expandedExpression.g:576: warning:nondeterminism upon
+./expandedExpression.g:576:     k==1:B_ADD,B_MINUS
+./expandedExpression.g:576:     between alt 1 and exit branch of block
+./expandedExpression.g:645:56: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedExpression.g:645:56:     k==1:B_TILDE
+./expandedExpression.g:665:21: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedExpression.g:665:21:     k==1:B_TILDE
+./expandedExpression.g:886: warning:lexical nondeterminism between alts 1 and 2 of block upon
+./expandedExpression.g:886:     k==1:'/'
+./expandedExpression.g:886:     k==2:'*'
+./expandedExpression.g:886:     k==3:'?'
+./expandedExpression.g:886:     k==4:'\u0003'..'\uffff'
+./expandedExpression.g:939:30: warning:lexical nondeterminism between alts 1 and 2 of block upon
+./expandedExpression.g:939:30:     k==1:'\n'
+./expandedExpression.g:939:30:     k==2:'\u0003'..'\uffff'
+./expandedExpression.g:939:30:     k==3:'\u0003'..'\uffff'
+./expandedExpression.g:939:30:     k==4:<end-of-token>,'\u0003'..'\uffff'

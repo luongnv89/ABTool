@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # Modify the variable ABPATH if new location 
-ABPATH=/Volumes/Donnees_Projets/SVN/ABTools-News/Binary
+ABPATH=/Users/montimage/workspace/open-source/new_abtool
 
 java -jar $ABPATH/abtools.jar $@

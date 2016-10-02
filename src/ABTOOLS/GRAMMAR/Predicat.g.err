@@ -1,0 +1,29 @@
+ANTLR Parser Generator   Version 2.7.6 (2005-12-22)   1989-2005
+Predicat.g:248: warning:nondeterminism upon
+Predicat.g:248:     k==1:B_COMMA
+Predicat.g:248:     between alt 1 and exit branch of block
+Predicat.g:260: warning:nondeterminism upon
+Predicat.g:260:     k==1:B_GREATER
+Predicat.g:260:     between alt 1 and exit branch of block
+Predicat.g:356: warning:nondeterminism upon
+Predicat.g:356:     k==1:B_MULT
+Predicat.g:356:     between alt 1 and exit branch of block
+Predicat.g:364: warning:nondeterminism upon
+Predicat.g:364:     k==1:B_MULT,B_POWER
+Predicat.g:364:     between alt 1 and exit branch of block
+Predicat.g:375: warning:nondeterminism upon
+Predicat.g:375:     k==1:B_DIV,"mod"
+Predicat.g:375:     between alt 1 and exit branch of block
+Predicat.g:386: warning:nondeterminism upon
+Predicat.g:386:     k==1:B_ADD,B_MINUS
+Predicat.g:386:     between alt 1 and exit branch of block
+Predicat.g:469:27: warning:nondeterminism between alts 1 and 2 of block upon
+Predicat.g:469:27:     k==1:B_TILDE
+Predicat.g:491:21: warning:nondeterminism between alts 1 and 2 of block upon
+Predicat.g:491:21:     k==1:B_TILDE
+Predicat.g:925: warning:lexical nondeterminism between alts 1 and 2 of block upon
+Predicat.g:925:     k==1:'/'
+Predicat.g:925:     k==2:'*'
+Predicat.g:925:     k==3:'?'
+Predicat.g:925:     k==4:'\u0000'..'\u00ff'
+Predicat.g:925:     k==5:'\u0000'..'\u00ff'

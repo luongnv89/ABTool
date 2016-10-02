@@ -1,0 +1,7 @@
+ANTLR Parser Generator   Version 2.7.6 (2005-12-22)   1989-2005
+Normalize.g:778: warning:nondeterminism between alts 1 and 3 of block upon
+Normalize.g:778:     k==1:LIST_VAR
+Normalize.g:805: warning:nondeterminism between alts 1 and 3 of block upon
+Normalize.g:805:     k==1:B_MULT
+Normalize.g:805: warning:nondeterminism between alts 2 and 3 of block upon
+Normalize.g:805:     k==1:PRODSET

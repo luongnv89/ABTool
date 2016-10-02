@@ -1,0 +1,57 @@
+ANTLR Parser Generator   Version 2.7.6 (2005-12-22)   1989-2005
+./expandedGeneralisedSubstitutionLanguage.g:245: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:245:     k==1:B_MULT
+./expandedGeneralisedSubstitutionLanguage.g:245:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:253: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:253:     k==1:B_MULT,B_POWER
+./expandedGeneralisedSubstitutionLanguage.g:253:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:264: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:264:     k==1:B_DIV,"mod"
+./expandedGeneralisedSubstitutionLanguage.g:264:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:275: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:275:     k==1:B_ADD,B_MINUS
+./expandedGeneralisedSubstitutionLanguage.g:275:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:339:44: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedGeneralisedSubstitutionLanguage.g:339:44:     k==1:B_TILDE
+./expandedGeneralisedSubstitutionLanguage.g:360:27: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedGeneralisedSubstitutionLanguage.g:360:27:     k==1:B_TILDE
+./expandedGeneralisedSubstitutionLanguage.g:502: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:502:     k==1:B_COMMA
+./expandedGeneralisedSubstitutionLanguage.g:502:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:513: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:513:     k==1:B_GREATER
+./expandedGeneralisedSubstitutionLanguage.g:513:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:597: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:597:     k==1:B_MULT
+./expandedGeneralisedSubstitutionLanguage.g:597:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:605: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:605:     k==1:B_MULT,B_POWER
+./expandedGeneralisedSubstitutionLanguage.g:605:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:615: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:615:     k==1:B_DIV,"mod"
+./expandedGeneralisedSubstitutionLanguage.g:615:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:625: warning:nondeterminism upon
+./expandedGeneralisedSubstitutionLanguage.g:625:     k==1:B_ADD,B_MINUS
+./expandedGeneralisedSubstitutionLanguage.g:625:     between alt 1 and exit branch of block
+./expandedGeneralisedSubstitutionLanguage.g:694:56: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedGeneralisedSubstitutionLanguage.g:694:56:     k==1:B_TILDE
+./expandedGeneralisedSubstitutionLanguage.g:714:21: warning:nondeterminism between alts 1 and 2 of block upon
+./expandedGeneralisedSubstitutionLanguage.g:714:21:     k==1:B_TILDE
+./expandedGeneralisedSubstitutionLanguage.g: warning:lexical nondeterminism between rules GSL_SUCH and B_SUCH upon
+./expandedGeneralisedSubstitutionLanguage.g:     k==1:'|'
+./expandedGeneralisedSubstitutionLanguage.g:     k==2:<end-of-token>
+./expandedGeneralisedSubstitutionLanguage.g:     k==3:<end-of-token>
+./expandedGeneralisedSubstitutionLanguage.g:     k==4:<end-of-token>
+./expandedGeneralisedSubstitutionLanguage.g:     k==5:<end-of-token>
+./expandedGeneralisedSubstitutionLanguage.g: warning:lexical nondeterminism between rules GSL_GUARD and B_garde upon
+./expandedGeneralisedSubstitutionLanguage.g:     k==1:'='
+./expandedGeneralisedSubstitutionLanguage.g:     k==2:'='
+./expandedGeneralisedSubstitutionLanguage.g:     k==3:'>'
+./expandedGeneralisedSubstitutionLanguage.g:     k==4:<end-of-token>
+./expandedGeneralisedSubstitutionLanguage.g:     k==5:<end-of-token>
+./expandedGeneralisedSubstitutionLanguage.g:969: warning:lexical nondeterminism between alts 1 and 2 of block upon
+./expandedGeneralisedSubstitutionLanguage.g:969:     k==1:'/'
+./expandedGeneralisedSubstitutionLanguage.g:969:     k==2:'*'
+./expandedGeneralisedSubstitutionLanguage.g:969:     k==3:'?'
+./expandedGeneralisedSubstitutionLanguage.g:969:     k==4:'\u0003'..'\uffff'
+./expandedGeneralisedSubstitutionLanguage.g:969:     k==5:'\u0003'..'\uffff'

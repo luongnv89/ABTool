@@ -1,0 +1,5 @@
+ANTLR Parser Generator   Version 2.7.6 (2005-12-22)   1989-2005
+./expandedEventTreeWalker.g:348: warning:nondeterminism between alts 1 and 5 of block upon
+./expandedEventTreeWalker.g:348:     k==1:B_BEGIN_POST
+./expandedEventTreeWalker.g:2369: warning:nondeterminism between alts 4 and 5 of block upon
+./expandedEventTreeWalker.g:2369:     k==1:LIST_VAR
